@@ -3,7 +3,7 @@ import { useState } from 'react';
 import astroLogo from '../assets/astro.svg';
 ---
 
-<header class="w-full bg-red-500">
+<header class="w-full bg-red-500 relative">
   <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
     <div class="flex items-center space-x-2">
       <img src={astroLogo.src} alt="Homepage" class="h-6" />
@@ -25,7 +25,8 @@ import astroLogo from '../assets/astro.svg';
   </nav>
 
   <!-- Navegacion Mobile  -->
-  <ul id="mobile-menu" class="md:hidden hidden px-4 pb-4 text-white font-medium space-y-2 text-right flex flex-col items-end">
+  <ul id="mobile-menu"
+  class="md:hidden fixed right-0 w-full bg-red-400 px-4 py-4 text-white font-medium space-y-2 text-right flex flex-col items-end">
     <li><a href="/" class="block hover:underline">Home</a></li>
     <li><a href="/gallery" class="block hover:underline">Gallery</a></li>
     <li><a href="/services" class="block hover:underline">Services</a></li>

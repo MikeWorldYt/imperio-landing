@@ -1,17 +1,20 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/HomeSection/About.astro';
+import Services from '../components/HomeSection/Services.astro';
+import Cta from '../components/HomeSection/Cta.astro';
+import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import '../styles/global.css';
 ---
 
 <Layout>
-	<div class="text-center">
-		<h1 class="text-5xl font-bold text-red-600">
-			TAILWIND TEST
-		</h1>
-	</div>
-	<Welcome />
+  <Header />
+  <Hero />
+  <About />
+  <Services />
+  <Cta />
+  <Footer />
 </Layout>

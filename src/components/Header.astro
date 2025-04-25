@@ -1,0 +1,21 @@
+---
+import { useState } from 'react';
+import astroLogo from '../assets/astro.svg';
+---
+
+<header class="w-full bg-red-500">
+  <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img src={astroLogo.src} alt="Homepage" class="h-6" />
+      <span class="text-white font-bold text-lg">Imperio Pools</span>
+    </div>
+
+    <!-- Navegación -->
+    <ul class="flex space-x-6 text-white font-medium">
+      <li><a href="/" class="hover:underline">Home</a></li>
+      <li><a href="/gallery" class="hover:underline">Gallery</a></li>
+      <li><a href="/services" class="hover:underline">Services</a></li>
+      <li><a href="/get-quote" class="hover:underline">Get Quote</a></li>
+    </ul>
+  </nav>
+</header>

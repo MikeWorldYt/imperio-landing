@@ -17,3 +17,7 @@ export function getStaticPaths() {
         { params: { lang: 'es' } },
     ];
 }
+
+export function getDefaultLang() {
+    return defaultLang;
+}

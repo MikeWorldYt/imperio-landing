@@ -1,0 +1,50 @@
+---
+import Header from '../../components/layout/Header.astro';
+import Hero from '../../components/sections/Home/Hero.astro';
+import About from '../../components/sections/Home/About.astro';
+import Services from '../../components/sections/Home/Services.astro';
+import Cta from '../../components/sections/Home/Cta.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
+
+import '../../styles/global.css';
+
+// i18n Settings  //
+import { useTranslations } from '../../hooks/useTranslations';
+import { getLangFromUrl, getStaticPaths, getDefaultLang } from '../../i18n/utils/i18n';
+import { homeTexts as enHomeTexts } from '../../i18n/en/home';
+import { homeTexts as esHomeTexts } from '../../i18n/es/home';
+
+export { getStaticPaths };
+
+export interface Props {
+    lang: string;
+}
+
+const { lang: langProp } = Astro.props;
+const url = new URL(Astro.url);
+
+let lang = langProp || getLangFromUrl(url) || getDefaultLang();
+
+const homeTextsByLang = {
+    en: enHomeTexts,
+    es: esHomeTexts,
+};
+
+// if (!(lang in homeTextsByLang)) {
+//    lang = getDefaultLang();
+// }
+
+const texts = homeTextsByLang[lang as keyof typeof homeTextsByLang]  || homeTextsByLang['en'];
+const t = useTranslations(texts);
+---
+
+<Layout>
+  <!--  <h1 > {t('title')} </h1> -->
+  <Header />
+  <Hero />
+  <About />
+  <Services />
+  <Cta />
+  <Footer />
+</Layout>

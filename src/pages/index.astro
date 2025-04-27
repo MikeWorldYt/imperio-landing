@@ -1,20 +1,27 @@
 ---
-import Header from '../components/layout/Header.astro';
-import Hero from '../components/sections/Home/Hero.astro';
-import About from '../components/sections/Home/About.astro';
-import Services from '../components/sections/Home/Services.astro';
-import Cta from '../components/sections/Home/Cta.astro';
-import Footer from '../components/layout/Footer.astro';
 import Layout from '../layouts/Layout.astro';
+import Home from './[lang]/home.astro';
 
 import '../styles/global.css';
+
+// i18n Settings  //
+import { getDefaultLang } from '../i18n/utils/i18n';
+
+const url = new URL(Astro.url);
+const path = url.pathname.split('/');
+let lang = path[1];
+
+if (!lang || lang.length !== 2) {
+  lang = getDefaultLang(); // 'en' por defecto
+}
 ---
 
 <Layout>
-  <Header />
-  <Hero />
-  <About />
-  <Services />
-  <Cta />
-  <Footer />
+  <Home lang={lang} />
+  <!-- --Header / -->
+  <!--Hero / -->
+  <!--About / -->
+  <!--Services / -->
+  <!--Cta / -->
+  <!--Footer / -->
 </Layout>

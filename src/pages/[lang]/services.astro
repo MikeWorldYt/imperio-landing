@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/global.css';
+
+// i18n Settings  //
+import { useTranslations } from '../../hooks/useTranslations';
+import { getLangFromUrl, getStaticPaths } from '../../i18n/utils/i18n';
+import { servicesTexts as enServicesTexts } from '../../i18n/en/services';
+import { servicesTexts as esServicesTexts } from '../../i18n/es/services';
+
+export { getStaticPaths };
+
+const url = new URL(Astro.url);
+const lang = getLangFromUrl(url);
+
+const servicesTextsByLang = {
+    en: enServicesTexts,
+    es: esServicesTexts,
+};
+const texts = servicesTextsByLang[lang] || enServicesTexts;
+const t = useTranslations(texts);
+---
+
+<Layout>
+  <h1 class="text-3xl font-bold text-center mt-10">{t('title')}</h1>
+  <h2>{t('subtitle')}</h2>
+</Layout>

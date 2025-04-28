@@ -28,7 +28,7 @@ const { texts } = Astro.props;
 <header class="w-full bg-red-500 fixed top-0 z-10">
   <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
     <div class="flex items-center space-x-2">
-      <h1>s={texts.title}</h1>
+      <h1>{texts.title}</h1>
       <img src={astroLogo.src} alt="Homepage" class="h-6" />
       <span class="text-white font-bold text-lg">Imperio Pools</span>
     </div>
@@ -40,19 +40,19 @@ const { texts } = Astro.props;
 
     <!-- Navegación Desktop -->
     <ul id="nav-menu" class="hidden md:flex space-x-6 text-white font-medium">
-      <li><a href={`/${lang}/gallery`} class="hover:underline">Gallery</a></li>
-      <li><a href={`/${lang}/services`} class="hover:underline">Services</a></li>
-      <li><a href={`/${lang}/get-quote`} class="hover:underline">Get Quote</a></li>
+      <li><a href={`/${lang}/gallery`} class="hover:underline">{texts.nav2}</a></li>
+      <li><a href={`/${lang}/services`} class="hover:underline">{texts.nav3}</a></li>
+      <li><a href={`/${lang}/get-quote`} class="hover:underline">{texts.test}</a></li>
     </ul>
   </nav>
 
   <!-- Navegacion Mobile  -->
   <ul id="mobile-menu"
   class="md:hidden fixed right-0 w-full bg-red-400 px-4 py-4 text-white font-medium space-y-2 text-right flex flex-col items-end">
-    <li><a href={`/${lang}/home`} class="block hover:underline">Home</a></li>
-    <li><a href={`/${lang}/gallery`} class="block hover:underline">Gallery</a></li>
-    <li><a href={`/${lang}/services`} class="block hover:underline">Services</a></li>
-    <li><a href={`/${lang}/get-quote`} class="block hover:underline">Get Quote</a></li>
+    <li><a href={`/${lang}/home`} class="block hover:underline">{texts.nav1}</a></li>
+    <li><a href={`/${lang}/gallery`} class="block hover:underline">{texts.nav2}</a></li>
+    <li><a href={`/${lang}/services`} class="block hover:underline">{texts.nav3}</a></li>
+    <li><a href={`/${lang}/get-quote`} class="block hover:underline">{texts.nav4}</a></li>
   </ul>
 
   <!-- Script para el botón hamburguesa -->

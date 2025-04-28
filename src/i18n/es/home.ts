@@ -6,7 +6,12 @@ export const homeTexts: HomeTexts = {
 
     header: {
         title: 'Hola Header',
-        subtitle: 'Estamos en la header page.'
+        subtitle: 'Estamos en la header page.',
+        nav1: 'Home',
+        nav2: 'Galería',
+        nav3: 'Servicios',
+        nav4: 'Cotizar',
+        test: 'test'
     },
 
     hero: {

@@ -14,6 +14,7 @@ import { useTranslations } from '../../hooks/useTranslations';
 import { getLangFromUrl, getStaticPaths, getDefaultLang } from '../../i18n/utils/i18n';
 import { homeTexts as enHomeTexts } from '../../i18n/en/home';
 import { homeTexts as esHomeTexts } from '../../i18n/es/home';
+import type { HomeTexts } from '../../i18n/utils/types';
 
 export { getStaticPaths };
 
@@ -35,13 +36,13 @@ const homeTextsByLang = {
 //    lang = getDefaultLang();
 // }
 
-const texts = homeTextsByLang[lang as keyof typeof homeTextsByLang]  || homeTextsByLang['en'];
+const texts = homeTextsByLang[lang as keyof typeof homeTextsByLang] as HomeTexts || homeTextsByLang['en'];
 const t = useTranslations(texts);
 ---
 
 <Layout>
   <!--  <h1 > {t('title')} </h1> -->
-  <Header />
+  <Header texts={texts.header} />
   <Hero />
   <About />
   <Services />

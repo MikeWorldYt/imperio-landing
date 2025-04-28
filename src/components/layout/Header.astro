@@ -2,9 +2,20 @@
 import { useState } from 'react';
 import astroLogo from '../../assets/astro.svg';
 import { Menu } from 'lucide-react';
+
+// Dinamic Routes  //
+import { getDefaultLang } from '../../i18n/utils/i18n';
+
+const url = new URL(Astro.url);
+const path = url.pathname.split('/');
+let lang = path[1];
+
+if (!lang || lang.length !== 2) {
+  lang = getDefaultLang();
+}
 ---
 
-<header class="w-full bg-red-500 sticky top-0">
+<header class="w-full bg-red-500 fixed top-0 z-10">
   <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
     <div class="flex items-center space-x-2">
       <img src={astroLogo.src} alt="Homepage" class="h-6" />
@@ -18,19 +29,19 @@ import { Menu } from 'lucide-react';
 
     <!-- Navegación Desktop -->
     <ul id="nav-menu" class="hidden md:flex space-x-6 text-white font-medium">
-      <li><a href="gallery" class="hover:underline">Gallery</a></li>
-      <li><a href="services" class="hover:underline">Services</a></li>
-      <li><a href="get-quote" class="hover:underline">Get Quote</a></li>
+      <li><a href={`/${lang}/gallery`} class="hover:underline">Gallery</a></li>
+      <li><a href={`/${lang}/services`} class="hover:underline">Services</a></li>
+      <li><a href={`/${lang}/get-quote`} class="hover:underline">Get Quote</a></li>
     </ul>
   </nav>
 
   <!-- Navegacion Mobile  -->
   <ul id="mobile-menu"
   class="md:hidden fixed right-0 w-full bg-red-400 px-4 py-4 text-white font-medium space-y-2 text-right flex flex-col items-end">
-    <li><a href="home" class="block hover:underline">Home</a></li>
-    <li><a href="/gallery" class="block hover:underline">Gallery</a></li>
-    <li><a href="/services" class="block hover:underline">Services</a></li>
-    <li><a href="/get-quote" class="block hover:underline">Get Quote</a></li>
+    <li><a href={`/${lang}/home`} class="block hover:underline">Home</a></li>
+    <li><a href={`/${lang}/gallery`} class="block hover:underline">Gallery</a></li>
+    <li><a href={`/${lang}/services`} class="block hover:underline">Services</a></li>
+    <li><a href={`/${lang}/get-quote`} class="block hover:underline">Get Quote</a></li>
   </ul>
 
   <!-- Script para el botón hamburguesa -->

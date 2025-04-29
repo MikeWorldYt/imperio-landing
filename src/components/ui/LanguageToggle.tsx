@@ -12,20 +12,20 @@ return (
     <div className="flex justify-center items-center">
         <button
             onClick={toggleLanguage}
-            className="relative w-28 h-14 bg-gray-100 rounded-full shadow-inner flex items-center justify-between px-4 text-gray-700 font-semibold overflow-hidden"
+            className="relative w-16 h-8 bg-gray-100 rounded-full shadow-inner flex items-center justify-between px-2 text-gray-700 font-semibold overflow-hidden"
         >
-        <span className="z-10">ES</span>
-        <span className="z-10">EN</span>
+        <span className="z-10 text-xs">ES</span>
+        <span className="z-10 text-xs">EN</span>
         <div
-            className={`absolute top-1 left-1 w-12 h-12 rounded-full overflow-hidden shadow-md transform transition-transform duration-300 ${
-            language === "en" ? "translate-x-16 z-20" : "translate-x-0 z-20"
+            className={`absolute top-1 left-1 w-6 h-6 rounded-full overflow-hidden shadow-md transform transition-transform duration-500 ease-in-out ${
+            language === "en" ? "translate-x-8 z-20" : "translate-x-0 z-20"
             }`}
         >
             <img
                 key={language} 
                 src={language === "en" ? "/icons/flag-us.svg" : "/icons/flag-es.svg"}
                 alt="flag"
-                className="w-full h-full object-cover transition-opacity duration-300"
+                className="w-full h-full object-cover transition-opacity duration-500"
             />
         </div>
         </button>

@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { defaultLang } from "../../i18n/utils/i18n";
 
 const LanguageToggle = () => {
-    const [language, setLanguage] = useState<"en" | "es">("en");
+    const [language, setLanguage] = useState<"en" | "es">(defaultLang);
 
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('language');
+        if (savedLanguage === 'en' || savedLanguage === 'es') {
+            setLanguage(savedLanguage);
+        } else {
+            localStorage.setItem('language', defaultLang); // 👈 Manda default si no hay nada
+            setLanguage(defaultLang);
+        }
+    }, []);
     const toggleLanguage = () => {
-        setLanguage((prev) => (prev === "en" ? "es" : "en"));
-        // Logica para cambiar el idioma
-};
+        const newLanguage = language === "en" ? "es" : "en";
+        setLanguage(newLanguage);
+        localStorage.setItem("language", newLanguage);
+        // cambio de ruta
+        const currentPath = window.location.pathname.split('/').slice(2).join('/');
+        window.location.href = `/${newLanguage}/${currentPath}`;
+    };
 
 return (
     <div className="flex justify-center items-center">

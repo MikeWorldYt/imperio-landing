@@ -1,28 +1,33 @@
 ---
+import Header from '../../components/layout/Header.astro';
 import Layout from '../../layouts/Layout.astro';
 import '../../styles/global.css';
 
 // i18n Settings  //
+import { useLang } from '../../hooks/useLang';
+import { useLangPageTexts } from '../../hooks/useLangPageText';
 import { useTranslations } from '../../hooks/useTranslations';
-import { getLangFromUrl, getStaticPaths } from '../../i18n/utils/i18n';
+import { getStaticPaths } from '../../i18n/utils/i18n';
 import { galleryTexts as enGalleryTexts } from '../../i18n/en/gallery';
 import { galleryTexts as esGalleryTexts } from '../../i18n/es/gallery';
+import type { LangTypes } from '../../i18n/utils/types';
 
 export { getStaticPaths };
-
-const url = new URL(Astro.url);
-const lang = getLangFromUrl(url);
 
 const galleryTextsByLang = {
     en: enGalleryTexts,
     es: esGalleryTexts,
 };
-const texts = galleryTextsByLang[lang] || enGalleryTexts;
-const t = useTranslations(texts);
 
+// @ts-ignore
+const texts = useLangPageTexts<LangTypes>(Astro, galleryTextsByLang);
+// @ts-ignore
+const lang = useLang(Astro);
+const t = useTranslations(texts);
 ---
 
 <Layout lang="{lang}">
+    <Header texts={texts.header} />
     <h1 class="text-3xl font-bold text-center mt-10">{t('title')}</h1>
     <h2>{t('subtitle')}</h2>
 </Layout>

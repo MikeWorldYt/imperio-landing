@@ -10,11 +10,13 @@ import Layout from '../../layouts/Layout.astro';
 import '../../styles/global.css';
 
 // i18n Settings  //
+import { useLang } from '../../hooks/useLang';
+import { useLangPageTexts } from '../../hooks/useLangPageText';
 import { useTranslations } from '../../hooks/useTranslations';
-import { getLangFromUrl, getStaticPaths, getDefaultLang } from '../../i18n/utils/i18n';
+import { getStaticPaths } from '../../i18n/utils/i18n';
 import { homeTexts as enHomeTexts } from '../../i18n/en/home';
 import { homeTexts as esHomeTexts } from '../../i18n/es/home';
-import type { HomeTexts } from '../../i18n/utils/types';
+import type { LangTypes } from '../../i18n/utils/types';
 
 export { getStaticPaths };
 
@@ -22,22 +24,19 @@ export interface Props {
     lang: string;
 }
 
-const { lang: langProp } = Astro.props;
-const url = new URL(Astro.url);
-
-let lang = langProp || getLangFromUrl(url) || getDefaultLang();
-
 const homeTextsByLang = {
-    en: enHomeTexts,
-    es: esHomeTexts,
+  en: enHomeTexts,
+  es: esHomeTexts,
 };
 
 // if (!(lang in homeTextsByLang)) {
 //    lang = getDefaultLang();
 // }
 
-const texts = homeTextsByLang[lang as keyof typeof homeTextsByLang] as HomeTexts || homeTextsByLang['en'];
+const texts = useLangPageTexts<LangTypes>(Astro, homeTextsByLang);
+const lang = useLang(Astro);
 const t = useTranslations(texts);
+void lang,t;
 ---
 
 <Layout>

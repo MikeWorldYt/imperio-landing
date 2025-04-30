@@ -1,3 +1,3 @@
-export type HomeTexts = {
+export type LangTypes = {
     [key: string]: any;
 };

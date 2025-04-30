@@ -1,6 +1,6 @@
-import type { HomeTexts } from '../utils/types';
+import type { LangTypes } from '../utils/types';
 
-export const homeTexts: HomeTexts = {
+export const homeTexts: LangTypes = {
     title: 'Hello Home',
     subtitle: 'We are in the home page.',
 

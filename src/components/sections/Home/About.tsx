@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
 const AboutImage = () => {
-    const [showMessage, setShowMessage] = useState(false);
+    const [showFirst, setShowFirst] = useState(false);
+    const [showSecond, setShowSecond] = useState(false);
     
     useEffect(() => {
-        const timer = setTimeout(() => setShowMessage(true), 3000);
-        return () => clearTimeout(timer);
+        const t1 = setTimeout(() => setShowFirst(true), 3000);
+        const t2 = setTimeout(() => setShowSecond(true), 6000);
+        return () => {
+            clearTimeout(t1);
+            clearTimeout(t2);
+        };
     }, []);
 
     return (
@@ -27,13 +32,29 @@ const AboutImage = () => {
                 </div>
             </div> {/* Contenedor rojo */}
 
-            {/* Tarjeta flotante tipo badge */}
+            {/* Tarjeta flotante tipo mensaje - mensaje */}
             <div 
-                className={`floating-card absolute bottom-0 right-0 w-[80%] min-h-[60px] px-4 bg-white text-black flex items-center rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-none shadow-md transition-all duration-700 ease-out
-                ${showMessage ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
+                className={`floating-card absolute right-0 max-w-[80%] min-h-[60px] px-4 bg-blue-600 text-white flex items-center rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-none shadow-md transition-all duration-700 ease-out
+                ${showFirst ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
+                ${showSecond ? 'bottom-20' : 'bottom-0'}
                 `}
             >
-                <p className="text-sm font-medium z-10">They are the best!!!</p>
+                <p className="text-sm font-medium z-10">They are the best!!! 🔥😄</p>
+            </div>
+            {/* Tarjeta flotante tipo mensaje - respuesta*/}
+            <div
+                className={`absolute bottom-0 left-0 w-[85%] flex items-end gap-2 transition-all duration-700 ease-out
+                ${showSecond ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
+                `}
+            >
+                <img
+                    src="/icons/pfp.svg"
+                    alt="User profile"
+                    className="w-8 h-8 rounded-full border-2 border-white shadow"
+                />
+                <div className="min-h-[60px] px-4 py-2 bg-gray-200 text-black flex items-center rounded-tl-2xl rounded-tr-2xl rounded-br-2xl rounded-bl-none shadow-md text-sm font-medium">
+                    Glad you liked it! 😊
+                </div>
             </div>
 
             <style>{`

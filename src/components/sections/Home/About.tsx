@@ -1,17 +1,43 @@
 import React, { useEffect, useState } from 'react';
 
 const AboutImage = () => {
+    const messages = [
+        "I'm really happy with the result ✨",
+        "They did a great job 💪🔥",
+        "You guys are the best 🔥😄",
+        "Honestly, amazing work 👏✨",
+        "Super happy with the result 😍",
+        "This is awesome 🔥🔥",
+    ];
+
+    const responses = [
+        "Thanks so much! 😊",
+        "Glad you liked it! 🙏",
+        "Always here to help 💪",
+        "That means a lot 😁",
+    ];
+
+    const [message, setMessage] = useState('');
+    const [response, setResponse] = useState('');
     const [showFirst, setShowFirst] = useState(false);
     const [showSecond, setShowSecond] = useState(false);
     
     useEffect(() => {
-        const t1 = setTimeout(() => setShowFirst(true), 3000);
-        const t2 = setTimeout(() => setShowSecond(true), 6000);
+        const t1 = setTimeout(() => {
+          setMessage(messages[Math.floor(Math.random() * messages.length)]);
+          setShowFirst(true);
+        }, 3000);
+      
+        const t2 = setTimeout(() => {
+          setResponse(responses[Math.floor(Math.random() * responses.length)]);
+          setShowSecond(true);
+        }, 6000);
+      
         return () => {
-            clearTimeout(t1);
-            clearTimeout(t2);
+          clearTimeout(t1);
+          clearTimeout(t2);
         };
-    }, []);
+      }, []);
 
     return (
         <div className="relative w-[450px] h-[300px] m-0 p-0"> {/* border border-black Contenedor principal */}
@@ -39,7 +65,7 @@ const AboutImage = () => {
                 ${showSecond ? 'bottom-20' : 'bottom-0'}
                 `}
             >
-                <p className="text-sm font-medium z-10">They are the best!!! 🔥😄</p>
+                <p className="text-sm font-medium z-10">{message}</p>
             </div>
             {/* Tarjeta flotante tipo mensaje - respuesta*/}
             <div
@@ -53,7 +79,7 @@ const AboutImage = () => {
                     className="w-8 h-8 rounded-full border-2 border-white shadow"
                 />
                 <div className="min-h-[60px] px-4 py-2 bg-gray-200 text-black flex items-center rounded-tl-2xl rounded-tr-2xl rounded-br-2xl rounded-bl-none shadow-md text-sm font-medium">
-                    Glad you liked it! 😊
+                    {response}
                 </div>
             </div>
 

@@ -24,20 +24,20 @@ const AboutImage = () => {
     
     useEffect(() => {
         const t1 = setTimeout(() => {
-          setMessage(messages[Math.floor(Math.random() * messages.length)]);
-          setShowFirst(true);
+            setMessage(messages[Math.floor(Math.random() * messages.length)]);
+            setShowFirst(true);
         }, 3000);
-      
+
         const t2 = setTimeout(() => {
-          setResponse(responses[Math.floor(Math.random() * responses.length)]);
-          setShowSecond(true);
+            setResponse(responses[Math.floor(Math.random() * responses.length)]);
+            setShowSecond(true);
         }, 6000);
-      
+
         return () => {
-          clearTimeout(t1);
-          clearTimeout(t2);
+            clearTimeout(t1);
+            clearTimeout(t2);
         };
-      }, []);
+    }, []);
 
     return (
         <div className="relative w-[450px] h-[300px] m-0 p-0"> {/* border border-black Contenedor principal */}

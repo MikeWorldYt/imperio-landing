@@ -31,8 +31,8 @@ return (
                 boxShadow: "inset 4px 4px 8px #6e819e, inset -4px -4px 8px #ffffff",
             }}
         >
-        <span className="z-10 text-xs">ES</span>
         <span className="z-10 text-xs">EN</span>
+        <span className="z-10 text-xs">ES</span>
         <div
             className={`absolute top-1 left-1 w-6 h-6 rounded-full overflow-hidden transform transition-transform duration-500 ease-in-out ${
             language === "en" ? "translate-x-8 z-20" : "translate-x-0 z-20"

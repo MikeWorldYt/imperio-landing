@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const AboutImage = () => {
+    const [showMessage, setShowMessage] = useState(false);
+    
+    useEffect(() => {
+        const timer = setTimeout(() => setShowMessage(true), 3000);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <div className="relative w-[450px] h-[300px] m-0 p-0"> {/* border border-black Contenedor principal */}
 
@@ -21,8 +28,12 @@ const AboutImage = () => {
             </div> {/* Contenedor rojo */}
 
             {/* Tarjeta flotante tipo badge */}
-            <div className="floating-card absolute bottom-8 right-0 w-[80%] h-[60px] bg-white shadow-md text-black px-4 flex items-center rounded-2xl">
-                <p className="text-sm font-medium z-10">Floating Info</p>
+            <div 
+                className={`floating-card absolute bottom-0 right-0 w-[80%] min-h-[60px] px-4 bg-white text-black flex items-center rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-none shadow-md transition-all duration-700 ease-out
+                ${showMessage ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
+                `}
+            >
+                <p className="text-sm font-medium z-10">They are the best!!!</p>
             </div>
 
             <style>{`

@@ -27,10 +27,10 @@ const { texts } = Astro.props;
 
 <header class="w-full bg-red-500 fixed top-0 z-10">
   <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-    <div class="flex items-center space-x-2">
+    <a href={`/${lang}/home`} class="flex items-center space-x-2">
       <img src={astroLogo.src} alt="Homepage" class="h-6" />
       <span class="text-white font-bold text-lg">Imperio Pools</span>
-    </div>
+    </a>
 
     <!-- Botón hamburguesa -->
     <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
@@ -42,8 +42,8 @@ const { texts } = Astro.props;
       <li><a href={`/${lang}/gallery`} class="hover:underline">{texts.nav2}</a></li>
       <li><a href={`/${lang}/services`} class="hover:underline">{texts.nav3}</a></li>
       <li><a href={`/${lang}/get-quote`} class="hover:underline">{texts.nav4}</a></li>
+      <LanguageToggle client:load />
     </ul>
-    <LanguageToggle client:load />
   </nav>
 
   <!-- Navegacion Mobile  -->
@@ -54,9 +54,6 @@ const { texts } = Astro.props;
     <li><a href={`/${lang}/services`} class="block hover:underline">{texts.nav3}</a></li>
     <li><a href={`/${lang}/get-quote`} class="block hover:underline">{texts.nav4}</a></li>
   </ul>
-
-  <!-- Separador  -->
-  
 
   <!-- Script para el botón hamburguesa -->
   <script type="module" is:inline>

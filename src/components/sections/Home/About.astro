@@ -1,6 +1,22 @@
+---
+import AboutImage from './About';
+---
+
+<section class="w-full bg-cyan-400 py-4">
+  <div class=" max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+
+    <!-- Imagen React interactivamente -->
+    <AboutImage client:load />
+
+    <!-- Texto estático -->
+    <div class="w-full md:w-3/4 text-black">
+      <h2 class="text-4xl font-bold leading-tight md:text-5xl">About Us</h2>
+      <p class="mb-6">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a,
+        tempor magna. Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere.
+      </p>
 
 
-
-<section class="w-full h-48 bg-cyan-400 flex items-center justify-center">
-  <h2 class="text-white font-semibold">ABOUT</h2>
+    </div>
+  </div>
 </section>

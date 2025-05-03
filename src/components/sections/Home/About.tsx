@@ -41,15 +41,46 @@ const AboutImage = () => {
 
     const [tiltStyle, setTiltStyle] = useState({});
 
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left; // X dentro del div
+        const y = e.clientY - rect.top;  // Y dentro del div
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -15; // invertido para efecto "hundido"
+        const rotateY = ((x - centerX) / centerX) * 15;
+
+        setTiltStyle({
+            transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`,
+        });
+    };
+
+    const handleMouseLeave = () => {
+        setTiltStyle({ transform: 'rotateX(0deg) rotateY(0deg) scale(1)' });
+    };
+
     return (
-        <div className="relative w-[450px] h-[300px] border border-black my-0 p-8"> {/* border border-black Contenedor principal */}
+        <div className="relative w-[450px] h-[300px] border border-black my-0 p-8"
+            style={{ perspective: '1000px' }}
+        > {/* border border-black Contenedor principal */}
 
             <div className="absolute top-0 bottom-0 right-6 left-0 z-0 py-2"> {/* bg-pink-600  Cont rojo */}
                 {/* Imagen con hover effect - Contenedor verde lima */}
-                <div className="relative z-10 w-full h-full bg-[#6d92fc] overflow-hidden rounded-md transform transition-transform duration-300 hover:scale-105 shadow-md">
+                <div className="relative z-10 w-full h-full bg-[#6d92fc] overflow-hidden rounded-md shadow-md"
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={handleMouseLeave}
+                    style={tiltStyle}
+                >
                     <div // Imagen
-                        className="w-full h-full bg-center pointer-events-none select-none"
-                        style={{ backgroundImage: "url('/corporate memphis/worker_flat_vector_v2.svg')" }}
+                        className="w-full h-full pointer-events-none select-none"
+                        style={{ 
+                            backgroundImage: "url('/corporate memphis/worker_flat_vector_v2.svg')",
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "auto 100%",
+                            backgroundPosition: "bottom center"
+                        }}
                     ></div>
                     {/*<img
                         src="/corporate memphis/worker_flat_vector_v2.svg"

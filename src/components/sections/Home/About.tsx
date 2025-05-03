@@ -39,8 +39,10 @@ const AboutImage = () => {
         };
     }, []);
 
+    const [tiltStyle, setTiltStyle] = useState({});
+
     return (
-        <div className="relative w-[450px] h-[300px] m-0 p-0"> {/* border border-black Contenedor principal */}
+        <div className="relative w-[450px] h-[300px] border border-black my-0 p-8"> {/* border border-black Contenedor principal */}
 
             <div className="absolute top-0 bottom-0 right-6 left-0 z-0 py-2"> {/* bg-pink-600  Cont rojo */}
                 {/* Imagen con hover effect - Contenedor verde lima */}

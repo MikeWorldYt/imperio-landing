@@ -10,14 +10,17 @@ const ThemeToggle = () => {
         const defaultTheme = stored || (prefersDark ? 'dark' : 'light');
     
         setTheme(defaultTheme);
-        document.documentElement.classList.toggle('dark', defaultTheme === 'dark');
+        document.documentElement.classList.remove('dark', 'light');
+        document.documentElement.classList.add(defaultTheme);
     }, []);
 
     const toggleTheme = () => {
         const newTheme = theme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
         localStorage.setItem('theme', newTheme);
-        document.documentElement.classList.toggle('dark', newTheme === 'dark');
+        
+        document.documentElement.classList.remove('dark', 'light');
+        document.documentElement.classList.add(newTheme);
     };
 
     return (

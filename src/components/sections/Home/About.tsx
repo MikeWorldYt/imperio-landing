@@ -62,15 +62,17 @@ const AboutImage = () => {
     };
 
     return (
-        <div className="relative w-[450px] h-[300px] border border-black my-0 p-8"
+        <div className="relative w-[450px] h-[300px] my-0 p-8"
             style={{ perspective: '1000px' }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
         > {/* border border-black Contenedor principal */}
 
             <div className="absolute top-0 bottom-0 right-6 left-0 z-0 py-2"> {/* bg-pink-600  Cont rojo */}
-                {/* Imagen con hover effect - Contenedor verde lima */}
-                <div className="relative z-10 w-full h-full bg-[#6d92fc] overflow-hidden rounded-md shadow-md"
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
+                {/* Imagen con hover effect - Contenedor verde lima bg-[#6d92fc] */}
+                <div className="relative z-10 w-full h-full overflow-hidden rounded-md shadow-md"
+                    //onMouseMove={handleMouseMove}
+                    //onMouseLeave={handleMouseLeave}
                     style={tiltStyle}
                 >
                     <div // Imagen

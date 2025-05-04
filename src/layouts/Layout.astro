@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<style>
+			html.transition-none *, html.transition-none {
+				transition: none !important;
+			}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				try {
+					document.documentElement.classList.add('transition-none');
+					const stored = localStorage.getItem('theme');
+					const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					const theme = stored || (prefersDark ? 'dark' : 'light');
+					document.documentElement.classList.remove('dark', 'light');
+					document.documentElement.classList.add(theme);
+				} catch (e) {}
+			});
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -10,6 +27,11 @@
 	<body>
 		<slot />
 	</body>
+	<script>
+		window.addEventListener('load', () => {
+			document.documentElement.classList.remove('transition-none');
+		});
+	</script>
 </html>
 
 <style>

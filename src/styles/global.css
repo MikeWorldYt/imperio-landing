@@ -1,7 +1,9 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-    @apply bg-white text-gray-900 dark:bg-zinc-900 dark:text-white transition-colors duration-300;
+  @apply bg-white text-gray-900 dark:bg-zinc-900 dark:text-white transition-colors duration-300;
 }
 
 .global-section {
@@ -9,7 +11,7 @@ body {
 }
 
 .global-heading {
-    @apply text-3xl font-semibold mb-3 text-gray-800 dark:text-gray-100;
+    @apply text-3xl font-semibold mb-3 text-gray-800 dark:text-gray-100 transition-colors duration-300;
 }
 
 .global-subheading {

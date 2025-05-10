@@ -2,7 +2,7 @@
 import Header from '../../components/layout/Header.astro';
 import Hero from '../../components/sections/Home/Hero.astro';
 import About from '../../components/sections/Home/About.astro';
-import Services from '../../components/sections/Home/Services.astro';
+import Services from '../../components/sections/Home/Services';
 import Cta from '../../components/sections/Home/Cta.astro';
 import Footer from '../../components/layout/Footer.astro';
 import Layout from '../../layouts/Layout.astro';
@@ -17,7 +17,6 @@ import { getStaticPaths } from '../../i18n/utils/i18n';
 import { homeTexts as enHomeTexts } from '../../i18n/en/home';
 import { homeTexts as esHomeTexts } from '../../i18n/es/home';
 import type { LangTypes } from '../../i18n/utils/types';
-
 export { getStaticPaths };
 
 export interface Props {
@@ -44,7 +43,7 @@ void lang,t;
   <Header texts={texts.header} />
   <Hero />
   <About />
-  <Services />
+  <Services client:load />
   <Cta />
   <Footer />
 </Layout>

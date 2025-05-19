@@ -12,6 +12,9 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
         alt?: string;
     }>(null);
 
+    // Nuevo estado para el mensaje de depuración del clic
+    const [debugClickMessage, setDebugClickMessage] = useState<string | null>(null);
+
     return (
         <>
             {images?.length ? (
@@ -20,7 +23,10 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
                         <button
                             key={id}
                             className="w-full aspect-square overflow-hidden group"
-                            onClick={() => setSelectedImage({ src, alt })}
+                            onClick={() => { 
+                                console.log("DEBUG:Clicked:", id); // chore: remove this
+                                setSelectedImage({ src, alt });
+                            }}
                         >
                             <img
                                 src={src}

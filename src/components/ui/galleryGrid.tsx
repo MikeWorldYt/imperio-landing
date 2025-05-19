@@ -7,25 +7,31 @@ interface GalleryGridProps {
 }
 
 const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
-    const [selectedImage, setSelectedImage] = useState<null | {
-        src: string;
-        alt?: string;
-    }>(null);
+    const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+    const currentImage = typeof currentIndex === "number" ? images[currentIndex] : null;
 
-    // Nuevo estado para el mensaje de depuración del clic
-    const [debugClickMessage, setDebugClickMessage] = useState<string | null>(null);
+    const GoPrev = () => {
+        if (currentIndex !== null && currentIndex > 0) {
+            setCurrentIndex(currentIndex - 1);
+        }
+    };
+    const GoNext = () => {
+        if (currentIndex !== null && currentIndex < images.length - 1) {
+            setCurrentIndex(currentIndex + 1);
+    }
+    };
 
     return (
         <>
             {images?.length ? (
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1">
-                    {images.map(({ id, src, alt }) => (
+                    {images.map(({ id, src, alt }, index) => (
                         <button
                             key={id}
                             className="w-full aspect-square overflow-hidden group"
                             onClick={() => { 
                                 console.log("DEBUG:Clicked:", id); // chore: remove this
-                                setSelectedImage({ src, alt });
+                                setCurrentIndex(index)
                             }}
                         >
                             <img
@@ -37,11 +43,13 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
                     ))}
                 </div>
             ) : null}   
-            {selectedImage && (
+            {currentImage && (
                 <Lightbox
-                    imageSrc={selectedImage.src}
-                    alt={selectedImage.alt}
-                    onClose={() => setSelectedImage(null)}
+                    imageSrc={currentImage.src}
+                    alt={currentImage.alt}
+                    onClose={() => setCurrentIndex(null)}
+                    onPrev={GoPrev}
+                    onNext={GoNext}
                 />
             )}
         </>

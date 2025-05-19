@@ -1,20 +1,24 @@
-// src/components/GalleryGrid.tsx
-import React from "react";
+import React, { useState } from "react";
+import Lightbox from "../ui/Lightbox";
 
 interface GalleryGridProps {
-  images: { id: string; src: string; alt?: string }[];
-  onImageClick?: (id: string) => void;
+    images: { id: string; src: string; alt?: string }[];
+    //onImageClick?: (id: string) => void;
 }
 
-const GalleryGrid: React.FC<GalleryGridProps> = ({ images, onImageClick }) => {
-        if (!images?.length) return null;
+const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
+    const [selectedImage, setSelectedImage] = useState<null | {
+        src: string;
+        alt?: string;
+    }>(null);
+
     return (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1">
             {images.map(({ id, src, alt }) => (
                 <button
                     key={id}
                     className="w-full aspect-square overflow-hidden group"
-                    onClick={() => onImageClick?.(id)}
+                    onClick={() => setSelectedImage({ src, alt })}
                 >
                     <img
                         src={src}

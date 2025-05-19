@@ -1,7 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, CircleX } from "lucide-react";
 
 interface LightboxProps {
+    imageId: string;
     imageSrc: string;
     alt?: string;
     onClose: () => void;
@@ -10,7 +12,7 @@ interface LightboxProps {
 }
 
 const Lightbox: React.FC<LightboxProps> = ({ 
-    imageSrc, alt, onClose, onPrev, onNext
+    imageId, imageSrc, alt, onClose, onPrev, onNext
 }) => {
 
     const touchStartX = useRef<number | null>(null);
@@ -32,7 +34,12 @@ const Lightbox: React.FC<LightboxProps> = ({
     };
 
     return (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
+        <motion.div
+            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
             <button
                 onClick={onClose}
                 className="absolute top-4 right-4 text-white text-2xl"
@@ -55,14 +62,19 @@ const Lightbox: React.FC<LightboxProps> = ({
             </button>
 
             {/* Imagen */}
-            <img
+            <AnimatePresence>
+            <motion.img
+                key={imageSrc}
+                layoutId={`image-${imageId}`}
                 src={imageSrc}
                 alt={alt || "Expanded image"}
                 className="max-w-full max-h-[90vh] rounded shadow-lg"
+                transition={{ duration: 0.4, ease: "easeInOut" }}
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
             />
-        </div>
+            </AnimatePresence>
+        </motion.div>
     );
 };
 

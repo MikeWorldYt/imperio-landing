@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Lightbox from "../ui/Lightbox";
 
 interface GalleryGridProps {
@@ -28,30 +29,35 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
                     {images.map(({ id, src, alt }, index) => (
                         <button
                             key={id}
-                            className="w-full aspect-square overflow-hidden group"
+                            className="w-full aspect-square group relative z-10"
                             onClick={() => { 
                                 console.log("DEBUG:Clicked:", id); // chore: remove this
                                 setCurrentIndex(index)
                             }}
                         >
-                            <img
+                            <motion.img
+                                layoutId={`image-${id}`}
                                 src={src}
                                 alt={alt || "Gallery image"}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
+                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
                             />
                         </button>
                     ))}
                 </div>
-            ) : null}   
-            {currentImage && (
-                <Lightbox
-                    imageSrc={currentImage.src}
-                    alt={currentImage.alt}
-                    onClose={() => setCurrentIndex(null)}
-                    onPrev={GoPrev}
-                    onNext={GoNext}
-                />
-            )}
+            ) : null}
+            <AnimatePresence>
+                {currentImage && (
+                    <Lightbox
+                        key={currentImage.id}
+                        imageId={currentImage.id}
+                        imageSrc={currentImage.src}
+                        alt={currentImage.alt}
+                        onClose={() => setCurrentIndex(null)}
+                        onPrev={GoPrev}
+                        onNext={GoNext}
+                    />
+                )}
+            </AnimatePresence>
         </>
     );
 };

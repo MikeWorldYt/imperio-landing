@@ -1,4 +1,3 @@
-// src/lib/media.ts
 export async function getAllMedia(limit = 20) {
     const res = await fetch(`https://picsum.photos/v2/list?limit=${limit}`);
     const data = await res.json();

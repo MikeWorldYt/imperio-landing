@@ -1,4 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
+import { useIsMobile } from "../../hooks/useIsMobile";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, CircleX } from "lucide-react";
 
@@ -33,16 +34,19 @@ const Lightbox: React.FC<LightboxProps> = ({
         touchStartX.current = null;
     };
 
+    const isMobile = useIsMobile();
+
     return (
         <motion.div
             className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
         >
             <button
                 onClick={onClose}
-                className="absolute top-4 right-4 text-white text-2xl"
+                className="absolute top-4 right-4 text-white p-2 hover:scale-110 transition-transform"
             >
                 <CircleX size={28} />
             </button>
@@ -62,18 +66,37 @@ const Lightbox: React.FC<LightboxProps> = ({
             </button>
 
             {/* Imagen */}
-            <AnimatePresence>
-            <motion.img
-                key={imageSrc}
-                layoutId={`image-${imageId}`}
-                src={imageSrc}
-                alt={alt || "Expanded image"}
-                className="max-w-full max-h-[90vh] rounded shadow-lg"
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                onTouchStart={handleTouchStart}
-                onTouchEnd={handleTouchEnd}
-            />
-            </AnimatePresence>
+            {isMobile ? (
+                <motion.div
+                    key={imageSrc}
+                    className="max-w-full max-h-[90vh] rounded shadow-lg"
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                    initial={{ x: 300, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -300, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                >
+                <img
+                    src={imageSrc}
+                    alt={alt || "Expanded image"}
+                    className="max-w-full max-h-[90vh] rounded shadow-lg"
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                />
+                </motion.div>
+            ) : (
+                <motion.img
+                    key={imageSrc}
+                    layoutId={`image-${imageId}`}
+                    src={imageSrc}
+                    alt={alt || "Expanded image"}
+                    className="max-w-full max-h-[90vh] rounded shadow-lg"
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                />
+            )}
         </motion.div>
     );
 };

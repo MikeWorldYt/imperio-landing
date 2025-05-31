@@ -1,5 +1,25 @@
 ---
 import HeroForm from './HeroForm';
+
+// Dinamic Routes  //
+import { getDefaultLang } from '../../../i18n/utils/i18n';
+
+const url = new URL(Astro.url);
+const path = url.pathname.split('/');
+let lang = path[1];
+
+if (!lang || lang.length !== 2) {
+  lang = getDefaultLang();
+}
+
+// i18n Settings (props) //
+export interface Props {
+  texts: {
+    [key: string]: string;
+  }
+}
+
+const { texts } = Astro.props;
 ---
 
 <section class="relative bg-cover bg-center" style={{ backgroundImage: "url('/hero-pool.jpg')" }}>
@@ -8,10 +28,13 @@ import HeroForm from './HeroForm';
         <div class="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-8 px-4 py-20 text-white">
             <div class="flex flex-col justify-center">
                 <h1 class="text-4xl font-bold leading-tight md:text-5xl">
-                    Lorem ipsum
+                    {texts.title}
                 </h1>
+                <p class="mt-4 text-lg md:text-xl">
+                    {texts.description}
+                </p>
                 <button class="w-fit px-6 py-3 rounded-lg bg-white text-blue-900 font-semibold shadow hover:bg-gray-100 transition">
-                    Contact Us
+                    {texts.button_cta}
                 </button>
             </div>
 

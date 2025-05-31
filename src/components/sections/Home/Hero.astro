@@ -37,11 +37,14 @@ const { texts } = Astro.props;
                     {texts.button_cta}
                 </button>
             </div>
-
             {/* Formulario */}
-            <div class="bg-white/80 text-black p-6 rounded-xl shadow-lg">
-                <h1 class="text-center text-3xl font-bold text-blue-950">GET A QUOTE</h1>
-                <h2 class="text-center text-lg font-semibold mb-2 text-blue-950">Call us Today 909 4308 805</h2>
+            <div class="bg-white/80 text-black p-6 rounded-xl shadow-lg md:col-span-3">
+                <h1 class="text-center text-3xl font-bold text-blue-950">
+                    {texts.form_title}
+                </h1>
+                <h2 class="text-center text-lg font-semibold mb-2 text-blue-950">
+                    {texts.form_subtitle}
+                </h2>
                 <HeroForm client:load />
             </div>
         </div>

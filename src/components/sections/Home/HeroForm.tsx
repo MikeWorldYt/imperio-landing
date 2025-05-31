@@ -1,6 +1,20 @@
 import React, { useState } from 'react';
+import { homeTexts as enHomeTexts } from '../../../i18n/en/home';
+import { homeTexts as esHomeTexts } from '../../../i18n/es/home';
+import type { LangTypes } from '../../../i18n/utils/types';
 
-const HeroForm = () => {
+interface HeroFormProps {
+    lang: string;
+}
+
+const homeTextsByLang: Record<string, LangTypes> = {
+    en: enHomeTexts,
+    es: esHomeTexts,
+};
+
+const HeroForm = ({ lang }: HeroFormProps) => {
+    const text = homeTextsByLang[lang].hero.form_content;
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -17,19 +31,21 @@ const HeroForm = () => {
 
     return (
         <form className='flex flex-col gap-4'>
+            {/* Name field */}
             <input
                 name="name"
                 type="text"
-                placeholder="Name"
+                placeholder={text.name}
                 value={formData.name}
                 onChange={handleChange}
                 className="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-
+            {/* Contact method toggle field */}
             <div className="flex items-center gap-2 ">
-                <p className="text-sm font-medium text-gray-700">How would you like to be contacted?</p>
-
-            {/* Toggle switch */}
+                <p className="text-sm font-medium text-gray-700">
+                    {text.contact_method}
+                </p>
+                {/* Toggle switch */}
                 <div className="flex w-fit bg-gray-300 text-white rounded-md overflow-hidden">
                     
                     <button
@@ -39,7 +55,7 @@ const HeroForm = () => {
                         contactMethod === 'email' ? 'bg-blue-400/50 text-gray-800' : 'text-gray-400'
                     }`}
                     >
-                        Email
+                        {text.email}
                     </button>
                     <button
                     type="button"
@@ -48,17 +64,16 @@ const HeroForm = () => {
                         contactMethod === 'phone' ? 'bg-blue-400/50 text-gray-800' : 'text-gray-400'
                     }`}
                     >
-                        Phone
+                        {text.phone}
                     </button>
                 </div>
             </div>
-
-            {/* Conditional Fields */}
+            {/* Contact Method - Conditional Fields */}
             {contactMethod === 'email' ? (
                 <input
                     name="email"
                     type="email"
-                    placeholder="Email"
+                    placeholder={text.email}
                     value={formData.email}
                     onChange={handleChange}
                     className="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -68,26 +83,24 @@ const HeroForm = () => {
                 <input
                     name="phone"
                     type="tel"
-                    placeholder="Phone"
+                    placeholder={text.phone}
                     value={formData.phone}
                     onChange={handleChange}
                     className="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                 />
             )}
-
-
+            {/* Message field */}
             <textarea
                 name="message"    
-                placeholder="Message"
+                placeholder={text.message}
                 value={formData.message}
                 className="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-
+            {/* Submit button */}
             <button type="submit" className="bg-blue-600 text-white p-3 rounded-md hover:bg-blue-600">
-                Submit
+                {text.submit_button}
             </button>
-
         </form>
     );
 };

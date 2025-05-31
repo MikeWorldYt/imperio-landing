@@ -1,9 +1,10 @@
 import type { LangTypes } from '../utils/types';
 
 export const homeTexts: LangTypes = {
-    title: 'Hola Home',
-    subtitle: 'Estamos en la home page.',
-
+    // Head elements
+    title: 'Home - Imperio Pools',
+    
+    // Header texts
     header: {
         title: 'Hola Header',
         subtitle: 'Estamos en la header page.',
@@ -13,7 +14,7 @@ export const homeTexts: LangTypes = {
         nav4: 'Cotizar',
         test: 'test'
     },
-
+    // Hero section texts
     hero: {
         title: 'Construimos con precisión y excelencia.',
         description: 'desc en español',
@@ -28,5 +29,22 @@ export const homeTexts: LangTypes = {
             contact_method: 'Metodo de contacto',
             submit_button: 'Enviar'
         }
-    }
+    },
+    // About section texts
+    about: {
+        title: 'Sobre Nosotros',
+        description: 'descripción en español',
+    },
+    // Services section texts
+    services: {
+
+    },
+    // Call to Action section texts
+    cta: {
+
+    },
+    // Footer texts
+    footer: {
+        
+    },
 };

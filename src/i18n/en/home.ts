@@ -1,9 +1,10 @@
 import type { LangTypes } from '../utils/types';
 
 export const homeTexts: LangTypes = {
-    title: 'Hello Home',
-    subtitle: 'We are in the home page.',
-
+    // Head elements
+    title: 'Home - Imperio Pools',
+    
+    // Header texts
     header: {
         title: 'Hello Header',
         subtitle: 'We are in the header page.',
@@ -12,7 +13,7 @@ export const homeTexts: LangTypes = {
         nav3: 'Services',
         nav4: 'Get Quote'
     },
-
+    // Hero section texts
     hero: {
         title: 'We building, with precision and excellence.',
         description: 'desc in english',
@@ -27,5 +28,22 @@ export const homeTexts: LangTypes = {
             contact_method: 'Preferred Contact Method',
             submit_button: 'Submit'
         }
-    }
+    },
+    // About section texts
+    about: {
+        title: 'About Us',
+        description: 'At Imperio Pools, we believe in building more than just pools; we create experiences that last a lifetime. Our commitment to quality and customer satisfaction sets us apart in the industry. With years of expertise, we transform your vision into reality, ensuring every detail is crafted to perfection.',
+    },
+    // Services section texts
+    services: {
+
+    },
+    // Call to Action section texts
+    cta: {
+
+    },
+    // Footer texts
+    footer: {
+        
+    },
 };

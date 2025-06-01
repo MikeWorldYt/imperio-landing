@@ -37,7 +37,8 @@ export const homeTexts: LangTypes = {
     },
     // Services section texts
     services: {
-
+        title: 'Servicios',
+        
     },
     // Call to Action section texts
     cta: {

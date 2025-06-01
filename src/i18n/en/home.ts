@@ -36,7 +36,7 @@ export const homeTexts: LangTypes = {
     },
     // Services section texts
     services: {
-
+        title: 'Our Services',
     },
     // Call to Action section texts
     cta: {
@@ -44,6 +44,6 @@ export const homeTexts: LangTypes = {
     },
     // Footer texts
     footer: {
-        
+
     },
 };

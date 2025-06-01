@@ -1,12 +1,18 @@
 import React from 'react';
 
+interface ActionItem {
+  href: string;
+  text: string;
+  className?: string;
+}
+
 interface CardProps {
   title: string;
   description?: string;
   image?: string;
   icon?: string;
   subheading?: string;
-  actions?: React.ReactNode;
+  actions?: ActionItem[];
 }
 
 const Card: React.FC<CardProps> = ({
@@ -29,12 +35,26 @@ const Card: React.FC<CardProps> = ({
         <div className="px-4 pb-4 space-y-2">
           <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
           {description && <p className="text-gray-600 text-sm">{description}</p>}
-          {actions && <div className="flex space-x-2 pt-2">{actions}</div>}
+          {actions && actions.length > 0 && (
+            <div className="flex space-x-2 pt-2">
+              {actions.map((action, index) => (
+                <a
+                  key={index}
+                  href={action.href}
+                  className={action.className || "text-blue-500 hover:text-blue-700"} // Clase por defecto si no se provee
+                  // target={action.href.startsWith('http') ? '_blank' : undefined} // Ejemplo para abrir en nueva pestaña
+                  // rel={action.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                >
+                  {action.text}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
       {/* 📱 Mobile View */}
-      <div className="block md:hidden flex items-center justify-between bg-white rounded-xl shadow-md px-4 py-2">
+      <div className="md:hidden flex items-center justify-between bg-white rounded-xl shadow-md px-4 py-2">
         <div className="flex items-center gap-3">
           {icon && (
             <img src={icon} alt="icon" className="w-10 h-10 rounded bg-gray-100 p-1" />

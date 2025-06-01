@@ -4,7 +4,6 @@ import { servicesAPI } from '../../../data/servicesData';
 import { homeTexts as enHomeTexts } from '../../../i18n/en/home';
 import { homeTexts as esHomeTexts } from '../../../i18n/es/home';
 import type { LangTypes } from '../../../i18n/utils/types';
-import { div } from "framer-motion/client";
 
 const useIsDesktop = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -37,21 +36,21 @@ const Services = ({ lang }: ServicesProps) => {
           {texts.title}
         </h2>
         <div className="w-full max-w-screen-xl px-4">
-        {isDesktop ? ( // Desktop view
-        <div className="">
-          {servicesAPI.map((service, index) => (
-            <div className="min-w-[calc(100%/3-1rem)] snap-start shrink-0">
-              <Card key={index} {...service} />
+          {isDesktop ? ( // Desktop view
+            <div className="flex overflow-x-auto snap-x snap-mandatory space-x-4 scrollbar-hide scroll-smooth px-1">
+              {servicesAPI.map((service, index) => (
+                <div className="snap-start shrink-0 w-[calc(100%/3-1rem)] h-full py-2">
+                  <Card key={index} {...service} />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        ) : ( // Mobile view
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-screen-xl px-4">
-            {servicesAPI.map((service, index) => (
-              <Card key={index} {...service} />
-            ))}
-          </div>
-        )}
+          ) : ( // Mobile view
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-screen-xl px-4">
+              {servicesAPI.map((service, index) => (
+                <Card key={index} {...service} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
     );

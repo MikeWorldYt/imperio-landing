@@ -42,7 +42,12 @@ export const homeTexts: LangTypes = {
     },
     // Call to Action section texts
     cta: {
-
+        title: '¿Aún no estás seguro?',
+        description_1: 'Entendemos que es una decisión importante, por eso te ofrecemos una cotización gratuita que se ajuste a tus necesidades, llamanos al',
+        description_2: '909 4308 805',
+        description_3: 'y podriamos comenzar hoy mismo!',
+        button: 'Obtener Cotización Gratuita',
+        last_att: 'Tu Hardscape soñado está más cerca de lo que piensas 😉'
     },
     // Footer texts
     footer: {

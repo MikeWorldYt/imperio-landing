@@ -43,7 +43,12 @@ export const homeTexts: LangTypes = {
     },
     // Call to Action section texts
     cta: {
-
+        title: 'Not sure yet?',
+        description_1: "We understand it's an important decision, That’s why we offer a free estimate ailored to your needs by calling",
+        description_2: '909 4308 805',
+        description_3: 'and get started today!',
+        button: 'Get a Free Estimate',
+        last_att: 'Your Hardscape is closer than you think 😉'
     },
     // Footer texts
     footer: {

@@ -53,7 +53,7 @@ const Services = ({ lang }: ServicesProps) => {
               {/* Left button */}
               <button
                 onClick={() => scroll("left")}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-blue-100 rounded-full shadow-xl p-2"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-blue-100 rounded-full shadow-xl p-2 hover:bg-blue-200 hover:scale-105 active:scale-95 transition duration-300"
               >
                 <ChevronLeft className="text-blue-950" />
               </button>
@@ -68,7 +68,7 @@ const Services = ({ lang }: ServicesProps) => {
               {/* Right button  */}
               <button
                 onClick={() => scroll("right")}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-blue-100 rounded-full shadow-xl p-2"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-blue-100 rounded-full shadow-xl p-2 hover:bg-blue-200 hover:scale-105 active:scale-95 transition duration-300"
               >
                 <ChevronRight className="text-blue-950" />
               </button>

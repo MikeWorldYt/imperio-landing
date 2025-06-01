@@ -1,6 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { homeTexts as enHomeTexts } from '../../../i18n/en/home';
+import { homeTexts as esHomeTexts } from '../../../i18n/es/home';
+import type { LangTypes } from '../../../i18n/utils/types';
 
-const AboutImage = () => {
+interface AboutImageProps {
+    lang: string;
+}
+
+const homeTextsByLang: Record<string, LangTypes> = {
+    en: enHomeTexts,
+    es: esHomeTexts,
+};
+
+const AboutImage = ({ lang }: AboutImageProps) => {
+    const texts = homeTextsByLang[lang].about.image;
     const messages = [
         "I'm really happy with the result ✨",
         "They did a great job 💪🔥",

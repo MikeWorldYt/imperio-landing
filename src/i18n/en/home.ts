@@ -33,6 +33,9 @@ export const homeTexts: LangTypes = {
     about: {
         title: 'About Us',
         description: 'At Imperio Pools, we believe in building more than just pools; we create experiences that last a lifetime. Our commitment to quality and customer satisfaction sets us apart in the industry. With years of expertise, we transform your vision into reality, ensuring every detail is crafted to perfection.',
+        image: {
+
+        }
     },
     // Services section texts
     services: {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useId } from 'react';
 
 interface ActionItem {
   href: string;
@@ -26,13 +26,27 @@ const Card: React.FC<CardProps> = ({
   btnSecondary,
 }) => {
   // Toggle menú móvil
+  const menuId = useId();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Cerrar menú móvil al hacer clic fuera
+  useEffect(() => {
+    const handleClickOutside = () => setIsMobileMenuOpen(false); // TASK: Crear un evento para cerrar el menú móvil al hacer clic fuera de él
+    const handleCustomEvent = (e: CustomEvent<string>) => {
+      if (e.detail !== menuId) setIsMobileMenuOpen(false);
+    };
+    window.addEventListener("close-all-menus", handleCustomEvent as EventListener);
+    return () => {
+      window.removeEventListener("close-all-menus", handleCustomEvent as EventListener);
+    };
+  }, [menuId]);
+  // Función para alternar el menú móvil
   const toggleMobileMenu = () => {
-    console.log('Botón de menú móvil clickeado. Estado ANTERIOR:', isMobileMenuOpen);
-    setIsMobileMenuOpen(prevState => {
-      console.log('Nuevo estado será:', !prevState);
-      return !prevState;
-    });
+    const nextState = !isMobileMenuOpen;
+    setIsMobileMenuOpen(nextState);
+    if (nextState) {
+      const event = new CustomEvent("close-all-menus", { detail: menuId });
+      window.dispatchEvent(event);
+    }
   };
 
   return (

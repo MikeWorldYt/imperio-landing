@@ -9,7 +9,9 @@ const config: Config =  {
         extend: {},
     },
     darkMode: 'class', // Enable dark mode support
-    plugins: [],
+    plugins: [
+        require('tailwind-scrollbar-hide')
+    ],
 }
 
 export default config;

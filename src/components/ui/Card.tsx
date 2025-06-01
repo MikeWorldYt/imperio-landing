@@ -61,9 +61,18 @@ const Card: React.FC<CardProps> = ({
         <div className="px-4 pb-4 space-y-2">
           <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
           {description && <p className="text-gray-600 text-sm">{description}</p>}
-          {btnPrimary && btnPrimary.length > 0 && (
-            <div className="flex space-x-2 pt-2">
-              {btnPrimary.map((action, index) => (
+          { (btnPrimary?.length || btnSecondary?.length) && (
+            <div className="flex flex-wrap gap-2 pt-2">
+              {btnSecondary?.map((action, index) => (
+                <a
+                  key={`secondary-${index}`}
+                  href={action.href}
+                  className={action.className || "text-gray-500 hover:text-gray-700"}
+                >
+                  {action.text}
+                </a>
+              ))}
+              {btnPrimary?.map((action, index) => (
                 <a
                   key={index}
                   href={action.href}

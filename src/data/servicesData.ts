@@ -24,14 +24,14 @@ export const servicesAPI: Service[] = [{
         subheading: 'In-Ground Pools',
         btnPrimary: [
             {
-                href :"get-quote",
+                href :"en/get-quote",
                 className :"inline-block px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition",
                 text: "Contact"
             }
         ],
         btnSecondary: [
             {
-                href: "get-quote",
+                href: "en/services",
                 className: "inline-block px-4 py-1 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition",
                 text: "Learn More"
             }
@@ -45,14 +45,14 @@ export const servicesAPI: Service[] = [{
         subheading: 'Wellness Upgrade',
         btnPrimary: [
             {
-                href:"get-quote",
+                href:"en/get-quote",
                 className:"inline-block px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition",
                 text:"Contact",
             }
         ],
         btnSecondary: [
             {
-                href:"get-quote",
+                href:"en/services",
                 className:"inline-block px-4 py-1 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition",
                 text:"Learn More",
             }
@@ -66,14 +66,14 @@ export const servicesAPI: Service[] = [{
         subheading: 'Pool Remodeling',
         btnPrimary: [
             {
-                href:"tel:55555555",
+                href:"en/get-quote",
                 className:"inline-block px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition",
                 text:"Contact",
             }
         ],
         btnSecondary: [
             {
-                href:"get-quote",
+                href:"en/services",
                 className:"inline-block px-4 py-1 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition",
                 text:"Learn More",
             }

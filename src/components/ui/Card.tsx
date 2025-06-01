@@ -13,6 +13,7 @@ interface CardProps {
   icon?: string;
   subheading?: string;
   btnPrimary?: ActionItem[];
+  btnSecondary?: ActionItem[];
 }
 
 const Card: React.FC<CardProps> = ({
@@ -22,6 +23,7 @@ const Card: React.FC<CardProps> = ({
   icon,
   subheading,
   btnPrimary,
+  btnSecondary,
 }) => {
   // Toggle menú móvil
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -74,7 +76,7 @@ const Card: React.FC<CardProps> = ({
             {subheading && <p className="text-sm text-gray-500">{subheading}</p>}
           </div>
         </div>
-        {btnPrimary && btnPrimary.length > 0 && ( // Dropdown menu para móvil
+        {btnPrimary && btnPrimary.length && btnSecondary && btnSecondary.length > 0 && ( // Dropdown menu para móvil
           <div className="relative flex-shrink-0">
             <button
               onClick={toggleMobileMenu}
@@ -93,17 +95,28 @@ const Card: React.FC<CardProps> = ({
           </button>
           {isMobileMenuOpen && (
             <div
-              className="absolute right-0 mt-2 w-48 origin-top-right bg-white rounded-md shadow-lg z-20 ring-1 ring-black ring-opacity-5 focus:outline-none"
+              className="absolute right-0 mt-2 origin-top-right bg-white rounded-md shadow-lg z-20 ring-1 ring-black ring-opacity-5 focus:outline-none"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="menu-button" // Deberías dar un id al botón si usas esto
             >
-              <div className="py-2 px-4" role="none">
+              <div className="py-2 px-4 shadow-lg flex gap-2" role="none">
+                {btnSecondary.map((action, index) => (
+                  <a
+                    key={index}
+                    href={action.href}
+                    className={`w-[7rem] text-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 ${action.className || ''}`}
+                    role="menuitem"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {action.text}
+                  </a>
+                ))}
                 {btnPrimary.map((action, index) => (
                   <a
                     key={index}
                     href={action.href}
-                    className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 ${action.className || ''}`}
+                    className={`text-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 ${action.className || ''}`}
                     role="menuitem"
                     onClick={() => setIsMobileMenuOpen(false)} // Cierra el menú al hacer clic en una acción
                   >
@@ -115,6 +128,7 @@ const Card: React.FC<CardProps> = ({
           )}
           </div>
         )}
+
       </div>
     </>
   );

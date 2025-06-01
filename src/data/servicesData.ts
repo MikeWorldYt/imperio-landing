@@ -29,6 +29,13 @@ export const servicesAPI: Service[] = [{
                 text: "Contact"
             }
         ],
+        btnSecondary: [
+            {
+                href: "get-quote",
+                className: "inline-block px-4 py-1 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition",
+                text: "Learn More"
+            }
+        ]
     },
     {
         title: 'Jacuzzi & Spa',
@@ -64,4 +71,11 @@ export const servicesAPI: Service[] = [{
                 text:"Contact",
             }
         ],
+        btnSecondary: [
+            {
+                href:"get-quote",
+                className:"inline-block px-4 py-1 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition",
+                text:"Learn More",
+            }
+        ]
 }];

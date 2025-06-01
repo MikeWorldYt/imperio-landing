@@ -17,8 +17,8 @@ export interface Service {
 }
 
 export const servicesAPI: Service[] = [{
-        title: 'Pool Installation',
-        description: 'We design and build custom in-ground pools with premium finishes.',
+        title: 'Pool Remodeling',
+        description: 'Modernize and enhance your existing pool or spa with expert renovations.',
         image: 'https://leisurepools.eu/wp-content/uploads/2020/06/best-type-of-swimming-pool-for-my-home_2.jpg',
         icon: '/icons/pool.svg',
         subheading: 'In-Ground Pools',
@@ -38,8 +38,8 @@ export const servicesAPI: Service[] = [{
         ]
     },
     {
-        title: 'Jacuzzi & Spa',
-        description: 'Relax with our luxurious spa and jacuzzi installations.',
+        title: 'Replastering',
+        description: 'Transform your pool or spa with expert replastering services.',
         image: 'https://www.thefibreglasspoolcompany.com.au/wp-content/uploads/hamilton-sl-hero-1.jpg',
         icon: '/icons/spa.svg',
         subheading: 'Wellness Upgrade',
@@ -59,8 +59,8 @@ export const servicesAPI: Service[] = [{
         ]
     },
     {
-        title: 'Renovations',
-        description: 'Modernize and enhance your existing pool or spa with expert remodeling.',
+        title: 'Waterfalls & Fountains',
+        description: 'Enhance your pool or spa with stunning waterfalls and fountains.',
         image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
         icon: '/icons/renovation.svg',
         subheading: 'Pool Remodeling',

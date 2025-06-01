@@ -30,17 +30,50 @@ const homeTextsByLang: Record<string, LangTypes> = {
 const Services = ({ lang }: ServicesProps) => {
     const texts = homeTextsByLang[lang].services;
     const isDesktop = useIsDesktop();
-    // Carrousel
+  // Carrousel
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const totalCards = servicesAPI.length - 2;
     const carouselRef = useRef<HTMLDivElement>(null);
+  // Carrusel: desplazar el carrusel
     const scroll = (dir: "left" | "right") => {
-      if (carouselRef.current) {
-        const width = carouselRef.current.clientWidth;
-        carouselRef.current.scrollBy({
-          left: dir === "left" ? -width : width,
+      if (!carouselRef.current) return;
+      const width = carouselRef.current.clientWidth;
+      const cardWidth = width / 3;
+      let newIndex = currentIndex + (dir === "left" ? -1 : 1);
+    // Asegurarse de que el índice esté dentro del rango
+      if (newIndex < 0) newIndex = totalCards - 1;
+      if (newIndex >= totalCards) newIndex = 0;
+    // Desplazar el carrusel
+      carouselRef.current.scrollTo({
+        left: cardWidth * newIndex,
+        behavior: "smooth",
+      });
+    // Actualizar el índice actual
+      setCurrentIndex(newIndex);
+    };
+  // Carrousel: Auto-scroll y rebote manual entre extremos
+    useEffect(() => {
+      if (!isDesktop || !carouselRef.current) return;
+    // Calcular el ancho de la tarjeta
+      const el = carouselRef.current;
+      const cardWidth = el.clientWidth / 3;
+    // Configurar el desplazamiento automático
+      const scrollNext = () => {
+        let nextIndex = currentIndex + 1;
+        if (nextIndex >= totalCards) nextIndex = 0;
+      // Desplazar el carrusel
+        el.scrollTo({
+          left: cardWidth * nextIndex,
           behavior: "smooth",
         });
-      }
-    };
+      // Actualizar el índice actual
+        setCurrentIndex(nextIndex);
+      };
+    // auto-scroll cada 5 segundos
+      const interval = setInterval(scrollNext, 5000);
+    // retorno
+      return () => clearInterval(interval);
+    }, [isDesktop, currentIndex]);
 
     return (
       <section className="w-full py-16 bg-blue-600/50 flex flex-col items-center justify-center text-black">

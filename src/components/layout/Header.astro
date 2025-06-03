@@ -44,7 +44,7 @@ const { texts } = Astro.props;
     <ul id="nav-menu" class="hidden md:flex space-x-6 text-white font-medium">
       <li><a href={`/${lang}/gallery`} class="hover:underline">{texts.nav2}</a></li>
       <li><a href={`/${lang}/services`} class="hover:underline">{texts.nav3}</a></li>
-      <li><a href={`/${lang}/get-quote`} class="hover:underline">{texts.nav4}</a></li>
+      <li><a href={`/${lang}/get-quote/form?s=renovation`} class="hover:underline">{texts.nav4}</a></li>
       <LanguageToggle client:load />
       <ThemeToggle client:load />
     </ul>
@@ -56,7 +56,7 @@ const { texts } = Astro.props;
     <li><a href={`/${lang}/home`} class="block hover:underline">{texts.nav1}</a></li>
     <li><a href={`/${lang}/gallery`} class="block hover:underline">{texts.nav2}</a></li>
     <li><a href={`/${lang}/services`} class="block hover:underline">{texts.nav3}</a></li>
-    <li><a href={`/${lang}/get-quote`} class="block hover:underline">{texts.nav4}</a></li>
+    <li><a href={`/${lang}/get-quote/form?s=renovation`} class="block hover:underline">{texts.nav4}</a></li>
   </ul>
 
   <!-- Script para el botón hamburguesa -->

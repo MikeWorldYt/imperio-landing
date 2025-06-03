@@ -73,9 +73,13 @@ const FormSlice = ( { lang }: FormSliceProps ) => {
             className="flex w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value=""> {texts.service_placeholder} </option>
-            <option value="option 1"> Option 1 </option>
-            <option value="renovation"> Renovation </option>
-            <option value="option 3"> Option 3 </option>
+            <option value="renovation"> {texts.service_1} </option>
+            <option value="plaster"> {texts.service_2} </option>
+            <option value="option 3"> {texts.service_3} </option>
+            <option value="option 4"> {texts.service_4} </option>
+            <option value="option 5"> {texts.service_5} </option>
+            <option value="option 6"> {texts.service_6} </option>
+            <option value="option 7"> {texts.service_7} </option>
           </select>
         </div>
         {/* Contact method toggle field */}

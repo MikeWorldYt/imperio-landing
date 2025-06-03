@@ -75,11 +75,11 @@ const FormSlice = ( { lang }: FormSliceProps ) => {
             <option value=""> {texts.service_placeholder} </option>
             <option value="renovation"> {texts.service_1} </option>
             <option value="plaster"> {texts.service_2} </option>
-            <option value="option 3"> {texts.service_3} </option>
-            <option value="option 4"> {texts.service_4} </option>
-            <option value="option 5"> {texts.service_5} </option>
-            <option value="option 6"> {texts.service_6} </option>
-            <option value="option 7"> {texts.service_7} </option>
+            <option value="coping-tile"> {texts.service_3} </option>
+            <option value="deck-bars"> {texts.service_4} </option>
+            <option value="deco-features"> {texts.service_5} </option>
+            <option value="new-pools"> {texts.service_6} </option>
+            <option value="maintenance"> {texts.service_7} </option>
           </select>
         </div>
         {/* Contact method toggle field */}

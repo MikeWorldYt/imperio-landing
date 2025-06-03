@@ -6,7 +6,7 @@ body {
   @apply bg-white text-gray-900 dark:bg-zinc-900 dark:text-white transition-colors duration-300;
 }
 
-.global-section {
+.global-section-text {
     @apply text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white md:text-5xl;
 }
 

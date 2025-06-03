@@ -77,7 +77,7 @@ const Services = ({ lang }: ServicesProps) => {
 
     return (
       <section className="w-full py-16 bg-blue-600/50 flex flex-col items-center justify-center text-black">
-        <h2 className="global-section mb-8">
+        <h2 className="global-section-text mb-8">
           {texts.title}
         </h2>
         <div className="relative w-full max-w-screen-xl px-4">

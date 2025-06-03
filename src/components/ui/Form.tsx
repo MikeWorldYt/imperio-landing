@@ -38,7 +38,7 @@ const FormSlice = ( { lang }: FormSliceProps ) => {
 
   const [contactMethod, setContactMethod] = useState<'email' | 'phone'>('phone');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -110,7 +110,7 @@ const FormSlice = ( { lang }: FormSliceProps ) => {
             required
           />
         )}
-
+        {/* Service field */}
         <select
           name="service"
           value={formData.service}
@@ -122,9 +122,19 @@ const FormSlice = ( { lang }: FormSliceProps ) => {
           <option value="renovation"> Renovation </option>
           <option value="option 3"> Option 3 </option>
         </select>
-
+        {/* Message field */}
+        <textarea
+          name="message"
+          placeholder={texts.message}
+          value={formData.message}
+          onChange={handleChange}
+          className="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        ></textarea>
+        {/* Submit button */}
+        <button type="submit" className="bg-blue-600 text-white p-3 rounded-md hover:bg-blue-600">
+          {texts.submit_button}
+        </button>
       </form>
-      <p className="text-lg">Selected Service: {service}</p>
     </div>
   );
 

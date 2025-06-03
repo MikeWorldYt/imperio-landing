@@ -7,6 +7,7 @@ export const formTexts: LangTypes = {
     email: 'Email',
     phone: 'Phone',
     service: 'Service',
+    service_placeholder: 'Select a Service',
     message: 'Message',
     contact_method: 'Preferred Contact Method',
     submit_button: 'Submit'

@@ -61,6 +61,23 @@ const FormSlice = ( { lang }: FormSliceProps ) => {
           onChange={handleChange}
           className="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
+        {/* Service field */}
+        <div className="flex items-center gap-2 ">
+          <p className="text-sm font-medium text-gray-700">
+            {texts.service}
+          </p>
+          <select
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            className="flex w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value=""> {texts.service_placeholder} </option>
+            <option value="option 1"> Option 1 </option>
+            <option value="renovation"> Renovation </option>
+            <option value="option 3"> Option 3 </option>
+          </select>
+        </div>
         {/* Contact method toggle field */}
         <div className="flex items-center gap-2 ">
           <p className="text-sm font-medium text-gray-700">
@@ -110,18 +127,6 @@ const FormSlice = ( { lang }: FormSliceProps ) => {
             required
           />
         )}
-        {/* Service field */}
-        <select
-          name="service"
-          value={formData.service}
-          onChange={handleChange}
-          className="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          <option value=""> {texts.service} </option>
-          <option value="option 1"> Option 1 </option>
-          <option value="renovation"> Renovation </option>
-          <option value="option 3"> Option 3 </option>
-        </select>
         {/* Message field */}
         <textarea
           name="message"

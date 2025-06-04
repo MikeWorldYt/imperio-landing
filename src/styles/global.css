@@ -3,21 +3,60 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white text-gray-900 dark:bg-zinc-900 dark:text-white transition-colors duration-300;
+    @apply transition-colors duration-300
+    bg-white dark:bg-[#1f1f1f]
+    text-[#1f2937] dark:text-[#f3f4f6];
 }
 
+header {
+    @apply transition-colors duration-300
+    bg-[oklch(92%_0.05_260)] dark:bg-[oklch(24%_0.05_260)]
+    text-[#1f2937] dark:text-[#f3f4f6]
+    w-full fixed top-0 z-20;
+}
+
+/* === Secciones === */
+.bg-section-1 {
+    @apply bg-[oklch(95%_0.03_250)] dark:bg-[oklch(28%_0.03_250)];
+}
+
+.bg-section-2 {
+    @apply bg-[oklch(97%_0.01_270)] dark:bg-[oklch(26%_0.02_270)];
+}
+
+.bg-section-3 {
+    @apply bg-[oklch(94%_0.02_280)] dark:bg-[oklch(30%_0.015_280)];
+}
+
+/* === Tipografía Global === */
 .global-section-text {
-    @apply text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white md:text-5xl;
+    @apply text-4xl md:text-5xl font-bold tracking-tight mb-4
+    text-[#1f2937] dark:text-[#f3f4f6];
 }
 
 .global-heading {
-    @apply text-3xl font-semibold mb-3 text-gray-800 dark:text-gray-100 transition-colors duration-300;
+    @apply text-3xl font-semibold mb-3 transition-colors duration-300
+    text-[#1f2937] dark:text-[#f3f4f6];
 }
 
 .global-subheading {
-    @apply text-2xl font-medium mb-2 text-gray-700 dark:text-gray-200;
+    @apply text-2xl font-medium mb-2
+    text-[#6b7280] dark:text-[#9ca3af];
 }
 
 .global-text {
-    @apply text-base text-gray-600 dark:text-gray-300 leading-loose;
+    @apply text-base leading-loose
+    text-[#6b7280] dark:text-[#9ca3af];
+}
+
+/* === Botones === */
+.btn-primary {
+    @apply px-4 py-2 rounded font-semibold shadow text-white
+    bg-[oklch(54.6%_0.245_262.881)] dark:bg-[oklch(70%_0.25_262.881)];
+}
+
+.btn-secondary {
+    @apply px-4 py-2 rounded font-semibold shadow
+    bg-[oklch(60%_0.05_270)] dark:bg-[oklch(80%_0.05_270)]
+    text-[#1f2937] dark:text-[#f3f4f6];
 }

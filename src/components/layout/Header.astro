@@ -6,6 +6,8 @@ import { Menu } from 'lucide-react';
 import LanguageToggle from '../ui/LanguageToggle';
 import ThemeToggle from '../ui/ThemeToggle';
 
+import '../../styles/global.css'; // Global styles
+
 // Dinamic Routes  //
 import { getDefaultLang } from '../../i18n/utils/i18n';
 
@@ -27,8 +29,7 @@ export interface Props {
 const { texts } = Astro.props;
 
 ---
-
-<header class="w-full bg-red-500 fixed top-0 z-10">
+<header>
   <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
     <a href={`/${lang}/home`} class="flex items-center space-x-2">
       <img src={astroLogo.src} alt="Homepage" class="h-6" />

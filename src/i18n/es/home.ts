@@ -4,16 +4,6 @@ export const homeTexts: LangTypes = {
     // Head elements
     title: 'Home - Imperio Pools',
     
-    // Header texts
-    header: {
-        title: 'Hola Header',
-        subtitle: 'Estamos en la header page.',
-        nav1: 'Home',
-        nav2: 'Galería',
-        nav3: 'Servicios',
-        nav4: 'Cotizar',
-        test: 'test'
-    },
     // Hero section texts
     hero: {
         title: 'Construimos con precisión y excelencia.',

@@ -5,10 +5,4 @@ export const galleryTexts: LangTypes = {
     subtitle: 'This is our project gallery.',
     description: `Discover some of our latest work`,
 
-    header: {
-        nav1: 'Home',
-        nav2: 'Gallery',
-        nav3: 'Services',
-        nav4: 'Get Quote'
-    },
 };

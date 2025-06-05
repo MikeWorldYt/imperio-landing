@@ -33,19 +33,19 @@ const { texts } = Astro.props;
   <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
     <a href={`/${lang}/home`} class="flex items-center space-x-2">
       <img src={astroLogo.src} alt="Homepage" class="h-6" />
-      <span class="text-white font-bold text-lg">Imperio Pools</span>
+      <span class="font-bold text-lg">Imperio Pools</span>
     </a>
 
     <!-- Botón hamburguesa -->
-    <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
+    <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none">
       <Menu color='white' />
     </button>
 
     <!-- Navegación Desktop -->
-    <ul id="nav-menu" class="hidden md:flex space-x-6 text-white font-medium">
+    <ul id="nav-menu" class="hidden md:flex space-x-6 font-medium">
       <li><a href={`/${lang}/gallery`} class="hover:underline">{texts.nav2}</a></li>
       <li><a href={`/${lang}/services`} class="hover:underline">{texts.nav3}</a></li>
-      <li><a href={`/${lang}/get-quote/form?s=renovation`} class="hover:underline">{texts.nav4}</a></li>
+      <li><a href={`/${lang}/get-quote/form?s=renovation`} class="hover:underline mr-4">{texts.nav4}</a></li>
       <LanguageToggle client:load />
       <ThemeToggle client:load />
     </ul>

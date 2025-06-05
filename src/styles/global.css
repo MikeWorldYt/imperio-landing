@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    @apply box-border;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     @apply transition-colors duration-300
     bg-white dark:bg-[#1f1f1f]
@@ -13,6 +19,50 @@ header {
     bg-[oklch(92%_0.05_260)] dark:bg-[oklch(24%_0.05_260)]
     text-[#1f2937] dark:text-[#f3f4f6]
     w-full fixed top-0 z-20;
+}
+
+/* Nav */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav li {
+    margin-right: 20px;
+    transition: transform 8s ease;
+}
+
+nav li:hover {
+    transform: translateY(-2px);
+}
+
+nav ul li:last-child a:hover {
+    color: #1f1f1f;
+}
+
+#desk-menu li a {
+    @apply inline-block transition-transform duration-200 ease-in-out;
+    text-shadow: 0 0 0 transparent;
+}
+
+#desk-menu li a:hover {
+    @apply -translate-y-0.5
+    text-shadow-dark /* Extended class */
+    dark:text-shadow-light /* Extended class */
+    ; 
+}
+
+#mobile-menu {
+    @apply bg-[oklch(95%_0.03_250)] dark:bg-[oklch(18%_0.03_250)]
+    md:hidden hidden fixed
+    right-0 w-full px-4 py-4 space-y-2
+    font-medium text-right
+    flex-col items-end;
+}
+
+#mobile-menu li a {
+    @apply block hover:underline;
 }
 
 /* === Secciones === */

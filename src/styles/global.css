@@ -19,6 +19,9 @@ header {
     bg-[oklch(92%_0.05_260)] dark:bg-[oklch(24%_0.05_260)]
     text-[#1f2937] dark:text-[#f3f4f6]
     w-full fixed top-0 z-20;
+    box-shadow: 3px 9px 12px 0px rgba(0,0,0,0.39);
+        -webkit-box-shadow: 3px 9px 12px 0px rgba(0,0,0,0.39);
+        -moz-box-shadow: 3px 9px 12px 0px rgba(0,0,0,0.39);
 }
 
 /* Nav */

@@ -42,7 +42,7 @@ void lang,t;
   <head>
     <title>{t('title')}</title>
   </head>
-  <Header texts={texts.header} />
+  <Header client:load lang={lang} />
   <Hero texts={texts.hero} />
   <About texts={texts.about} />
   <Services client:load lang={lang} />

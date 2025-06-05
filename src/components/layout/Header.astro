@@ -8,27 +8,28 @@ import '../../styles/global.css'
 import LanguageToggle from '../ui/LanguageToggle';
 import ThemeToggle from '../ui/ThemeToggle';
 
-// Dinamic Routes  //
-import { getDefaultLang } from '../../i18n/utils/i18n';
+// i18n Settings (props) //
+import { getLangFromUrl, getStaticPaths } from '../../i18n/utils/i18n';
+import { navTexts as enNavTexts } from '../../i18n/en/nav';
+import { navTexts as esNavTexts } from '../../i18n/es/nav';
+
+export { getStaticPaths };
 
 const url = new URL(Astro.url);
-const path = url.pathname.split('/');
-let lang = path[1];
+const lang = getLangFromUrl(url);
 
-if (!lang || lang.length !== 2) {
-  lang = getDefaultLang();
-}
+const navTextsByLang = {
+  en: enNavTexts,
+  es: esNavTexts,
+};
 
-// i18n Settings (props) //
 export interface Props {
-  texts: {
-    [key: string]: string;
-  }
+  lang: string;
 }
 
-const { texts } = Astro.props;
-
+const texts = navTextsByLang[lang] || enNavTexts;
 ---
+
 <header>
   <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
     <a href={`/${lang}/home`} class="flex items-center space-x-2">

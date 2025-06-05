@@ -29,6 +29,7 @@ export const homeTexts: LangTypes = {
         }
     },
     // Services section texts
+    title_services: 'Services',
     services: {
         title: 'Our Services',
     },

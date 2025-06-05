@@ -76,10 +76,7 @@ const Services = ({ lang }: ServicesProps) => {
     }, [isDesktop, currentIndex]);
 
     return (
-      <section className="w-full py-16 bg-blue-600/50 flex flex-col items-center justify-center text-black">
-        <h2 className="global-section-text mb-8">
-          {texts.title}
-        </h2>
+      <>
         <div className="relative w-full max-w-screen-xl px-4">
           {isDesktop ? ( // Desktop view
             <div className="flex overflow-x-auto snap-x snap-mandatory space-x-4 scrollbar-hide scroll-smooth px-1 ">
@@ -114,7 +111,7 @@ const Services = ({ lang }: ServicesProps) => {
             </div>
           )}
         </div>
-      </section>
+      </>
     );
 };
 

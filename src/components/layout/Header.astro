@@ -2,11 +2,11 @@
 import astroLogo from '../../assets/Imagotipo.svg';
 import { Menu } from 'lucide-react';
 
+import '../../styles/global.css'
+
 // UI Components  //
 import LanguageToggle from '../ui/LanguageToggle';
 import ThemeToggle from '../ui/ThemeToggle';
-
-import '../../styles/global.css'; // Global styles
 
 // Dinamic Routes  //
 import { getDefaultLang } from '../../i18n/utils/i18n';
@@ -42,22 +42,21 @@ const { texts } = Astro.props;
     </button>
 
     <!-- Navegación Desktop -->
-    <ul id="nav-menu" class="hidden md:flex space-x-6 font-medium">
-      <li><a href={`/${lang}/gallery`} class="hover:underline">{texts.nav2}</a></li>
-      <li><a href={`/${lang}/services`} class="hover:underline">{texts.nav3}</a></li>
-      <li><a href={`/${lang}/get-quote/form?s=renovation`} class="hover:underline mr-4">{texts.nav4}</a></li>
+    <ul id="desk-menu" class="hidden md:flex font-bold">
+      <li><a href={`/${lang}/gallery`} > {texts.nav2} </a></li>
+      <li><a href={`/${lang}/services`} > {texts.nav3} </a></li>
+      <li><a href={`/${lang}/get-quote/form`} > {texts.nav4} </a></li>
       <LanguageToggle client:load />
       <ThemeToggle client:load />
     </ul>
   </nav>
 
   <!-- Navegacion Mobile  -->
-  <ul id="mobile-menu"
-  class="md:hidden fixed right-0 w-full bg-red-400 px-4 py-4 font-medium space-y-2 text-right flex flex-col items-end">
-    <li><a href={`/${lang}/home`} class="block hover:underline">{texts.nav1}</a></li>
-    <li><a href={`/${lang}/gallery`} class="block hover:underline">{texts.nav2}</a></li>
-    <li><a href={`/${lang}/services`} class="block hover:underline">{texts.nav3}</a></li>
-    <li><a href={`/${lang}/get-quote/form?s=renovation`} class="block hover:underline">{texts.nav4}</a></li>
+  <ul id="mobile-menu">
+    <li><a href={`/${lang}/home`} > {texts.nav1} </a></li>
+    <li><a href={`/${lang}/gallery`} > {texts.nav2} </a></li>
+    <li><a href={`/${lang}/services`} > {texts.nav3} </a></li>
+    <li><a href={`/${lang}/get-quote/form?s=renovation`} > {texts.nav4} </a></li>
   </ul>
 
   <!-- Script para el botón hamburguesa -->

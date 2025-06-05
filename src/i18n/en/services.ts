@@ -1,4 +1,4 @@
 export const servicesTexts = {
-    title: 'Hello Services',
+    title: 'Services - Imperio Pools',
     subtitle: 'This is our services.'
 };

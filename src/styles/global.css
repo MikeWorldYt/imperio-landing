@@ -24,6 +24,10 @@ header {
         -moz-box-shadow: 3px 9px 12px 0px rgba(0,0,0,0.39);
 }
 
+section {
+    @apply w-full py-10 relative;
+}
+
 /* Nav */
 nav ul {
     list-style: none;

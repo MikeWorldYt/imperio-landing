@@ -35,12 +35,9 @@ export default function WaveSeparator() {
           <use xlinkHref="#onda" x="2" y="3" fill="rgba(23, 53, 80, 0.4)" />
           <use xlinkHref="#onda" x="2" y="0" fill="rgba(17, 170, 159, 0.4)" />
           <use xlinkHref="#onda" x="2" y="5" fill="rgba(61, 133, 200, 0.2)" />
-          {isDark ? (
-            <use xlinkHref="#onda" x="2" y="7" fill="#1f1f1f" style={{ transition: "fill 300ms ease-in-out" }}/>
-          ) : (
-            <use xlinkHref="#onda" x="2" y="7" fill="white" style={{ transition: "fill 300ms ease-in-out" }} />
-          )
-          }
+          <use xlinkHref="#onda" x="2" y="7"
+            fill={isDark ? "#1f1f1f" : "white"} style={{ transition: "fill 300ms ease-in-out" }} 
+          />
         </g>
       </svg>
     </div>

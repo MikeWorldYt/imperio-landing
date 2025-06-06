@@ -192,7 +192,7 @@ nav ul li:last-child a:hover {
     margin-bottom:-7px; /*Fix for safari gap*/
     min-height:100px;
     max-height:150px;
-    transform: translateY(5.1vh);
+    transform: translateY(5.5vh);
 }
 
 /* Animation */

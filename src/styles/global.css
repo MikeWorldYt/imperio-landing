@@ -103,6 +103,15 @@ nav ul li:last-child a:hover {
     */
 }
 
+.kicker {
+    font-family: 'Alumni Sans SC', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.25rem;
+}
+
 .global-section-text {
     @apply text-4xl md:text-5xl font-bold tracking-tight mb-4
     text-[#1f2937] dark:text-[#f3f4f6];

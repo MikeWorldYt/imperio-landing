@@ -24,9 +24,7 @@ const Kicker = ({ lang }: KickerProps ) => {
   useEffect(() => {
     if (locations.length === 0) return;
     const interval = setInterval(() => {
-      
       setIndex((prev) => (prev + 1) % locations.length);
-      
     }, 3000);
     return () => clearInterval(interval);
   }, [locations.length]);

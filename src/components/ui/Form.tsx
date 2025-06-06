@@ -46,11 +46,10 @@ const FormSlice = ( { lang }: FormSliceProps ) => {
   return (
     <div className="bg-white/80 text-black p-6 rounded-xl shadow-lg md:col-span-3">
       <h1 className="text-center text-3xl font-bold text-blue-950">
-        {texts.title}
+        {texts.title[0]}
+        <b>{texts.title[1]}</b>
+        {texts.title[2]}
       </h1>
-      <h2 className="text-center text-3xl font-bold text-blue-950">
-        {texts.subtitle}
-      </h2>
       {/* Formulario */}
       <form className="flex flex-col gap-4 mt-6">
         <input

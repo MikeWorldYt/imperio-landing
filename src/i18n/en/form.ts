@@ -1,7 +1,7 @@
 import type { LangTypes } from "../utils/types";
 
 export const formTexts: LangTypes = {
-    title: 'Get a Quote',
+    title: ['Get a ', 'Free', ' Quote'],
     subtitle: 'Call us Today 909 0000 000',
     name: 'Name',
     email: 'Email',

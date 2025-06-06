@@ -1,7 +1,7 @@
 import type { LangTypes } from "../utils/types";
 
 export const formTexts: LangTypes = {
-    title: 'Solicitar una Cotización',
+    title: ['Presupuesto', ' Gratis', ''],
     subtitle: 'Llámanos hoy 909 0000 000',
     name: 'Nombre',
     email: 'Correo',

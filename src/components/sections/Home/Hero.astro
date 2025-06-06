@@ -9,14 +9,14 @@ const path = url.pathname.split('/');
 let lang = path[1];
 
 if (!lang || lang.length !== 2) {
-  lang = getDefaultLang();
+    lang = getDefaultLang();
 }
 
 // i18n Settings (props) //
 export interface Props {
-  texts: {
-    [key: string]: string;
-  }
+    texts: {
+        [key: string]: string;
+    }
 }
 
 const { texts } = Astro.props;
@@ -26,7 +26,7 @@ const { texts } = Astro.props;
     <div class="absolute inset-0 bg-black/40 z-0" />
         <div class="relative max-w-7xl mx-auto grid md:grid-cols-8 gap-8 px-4 pt-8">
             {/* Contenido principal */}
-            <div class="flex flex-col justify-center md:col-span-5">
+            <div class="flex flex-col justify-center md:col-span-5 text-white">
                 <h1 class="hero-heading opacity-0 animate-fadeInUp">
                     {texts.title}
                 </h1>

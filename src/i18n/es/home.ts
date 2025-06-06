@@ -8,6 +8,8 @@ export const homeTexts: LangTypes = {
     hero: {
         title: 'Construimos,',
         title_2: 'con precisión y excelencia.',
+        kickerPrefix: 'Servimos en',
+        kickerLocations: ['Inland Empire', 'Orange County', 'Los Ángeles'],
         description: 'desc en español',
         button_cta: 'Contáctanos',
         form_title: 'Solicitar una Cotización',

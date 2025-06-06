@@ -8,8 +8,10 @@ export const homeTexts: LangTypes = {
     hero: {
         title: 'We building,',
         title_2: 'with precision and excellence.',
+        kickerPrefix: 'Serving in',
+        kickerLocations: ['Inland Empire', 'Orange County', 'Los Angeles'],
         description: 'Every project is a reflection of mastery—built with intention, refined through experience. We don’t follow standards. We set them.',
-        button_cta: 'Contact Us',
+        button_cta: 'Free Estimate',
         form_title: 'Get a Quote',
         form_subtitle: 'Call us Today 909 4308 805',
         form_content: {

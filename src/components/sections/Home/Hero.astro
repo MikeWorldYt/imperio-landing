@@ -1,9 +1,9 @@
 ---
-import HeroForm from './HeroForm';
 import WaveSeparator from '../../ui/WaveSeparator';
 
 // Dinamic Routes  //
 import { getDefaultLang } from '../../../i18n/utils/i18n';
+import FormSlice from '../../ui/Form';
 const url = new URL(Astro.url);
 const path = url.pathname.split('/');
 let lang = path[1];
@@ -22,30 +22,26 @@ export interface Props {
 const { texts } = Astro.props;
 ---
 
-<section class="h-full bg-cover bg-center" style={{ backgroundImage: "url('/hero-pool.jpg')" }}>
+<section class="h-full bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/hero-pool.jpg')" }}>
     <div class="absolute inset-0 bg-black/40 z-0" />
-        <div class="relative max-w-7xl mx-auto grid md:grid-cols-8 gap-8 px-4 py-20 text-white">
+        <div class="relative max-w-7xl mx-auto grid md:grid-cols-8 gap-8 px-4 pt-8">
             {/* Contenido principal */}
             <div class="flex flex-col justify-center md:col-span-5">
-                <h1 class="text-4xl font-bold leading-tight md:text-5xl">
+                <h1 class="hero-heading opacity-0 animate-fadeInUp">
                     {texts.title}
                 </h1>
-                <p class="mt-4 text-lg md:text-xl">
-                    {texts.description}
-                </p>
-                <button class="w-fit px-6 py-3 rounded-lg bg-white text-blue-900 font-semibold shadow hover:bg-gray-100 transition">
-                    {texts.button_cta}
-                </button>
+                <h1 class="hero-subheading opacity-0 animate-fadeInUpDelay">
+                    {texts.title_2}
+                </h1>
+                <div class="py-2 px-30 hidden md:block opacity-0 animate-fadeInUpDelay">
+                    <button class="btn-primary w-1/2">
+                        {texts.button_cta}
+                    </button>
+                </div>
             </div>
             {/* Formulario */}
-            <div class="bg-white/80 text-black p-6 rounded-xl shadow-lg md:col-span-3">
-                <h1 class="text-center text-3xl font-bold text-blue-950">
-                    {texts.form_title}
-                </h1>
-                <h2 class="text-center text-lg font-semibold mb-2 text-blue-950">
-                    {texts.form_subtitle}
-                </h2>
-                <HeroForm client:load lang={lang} />
+            <div class=" md:col-span-3" transition:name="form" >
+                <FormSlice client:load lang={lang}  />
             </div>
         </div>
     </div>

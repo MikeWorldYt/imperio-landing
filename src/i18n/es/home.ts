@@ -6,7 +6,8 @@ export const homeTexts: LangTypes = {
     
     // Hero section texts
     hero: {
-        title: 'Construimos con precisión y excelencia.',
+        title: 'Construimos,',
+        title_2: 'con precisión y excelencia.',
         description: 'desc en español',
         button_cta: 'Contáctanos',
         form_title: 'Solicitar una Cotización',

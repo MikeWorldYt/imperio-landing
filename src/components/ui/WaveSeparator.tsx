@@ -19,7 +19,7 @@ export default function WaveSeparator() {
   return (
     <div className="ondebox">
       <svg
-        className="onde"
+        className="onde pb-10"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 24 150 28"
         preserveAspectRatio="none"

@@ -6,7 +6,8 @@ export const homeTexts: LangTypes = {
     
     // Hero section texts
     hero: {
-        title: 'We building, with precision and excellence.',
+        title: 'We building,',
+        title_2: 'with precision and excellence.',
         description: 'Every project is a reflection of mastery—built with intention, refined through experience. We don’t follow standards. We set them.',
         button_cta: 'Contact Us',
         form_title: 'Get a Quote',

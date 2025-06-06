@@ -86,6 +86,23 @@ nav ul li:last-child a:hover {
 }
 
 /* === Tipografía Global === */
+.hero-heading {
+    @apply text-4xl font-bold leading-tight md:text-6xl
+    text-shadow-dark
+    ;
+    
+}
+
+.hero-subheading {
+    @apply text-3xl font-bold leading-tight md:text-5xl
+    text-shadow-dark;
+    /*
+    box-shadow: -14px 16px 13px 0px rgba(0,0,0,0.39);
+        -webkit-box-shadow: -14px 16px 13px 0px rgba(0,0,0,0.39);
+        -moz-box-shadow: -14px 16px 13px 0px rgba(0,0,0,0.39);
+    */
+}
+
 .global-section-text {
     @apply text-4xl md:text-5xl font-bold tracking-tight mb-4
     text-[#1f2937] dark:text-[#f3f4f6];
@@ -108,14 +125,18 @@ nav ul li:last-child a:hover {
 
 /* === Botones === */
 .btn-primary {
-    @apply px-4 py-2 rounded font-semibold shadow text-white
-    bg-[oklch(54.6%_0.245_262.881)] dark:bg-[oklch(70%_0.25_262.881)];
+    @apply w-full px-4 py-2 rounded font-semibold shadow 
+    bg-[oklch(54.6%_0.245_262.881)] dark:bg-[oklch(70%_0.25_262.881)]
+    hover:bg-[oklch(54.6%_0.3_262.881)] dark:hover:bg-[oklch(70%_0.3_262.881)]
+    text-primary-dm
+    transition-colors duration-300;
+    ;
 }
 
 .btn-secondary {
     @apply px-4 py-2 rounded font-semibold shadow
     bg-[oklch(60%_0.05_270)] dark:bg-[oklch(80%_0.05_270)]
-    text-[#1f2937] dark:text-[#f3f4f6];
+    text-primary dark:text-primary-dm;
 }
 
 /* === WaveSeperator Component === */
@@ -123,10 +144,11 @@ nav ul li:last-child a:hover {
 .onde {
     position:relative;
     width: 100%;
-    height:15vh;
+    height: 8vh;
     margin-bottom:-7px; /*Fix for safari gap*/
     min-height:100px;
     max-height:150px;
+    /* transform: translateY(-2.1rem); */
 }
 
 /* Animation */

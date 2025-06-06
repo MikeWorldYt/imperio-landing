@@ -20,6 +20,7 @@ export interface Props {
 }
 
 const { texts } = Astro.props;
+export const prerender = true;
 ---
 
 <section class="h-full bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/hero-pool.jpg')" }}>
@@ -47,6 +48,9 @@ const { texts } = Astro.props;
     </div>
 
     {/* Separador ondulado abajo */}
-    <WaveSeparator client:load />
-
+    <div class="absolute w-full bottom-0 left-0 right-0">
+        <div class="sticky bottom-0 left-0 right-0">
+            <WaveSeparator client:load />
+        </div>
+    </div>
 </section>

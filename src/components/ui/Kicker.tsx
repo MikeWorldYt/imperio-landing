@@ -20,22 +20,40 @@ const Kicker = ({ lang }: KickerProps ) => {
   const prefix = texts?.hero?.kickerPrefix || '';
   // State to manage the current index of the location
   const [index, setIndex] = useState(0);
+  
   useEffect(() => {
     if (locations.length === 0) return;
     const interval = setInterval(() => {
+      
       setIndex((prev) => (prev + 1) % locations.length);
-    }, 2500);
+      
+    }, 3000);
     return () => clearInterval(interval);
-  }, [locations]);
-  if (locations.length === 0) return null;
+  }, [locations.length]);
+  
   // Render the kicker with the current location
   return (
-    <h2 className="kicker text-shadow-dark">
-      {prefix}{' '}
-      <span className="transition-opacity duration-500 ease-in-out">
-        {locations[index]}
-      </span>
-    </h2>
+    <div id="kicker-container">
+      <h2 className="kicker text-shadow-dark flex items-center">
+        {prefix}{' '}
+        {/* ---- Slider ---- */}
+        <div id="kicker-slider" >
+          <div
+            className="kicker-inner inline-block"
+            style={{ transform: `translateY(-${index * 3}rem)` }}
+          >
+            { locations.map((location: string, i: number) => (
+              <div key={i} >
+                <span className="bg-fill-secondary text-primary px-1">
+                  {location}
+                </span>
+              </div>
+            )) }
+          </div>
+        </div>
+        {/* ---- Slider ---- */}
+      </h2>
+    </div>
   );
 };
 

@@ -36,6 +36,8 @@ const texts = useLangPageTexts<LangTypes>(Astro, homeTextsByLang);
 const lang = useLang(Astro);
 const t = useTranslations(texts);
 void lang,t;
+
+export const prerender = true
 ---
 
 <Layout>
@@ -44,7 +46,10 @@ void lang,t;
   </head>
   <Header client:load lang={lang} />
   <Hero texts={texts.hero} />
-  <About texts={texts.about} />
+  <section>
+    <About texts={texts.about}>
+    </About>
+  </section>
 
   <section class="py-16 bg-blue-600/50 flex flex-col items-center justify-center">
     <a href="services">

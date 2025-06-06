@@ -22,7 +22,6 @@ export interface Props {
 const { texts } = Astro.props;
 ---
 
-<section>
   <div class=" max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
     <!-- Imagen React interactivamente -->
     <AboutImage client:load lang={lang} />
@@ -36,4 +35,3 @@ const { texts } = Astro.props;
       </p>
     </div>
   </div>
-</section>

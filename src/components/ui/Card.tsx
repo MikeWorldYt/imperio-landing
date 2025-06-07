@@ -1,10 +1,5 @@
 import React, { useState, useEffect, useId } from 'react';
-
-interface ActionItem {
-  href: string;
-  text: string;
-  className?: string;
-}
+import { Button } from './Button';
 
 interface CardProps {
   title: string;
@@ -12,8 +7,6 @@ interface CardProps {
   image?: string;
   icon?: string;
   subheading?: string;
-  btnPrimary?: ActionItem[];
-  btnSecondary?: ActionItem[];
 }
 
 const Card: React.FC<CardProps> = ({
@@ -22,8 +15,6 @@ const Card: React.FC<CardProps> = ({
   image,
   icon,
   subheading,
-  btnPrimary,
-  btnSecondary,
 }) => {
   // Toggle menú móvil
   const menuId = useId();
@@ -61,30 +52,18 @@ const Card: React.FC<CardProps> = ({
         <div className="px-4 pb-4 space-y-2">
           <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
           {description && <p className="text-gray-600 text-sm">{description}</p>}
-          { (btnPrimary?.length || btnSecondary?.length) && (
             <div className="flex flex-wrap gap-2 pt-2">
-              {btnSecondary?.map((action, index) => (
-                <a
-                  key={`secondary-${index}`}
-                  href={action.href}
-                  className={action.className || "text-gray-500 hover:text-gray-700"}
-                >
-                  {action.text}
-                </a>
-              ))}
-              {btnPrimary?.map((action, index) => (
-                <a
-                  key={index}
-                  href={action.href}
-                  className={action.className || "text-blue-500 hover:text-blue-700"} // Clase por defecto si no se provee
-                  // target={action.href.startsWith('http') ? '_blank' : undefined} // Ejemplo para abrir en nueva pestaña
-                  // rel={action.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                >
-                  {action.text}
-                </a>
-              ))}
+              <Button
+                variant="secondary"
+                href={`services/${ title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') }`}
+                text="Learn More"
+              />
+              <Button
+                variant="primary"
+                href={`get-quote/form?s=${ title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') }`}
+                text="Contact"
+              />
             </div>
-          )}
         </div>
       </div>
 
@@ -99,7 +78,6 @@ const Card: React.FC<CardProps> = ({
             {subheading && <p className="text-sm text-gray-500">{subheading}</p>}
           </div>
         </div>
-        {btnPrimary && btnPrimary.length && btnSecondary && btnSecondary.length > 0 && ( // Dropdown menu para móvil
           <div className="relative flex-shrink-0">
             <button
               onClick={toggleMobileMenu}
@@ -124,33 +102,20 @@ const Card: React.FC<CardProps> = ({
               aria-labelledby="menu-button" // Deberías dar un id al botón si usas esto
             >
               <div className="py-2 px-4 shadow-lg flex gap-2" role="none">
-                {btnSecondary.map((action, index) => (
-                  <a
-                    key={index}
-                    href={action.href}
-                    className={`w-[7rem] text-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 ${action.className || ''}`}
-                    role="menuitem"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {action.text}
-                  </a>
-                ))}
-                {btnPrimary.map((action, index) => (
-                  <a
-                    key={index}
-                    href={action.href}
-                    className={`text-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 ${action.className || ''}`}
-                    role="menuitem"
-                    onClick={() => setIsMobileMenuOpen(false)} // Cierra el menú al hacer clic en una acción
-                  >
-                    {action.text}
-                  </a>
-                ))}
+                <Button
+                  variant="secondary"
+                  href={`services/${ title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') }`}
+                  text="Learn More"
+                />
+                <Button
+                  variant="primary"
+                  href={`get-quote/form?s=${ title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') }`}
+                  text="Contact"
+                />
               </div>
             </div>
           )}
           </div>
-        )}
 
       </div>
     </>

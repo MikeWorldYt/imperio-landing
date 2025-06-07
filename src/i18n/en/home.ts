@@ -6,7 +6,7 @@ export const homeTexts: LangTypes = {
     
     // Hero section texts
     hero: {
-        title: 'We building,',
+        title: 'We build,',
         title_2: 'with precision and excellence.',
         kickerPrefix: 'Serving in',
         kickerLocations: ['Inland Empire', 'Orange County', 'Los Angeles', 'Irvine', 'Riverside', 'Pamona', 'San Bernardino', 'Moreno Valley', 'Menifee', 'Yorba Linda', 'Long Beach', 'Corona', 'Temecula', 'Murrieta', ],

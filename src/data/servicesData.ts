@@ -7,9 +7,9 @@ export interface Service {
 }
 
 export const servicesAPI: Service[] = [
-    {
-        title: '<data>Pool Remodeling',
-        short: '<data>Modernize and enhance your existing pool or spa with expert ...',
+    {   
+        title: 'Pool Remodeling',
+        short: 'Modernize and enhance your existing pool or spa with expert ...',
         description: 'Modernize and enhance your existing pool or spa with expert renovations.',
         image: 'https://leisurepools.eu/wp-content/uploads/2020/06/best-type-of-swimming-pool-for-my-home_2.jpg',
         icon: '/icons/pool.svg',
@@ -28,7 +28,7 @@ export const servicesAPI: Service[] = [
         image: 'https://leisurepools.com.au/wp-content/uploads/2020/10/LeisurePoolsAU_Absolute_8m_SilverGrey_Rockhampton_2018-1.jpg',
         icon: '/icons/renovation.svg',
     },
-    {
+    {   
         title: 'Pool Deck',
         description: 'dec.',
         short: 'Transform your pool area with our expert deck renovation services...',

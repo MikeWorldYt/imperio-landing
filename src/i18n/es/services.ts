@@ -29,10 +29,10 @@ export const servicesTexts: Service = {
       image: "https://leisurepools.eu/wp-content/uploads/2020/06/best-type-of-swimming-pool-for-my-home_2.jpg",
       icon: '/icons/pool.svg',
       features: [
-        'Custom designs tailored to your preferences',
-        'High-quality materials for durability',
-        'Energy-efficient upgrades available',
-        'Expert craftsmanship and attention to detail'
+        'Diseños personalizados y modernos',
+        'Instalación segura y eficiente',
+        'Mantenimiento preventivo y correctivo',
+        'Garantía de calidad y durabilidad'
       ]
     },
     {
@@ -47,6 +47,43 @@ export const servicesTexts: Service = {
         'Wide range of plaster options',
         'Improved longevity and water quality'
       ]
+    },
+    {
+      id: 'waterfalls-and-fountains',
+      title: 'Cascadas y Fuentes',
+      short: 'Revitalize ... desc desc',
+      description: "Lorem ipsum",
+      image: "https://leisurepools.com.au/wp-content/uploads/2020/10/LeisurePoolsAU_Absolute_8m_SilverGrey_Rockhampton_2018-1.jpg",
+      icon: '/icons/renovation.svg',
+      features: [
+        'editar',
+        'editar',
+        'editar',
+        'editar'
+      ]
+    },
+    {
+      id: 'pool-deck',
+      title: 'Instalación de Azulejos',
+      short: 'Revi... desc desc',
+      description: "Lorem ipsum",
+      image: "https://images.squarespace-cdn.com/content/v1/65eb3d8c9719340a9a48d8d7/6c62ce0a-e2cb-46b7-8ad8-b9df9e1db52f/Luxury+Custom+Pool+Seattle+-+Krisco+Pools+%282%29.jpg?format=2500w",
+      icon: '/icons/renovation.svg',
+      features: [
+        'editar',
+        'editar',
+        'editar',
+        'editar'
+      ]
     }
+
+
+
+
+
+
+
+
+
   ]
 };

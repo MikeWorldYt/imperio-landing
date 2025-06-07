@@ -38,8 +38,8 @@ export const servicesTexts: Service = {
     {
       id: 'replastering',
       title: 'Replastering',
-      short: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-      description: "En - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      short: "Transform your pool or spa with expert replastering services...",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       image: "https://www.thefibreglasspoolcompany.com.au/wp-content/uploads/hamilton-sl-hero-1.jpg",
       icon: '/icons/spa.svg',
       features: [
@@ -47,6 +47,45 @@ export const servicesTexts: Service = {
         'Wide range of plaster options',
         'Improved longevity and water quality'
       ]
-    }
+    },
+    {
+      id: 'waterfalls-and-fountains',
+      title: 'Waterfalls & Fountains',
+      short: 'Enhance your pool or spa with stunning waterfalls and fountains...',
+      description: 'Enhance your pool or spa with stunning waterfalls and fountains.',
+      image: 'https://leisurepools.com.au/wp-content/uploads/2020/10/LeisurePoolsAU_Absolute_8m_SilverGrey_Rockhampton_2018-1.jpg',
+      icon: '/icons/renovation.svg',
+      features: [
+        'Beautiful waterfalls and fountains',
+        'Custom designs and styles',
+        'Enhanced aesthetics and functionality'
+      ]
+    },
+    {   
+      id: 'pool-deck',
+      title: 'Pool Deck',
+      short: 'This is a test service for demonstration purposes...',
+      description: 'dec.',
+      image: 'https://images.squarespace-cdn.com/content/v1/65eb3d8c9719340a9a48d8d7/6c62ce0a-e2cb-46b7-8ad8-b9df9e1db52f/Luxury+Custom+Pool+Seattle+-+Krisco+Pools+%282%29.jpg?format=2500w',
+      icon: '/icons/renovation.svg',
+      features: [
+        'Beautiful waterfalls and fountains',
+        'Custom designs and styles',
+        'Enhanced aesthetics and functionality'
+      ]
+    },
+    {
+      id: 'test-service-5',
+      title: 'Test service 5',
+      short: 'This is a test service for demonstration purposes...',
+      description: 'desc.',
+      image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
+      icon: '/icons/renovation.svg',
+      features: [
+        'Beautiful waterfalls and fountains',
+        'Custom designs and styles',
+        'Enhanced aesthetics and functionality'
+      ]
+    },
   ]
 };

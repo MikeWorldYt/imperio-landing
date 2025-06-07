@@ -1,15 +1,15 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/layout/Header.astro';
+import HorizontalCard from '../../../components/ui/CardHorizontal.astro';
 
 import '../../../styles/global.css';
+import { ChevronRight } from 'lucide-react';
 
 // i18n Settings  //
 import { getLangFromUrl, getStaticPaths } from '../../../i18n/utils/i18n';
 import { servicesTexts as enServicesTexts } from '../../../i18n/en/services';
 import { servicesTexts as esServicesTexts } from '../../../i18n/es/services';
-import Header from '../../../components/layout/Header.astro';
-import { ChevronRight } from 'lucide-react';
-import { Button } from '../../../components/ui/Button';
 
 export { getStaticPaths };
 
@@ -46,55 +46,15 @@ export const prerender = true
     </div>
 
     <div class="grid gap-8 md:grid-cols-2">
-    { 
-      servicesAPI.map((service) => (
-        <div class="group relative flex flex-col md:h-48 md:flex-row items-stretch dark:bg-light/10 bg-dark/10 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition duration-300">
-          <!-- Image -->
-          <div class="relative aspect-[3/2] w-full md:w-1/2 overflow-hidden md:group-hover:w-32 transition-all duration-300">
-            <img
-              src={service.image}
-              alt={service.title}
-              class="absolute inset-0 h-full object-cover group-hover:scale-125 group-hover:brightness-110 group-hover:opacity-90
-              transition-all duration-300"
-            />
-          </div>
-
-          <!-- Content -->
-          <div class="relative flex flex-1 flex-col p-4">
-            <div>
-              <h3 
-              class="text-xl font-medium mb-2 w-full 
-              md:absolute md:inset-x-4 md:top-1/2 md:-translate-y-1/2
-              group-hover:md:top-4 group-hover:md:translate-y-0
-              transition-all duration-300"
-              transition:name={service.id}
-            >
-              {service.title}
-              </h3>
-              <p
-                class="text-mutted line-clamp-3 md:opacity-0 group-hover:opacity-100
-                md:absolute md:inset-x-4 md:top-12
-                transition-opacity duration-300"
-              >
-              {service.description}
-              </p>
-            </div>
-            <div 
-              class="absolute bottom-4 right-4 transform hover:translate-x-2
-              md:opacity-0 group-hover:opacity-100
-              transition duration-300"
-            >
-              <Button
-                variant='primary'
-                href={`/${lang}/services/${service.id}`}
-                text="Learn more →"
-              />
-            </div>
-          </div>
-
-        </div>
-      ))
-    }
+    { servicesAPI.map((service) => (
+        <HorizontalCard 
+          id={service.id}
+          image={service.image}
+          title={service.title}
+          description={service.description}
+          lang={lang}
+        />
+      )) }
     </div>
 
   </section>

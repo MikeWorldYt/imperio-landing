@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Card from '../../ui/Card';
-import { servicesAPI } from '../../../data/servicesData';
-import { homeTexts as enHomeTexts } from '../../../i18n/en/home';
-import { homeTexts as esHomeTexts } from '../../../i18n/es/home';
-import type { LangTypes } from '../../../i18n/utils/types';
+import { servicesTexts as enServicesTexts } from "../../../i18n/en/services";
+import { servicesTexts as esServicesTexts } from "../../../i18n/es/services";
+// import { servicesAPI } from '../../../data/servicesData';
+import type { LangTypes, ServicesTypes } from '../../../i18n/utils/types';
 
 const useIsDesktop = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -21,15 +21,15 @@ interface ServicesProps {
   lang: string;
 }
 
-const homeTextsByLang: Record<string, LangTypes> = {
-  en: enHomeTexts,
-  es: esHomeTexts,
+const servicesTextsByLang: Record<string, LangTypes> = {
+  en: enServicesTexts,
+  es: esServicesTexts,
 };
 
 
 const Services = ({ lang }: ServicesProps) => {
-    const texts = homeTextsByLang[lang].services;
     const isDesktop = useIsDesktop();
+    const servicesAPI = servicesTextsByLang[lang].services;
   // Carrousel
     const [currentIndex, setCurrentIndex] = useState(0);
     const totalCards = servicesAPI.length - 2;
@@ -89,7 +89,7 @@ const Services = ({ lang }: ServicesProps) => {
               </button>
               {/* CARROUSEL CONTAINER */ }
                 <div ref={carouselRef} className="flex overflow-x-auto snap-x snap-mandatory space-x-4 scrollbar-hide scroll-smooth">
-                  {servicesAPI.map((service, index) => (
+                  {servicesAPI.map(( service: ServicesTypes , index: number ) => (
                     <div className="snap-start shrink-0 w-[calc(100%/3-1rem)] h-full py-2">
                       <Card key={index} {...service} />
                     </div>
@@ -105,7 +105,7 @@ const Services = ({ lang }: ServicesProps) => {
             </div>
           ) : ( // Mobile view
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-screen-xl px-4">
-              {servicesAPI.map((service, index) => (
+              {servicesAPI.map(( service: ServicesTypes, index: number ) => (
                 <Card key={index} {...service} />
               ))}
             </div>

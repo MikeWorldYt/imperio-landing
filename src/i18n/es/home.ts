@@ -30,10 +30,6 @@ export const homeTexts: LangTypes = {
     },
     // Services section texts
     title_services: 'Servicios',
-    services: {
-        title: 'Servicios',
-        
-    },
     // Call to Action section texts
     cta: {
         title: '¿Aún no estás seguro?',

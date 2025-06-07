@@ -6,7 +6,7 @@ export interface Service {
     title: string;
     short: string;
     description: string;
-    image: string;
+    image: string; // Only use 3:2 aspect ratio images
     icon: string;
     features: string[];
     // btnSecondary: {
@@ -19,7 +19,7 @@ export interface Service {
 
 export const servicesTexts: Service = {
   title: 'Services - Imperio Pools',
-  subtitle: 'This is our services.',
+  subtitle: 'These are our services',
   services: [
     {
       id: 'pool-remodeling',
@@ -52,7 +52,7 @@ export const servicesTexts: Service = {
       id: 'waterfalls-and-fountains',
       title: 'Waterfalls & Fountains',
       short: 'Enhance your pool or spa with stunning waterfalls and fountains...',
-      description: 'Enhance your pool or spa with stunning waterfalls and fountains.',
+      description: 'Enhance your pool or spa with stunning waterfalls and fountains, offering a unique and captivating visual experience. From cascading waterfalls to cascading fountains, our expertly crafted waterfalls and fountains add a touch of elegance and sophistication to your outdoor oasis.',
       image: 'https://leisurepools.com.au/wp-content/uploads/2020/10/LeisurePoolsAU_Absolute_8m_SilverGrey_Rockhampton_2018-1.jpg',
       icon: '/icons/renovation.svg',
       features: [
@@ -65,7 +65,7 @@ export const servicesTexts: Service = {
       id: 'pool-deck',
       title: 'Pool Deck',
       short: 'This is a test service for demonstration purposes...',
-      description: 'dec.',
+      description: "This is a test service for demonstration purposes.",
       image: 'https://images.squarespace-cdn.com/content/v1/65eb3d8c9719340a9a48d8d7/6c62ce0a-e2cb-46b7-8ad8-b9df9e1db52f/Luxury+Custom+Pool+Seattle+-+Krisco+Pools+%282%29.jpg?format=2500w',
       icon: '/icons/renovation.svg',
       features: [
@@ -78,7 +78,7 @@ export const servicesTexts: Service = {
       id: 'test-service-5',
       title: 'Test service 5',
       short: 'This is a test service for demonstration purposes...',
-      description: 'desc.',
+      description: "This is a test service for demonstration purposes",
       image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
       icon: '/icons/renovation.svg',
       features: [

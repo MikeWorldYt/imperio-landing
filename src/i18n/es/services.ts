@@ -6,7 +6,7 @@ export interface Service {
     title: string;
     short: string;
     description: string;
-    image: string;
+    image: string; // Only use 3:2 aspect ratio images
     icon: string;
     features: string[];
     // btnSecondary: {

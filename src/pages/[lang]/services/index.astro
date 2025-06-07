@@ -8,6 +8,7 @@ import { getLangFromUrl, getStaticPaths } from '../../../i18n/utils/i18n';
 import { servicesTexts as enServicesTexts } from '../../../i18n/en/services';
 import { servicesTexts as esServicesTexts } from '../../../i18n/es/services';
 import Header from '../../../components/layout/Header.astro';
+import { ChevronRight } from 'lucide-react';
 
 export { getStaticPaths };
 
@@ -19,6 +20,7 @@ const servicesTextsByLang = {
     es: esServicesTexts,
 };
 const texts = servicesTextsByLang[lang] || enServicesTexts;
+const servicesAPI = servicesTextsByLang[lang].services;
 
 export const prerender = true
 ---
@@ -36,19 +38,25 @@ export const prerender = true
     >
       {texts.subtitle}
     </h2>
+    <!-- breadcrumb -->
+    <div class="flex items-center mb-8">
+      <span>Services</span>
+      <span class="mx-2"> <ChevronRight> </span>
+    </div>
 
-    <ul>
-      <li>
-        <a href="services/pool-remodeling">
-          service_1
-        </a>
-      </li>
-      <li>
-        <a href="services/replastering">
-          service_2
-        </a>
-      </li>
-    </ul>
+    { 
+      servicesAPI.map((service) => (
+        <div class="mb-4">
+          <a
+            class="underline hover:underline-offset-2"
+            href={`/${lang}/services/${service.id}`}
+          >
+            <h3> {service.title} </h3>
+          </a>
+          <p>{service.description}</p>
+        </div>
+      ))
+    }
 
   </section>
 </Layout>

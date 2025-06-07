@@ -1,0 +1,53 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+// i18n Settings  //
+import { getLangFromUrl } from '../../../i18n/utils/i18n';
+import { servicesTexts as enServicesTexts } from '../../../i18n/en/services';
+import { servicesTexts as esServicesTexts } from '../../../i18n/es/services';
+import Header from '../../../components/layout/Header.astro';
+
+const url = new URL(Astro.url);
+const lang = getLangFromUrl(url);
+
+export const getStaticPaths = async () => {
+  const langs = ['en', 'es'];
+  // Define the services texts for each language
+  const servicesTextsByLang: any = {
+    en: enServicesTexts,
+    es: esServicesTexts,
+  };
+  //
+  return langs.flatMap(lang => {
+    const services = servicesTextsByLang[lang].services;
+    //
+    return services.map((service: any) => ({
+      params: { lang, id: service.id },
+      props: { service },
+    }));
+  });
+};
+
+const { service } = Astro.props;
+
+export const prerender = true;
+---
+
+<Layout>
+  <head>
+    <title>
+      { lang === 'en' ? 'Service ' : 'Servicio ' }{service.title} - Imperio Pools
+    </title>
+  </head>
+  <Header client:load lang={lang} />
+
+  <section class="py-16">
+    <h2 class="global-section-text mb-8 text-center" transition:name="title-service-details">
+      { service.title }
+    </h2>
+    <p class="text-center">This is a placeholder for service details.</p>
+    <p>
+      {service.description}
+    </p>
+  </section>
+</Layout>

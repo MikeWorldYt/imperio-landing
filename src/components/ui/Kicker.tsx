@@ -42,7 +42,7 @@ const Kicker = ({ lang }: KickerProps ) => {
           >
             { locations.map((location: string, i: number) => (
               <div key={i} >
-                <span className="bg-fill-secondary text-primary px-1">
+                <span className="bg-secondary text-primary px-1">
                   {location}
                 </span>
               </div>

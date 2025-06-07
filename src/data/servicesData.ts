@@ -1,4 +1,5 @@
 export interface Service {
+    id: string;
     title: string;
     short: string;
     description: string;
@@ -8,6 +9,7 @@ export interface Service {
 
 export const servicesAPI: Service[] = [
     {   
+        id: 'pool-remodeling',
         title: 'Pool Remodeling',
         short: 'Modernize and enhance your existing pool or spa with expert ...',
         description: 'Modernize and enhance your existing pool or spa with expert renovations.',
@@ -15,6 +17,7 @@ export const servicesAPI: Service[] = [
         icon: '/icons/pool.svg',
     },
     {
+        id: 'replastering',
         title: 'Replastering',
         short: 'Transform your pool or spa with expert replastering services...',
         description: 'Transform your pool or spa with expert replastering services.',
@@ -22,6 +25,7 @@ export const servicesAPI: Service[] = [
         icon: '/icons/spa.svg',
     },
     {
+        id: 'waterfalls-and-fountains',
         title: 'Waterfalls & Fountains',
         short: 'Enhance your pool or spa with stunning waterfalls and fountains...',
         description: 'Enhance your pool or spa with stunning waterfalls and fountains.',
@@ -29,6 +33,7 @@ export const servicesAPI: Service[] = [
         icon: '/icons/renovation.svg',
     },
     {   
+        id: 'pool-deck',
         title: 'Pool Deck',
         description: 'dec.',
         short: 'Transform your pool area with our expert deck renovation services...',
@@ -36,6 +41,7 @@ export const servicesAPI: Service[] = [
         icon: '/icons/renovation.svg',
     },
     {
+        id: 'test-service-5',
         title: 'Test service 5',
         description: 'desc.',
         short: 'This is a test service for demonstration purposes...',

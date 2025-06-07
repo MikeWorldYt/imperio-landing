@@ -2,6 +2,7 @@ import React, { useState, useEffect, useId } from 'react';
 import { Button } from './Button';
 
 interface CardProps {
+  id: string;
   title: string;
   description?: string;
   image?: string;
@@ -10,6 +11,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({
+  id,
   title,
   description,
   image,
@@ -55,12 +57,12 @@ const Card: React.FC<CardProps> = ({
             <div className="flex flex-wrap gap-2 pt-2">
               <Button
                 variant="secondary"
-                href={`services/${ title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') }`}
+                href={`services/${ id }`}
                 text="Learn More"
               />
               <Button
                 variant="primary"
-                href={`get-quote/form?s=${ title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') }`}
+                href={`get-quote/form?s=${ id }`}
                 text="Contact"
               />
             </div>
@@ -104,12 +106,12 @@ const Card: React.FC<CardProps> = ({
               <div className="py-2 px-4 shadow-lg flex gap-2" role="none">
                 <Button
                   variant="secondary"
-                  href={`services/${ title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') }`}
+                  href={`services/${ id }`}
                   text="Learn More"
                 />
                 <Button
                   variant="primary"
-                  href={`get-quote/form?s=${ title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') }`}
+                  href={`get-quote/form?s=${ id }`}
                   text="Contact"
                 />
               </div>

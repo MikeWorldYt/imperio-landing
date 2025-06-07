@@ -10,14 +10,14 @@
 
 body {
     @apply transition-colors duration-300
-    bg-white dark:bg-[#1f1f1f]
-    text-[#1f2937] dark:text-[#f3f4f6];
+    bg-light dark:bg-dark
+    text-primary dark:text-primary-dm;
 }
 
 header {
     @apply transition-colors duration-300
-    bg-[oklch(92%_0.05_260)] dark:bg-[oklch(24%_0.05_260)]
-    text-[#1f2937] dark:text-[#f3f4f6]
+    bg-secondary dark:bg-secondary-dm
+    text-primary dark:text-primary-dm
     w-full fixed top-0 z-20;
     box-shadow: 3px 9px 12px 0px rgba(0,0,0,0.39);
         -webkit-box-shadow: 3px 9px 12px 0px rgba(0,0,0,0.39);
@@ -149,12 +149,12 @@ nav ul li:last-child a:hover {
 /* === Global Section Styles === */
 .global-section-text {
     @apply text-4xl md:text-5xl font-bold tracking-tight mb-4
-    text-[#1f2937] dark:text-[#f3f4f6];
+    text-primary dark:text-primary-dm;
 }
 
 .global-heading {
     @apply text-3xl font-semibold mb-3 transition-colors duration-300
-    text-[#1f2937] dark:text-[#f3f4f6];
+    text-primary dark:text-primary-dm;
 }
 
 .global-subheading {

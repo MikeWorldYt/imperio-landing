@@ -20,7 +20,17 @@ const config: Config =  {
             boxShadow: {
                 'text-dark': '0px 4px 8px rgba(31, 31, 31, 0.8)',
                 'text-light': '0px 4px 8px rgba(243, 244, 246, 0.8)',
-            }
+            },
+            colors: {
+                'light': '#ffffff', // Fill - white
+                'dark': '#1f1f1f', // Gray12
+                'primary': '#1f2937', // Border / Texts
+                'primary-dm': '#f3f4f6',
+                'secondary': '#89c4ff', // Light Blue
+                'secondary-dm': '#001e3b', // Dark Blue
+                'acent': '#9ca3af',
+                'mutted': '#6b7280',
+            },
         },
     },
     darkMode: 'class', // Enable dark mode support

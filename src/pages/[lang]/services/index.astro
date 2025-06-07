@@ -9,6 +9,7 @@ import { servicesTexts as enServicesTexts } from '../../../i18n/en/services';
 import { servicesTexts as esServicesTexts } from '../../../i18n/es/services';
 import Header from '../../../components/layout/Header.astro';
 import { ChevronRight } from 'lucide-react';
+import { Button } from '../../../components/ui/Button';
 
 export { getStaticPaths };
 
@@ -47,7 +48,7 @@ export const prerender = true
     <div class="grid gap-8 md:grid-cols-2">
     { 
       servicesAPI.map((service) => (
-        <div class="h-48 group relative flex flex-col md:flex-row items-stretch border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 bg-red-600/40">
+        <div class="h-48 group relative flex flex-col md:flex-row items-stretch border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 test_1">
           <!-- Image -->
           <div class="w-full md:w-64 flex-shrink-0 transition-all duration-300 md:group-hover:w-32">
             <img
@@ -73,12 +74,11 @@ export const prerender = true
               </p>
             </div>
             <div class="flex justify-end hover:translate-x-2 transition duration-300 test_3">
-              <a 
-                class="inline-block px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+              <Button
+                variant='primary'
                 href={`/${lang}/services/${service.id}`}
-              >
-                Learn more →
-              </a>
+                text="Learn more →"
+              />
             </div>
           </div>
 

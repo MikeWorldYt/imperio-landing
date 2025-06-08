@@ -76,11 +76,11 @@ nav ul li:last-child a:hover {
 
 /* === Secciones === */
 .bg-section-1 {
-    @apply bg-[oklch(95%_0.03_250)] dark:bg-[oklch(28%_0.03_250)];
+    @apply bg-secondary dark:bg-[oklch(28%_0.03_250)];
 }
 
 .bg-section-2 {
-    @apply bg-[oklch(97%_0.01_270)] dark:bg-[oklch(26%_0.02_270)];
+    @apply dark:bg-[oklch(54.6%_0.245_262.881)] bg-[oklch(70%_0.25_262.881)];
 }
 
 .bg-section-3 {

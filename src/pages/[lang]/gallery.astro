@@ -8,8 +8,11 @@ import { ChevronRight } from 'lucide-react';
 
 // Gallery grid //
 import GalleryGrid from '../../components/ui/galleryGrid';
-import { getAllMedia } from "../../lib/media";
-const media = await getAllMedia();
+import { getMediaByFilter } from "../../lib/media";
+
+const url = new URL(Astro.request.url);
+const filter = url.searchParams.get('f') ?? undefined;
+const media = getMediaByFilter(filter);
 
 // i18n Settings  //
 import { useLang } from '../../hooks/useLang';

@@ -8,8 +8,7 @@
 
 body {
     @apply transition-colors duration-300
-    bg-light dark:bg-dark
-    text-primary dark:text-primary-dm;
+    bg-light dark:bg-dark;
 }
 
 header {
@@ -167,7 +166,7 @@ nav ul li:last-child a:hover {
 
 .global-text {
     @apply text-base leading-loose
-    text-[#6b7280] dark:text-[#9ca3af];
+    text-dark dark:text-[#9ca3af];
 }
 
 /* === Botones === */

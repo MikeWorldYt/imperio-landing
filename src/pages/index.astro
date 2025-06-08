@@ -14,6 +14,9 @@ let lang = path[1];
 if (!lang || lang.length !== 2) {
   lang = getDefaultLang(); // 'en' por defecto
 }
+
+const defaultLang = getDefaultLang();
+return Astro.redirect(`/${defaultLang}/home`);
 ---
 
 <Layout>

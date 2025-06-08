@@ -2,7 +2,7 @@ desktop.ini
 
 # build output
 dist/
-vercel/
+.vercel/
 
 # generated types
 .astro/

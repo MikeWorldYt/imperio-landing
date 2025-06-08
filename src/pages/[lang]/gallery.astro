@@ -15,7 +15,6 @@ const filter = url.searchParams.get('f') ?? undefined;
 const media = getMediaByFilter(filter);
 const categories = ["default", "pool-remodeling", "replastering"];
 const activeFilter = url.searchParams.get('f') ?? "default";
-const catTest = "activeFilter";
 
 // i18n Settings  //
 import { useLang } from '../../hooks/useLang';
@@ -38,6 +37,8 @@ const texts = useLangPageTexts<LangTypes>(Astro, galleryTextsByLang);
 // @ts-ignore
 const lang = useLang(Astro);
 const t = useTranslations(texts);
+
+export const prerender = true;
 ---
 
 <Layout lang="{lang}">
@@ -49,6 +50,9 @@ const t = useTranslations(texts);
     <h2 class="global-section-text mb-8 text-center">
       {texts.title}
     </h2>
+  </section>
+
+  <section class="w-full h-3/4 pt-0 mb-4 max-w-7xl grid md:grid-cols-[240px_1fr] gap-8 mx-auto">
     <aside>
     <!-- breadcrumb -->
       <div class="breadcrumb">
@@ -78,7 +82,9 @@ const t = useTranslations(texts);
     <div>
       <GalleryGrid images={media} client:load/>
     </div>
+  </div>
   </section>
+
   <Footer client:load />
 </Layout>
 

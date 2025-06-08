@@ -1,5 +1,5 @@
 ---
-import astroLogo from '../../assets/Imagotipo.svg';
+import astroLogo from '../../assets/Imagotipo.svg?url';
 import { Menu } from 'lucide-react';
 
 import '../../styles/global.css'
@@ -28,13 +28,12 @@ export interface Props {
 }
 
 const texts = navTextsByLang[lang] || enNavTexts;
-
 ---
 
 <header>
   <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
     <a href={`/${lang}/home`} class="flex items-center space-x-2">
-      <img src={astroLogo.src} alt="Homepage" class="h-6" />
+      <img src={astroLogo} alt="Homepage" class="h-6" />
       <span class="font-bold text-lg">Imperio Pools</span>
     </a>
 

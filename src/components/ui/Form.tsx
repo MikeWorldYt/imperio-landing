@@ -72,10 +72,10 @@ const FormSlice = ( { lang }: FormSliceProps ) => {
             className="flex w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value=""> {texts.service_placeholder} </option>
-            <option value="renovation"> {texts.service_1} </option>
-            <option value="plaster"> {texts.service_2} </option>
+            <option value="pool-remodeling"> {texts.service_1} </option>
+            <option value="replastering"> {texts.service_2} </option>
             <option value="coping-tile"> {texts.service_3} </option>
-            <option value="deck-bars"> {texts.service_4} </option>
+            <option value="pool-deck"> {texts.service_4} </option>
             <option value="deco-features"> {texts.service_5} </option>
             <option value="new-pools"> {texts.service_6} </option>
             <option value="maintenance"> {texts.service_7} </option>

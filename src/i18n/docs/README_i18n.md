@@ -44,7 +44,7 @@ This project implements multilingual support (English and Spanish) using Astro +
 
 ## ⚠️ About Astro Typing in Hooks
 
-Hooks like `useLang()` and `useLangPageTexts()` rely on `Astro.url`, which is **only available inside `.astro` files**.
+Hooks like `useLang()` and `useLangPageTexts()` rely on `Astro.request.url`, which is **only available inside `.astro` files**.
 
 For this reason:
 

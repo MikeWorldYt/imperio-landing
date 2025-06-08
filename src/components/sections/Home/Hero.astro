@@ -5,7 +5,7 @@ import Kicker from '../../ui/Kicker';
 // Dinamic Routes  //
 import { getDefaultLang } from '../../../i18n/utils/i18n';
 import FormSlice from '../../ui/Form';
-const url = new URL(Astro.url);
+const url = new URL(Astro.request.url);
 const path = url.pathname.split('/');
 let lang = path[1];
 

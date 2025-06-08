@@ -11,7 +11,7 @@ import { servicesTexts as enServicesTexts } from '../../../i18n/en/services';
 import { servicesTexts as esServicesTexts } from '../../../i18n/es/services';
 import { Button } from '../../../components/ui/Button';
 
-const url = new URL(Astro.url);
+const url = new URL(Astro.request.url);
 const lang = getLangFromUrl(url);
 
 const servicesTextsByLang = {

@@ -4,7 +4,7 @@ import AboutImage from './About';
 // Dinamic Routes  //
 import { getDefaultLang } from '../../../i18n/utils/i18n';
 
-const url = new URL(Astro.url);
+const url = new URL(Astro.request.url);
 const path = url.pathname.split('/');
 let lang = path[1];
 

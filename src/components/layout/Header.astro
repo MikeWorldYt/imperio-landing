@@ -15,7 +15,7 @@ import { navTexts as esNavTexts } from '../../i18n/es/nav';
 
 export { getStaticPaths };
 
-const url = new URL(Astro.url);
+const url = new URL(Astro.request.url);
 const lang = getLangFromUrl(url);
 
 const navTextsByLang = {
@@ -29,7 +29,6 @@ export interface Props {
 
 const texts = navTextsByLang[lang] || enNavTexts;
 
-export const prerender = true;
 ---
 
 <header>

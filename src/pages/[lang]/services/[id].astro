@@ -3,7 +3,8 @@ import Layout from '../../../layouts/Layout.astro';
 import Header from '../../../components/layout/Header.astro';
 import Footer from '../../../components/layout/Footer';
 
-import { ChevronRight } from "lucide-react";
+import '../../../styles/global.css';
+import { Box, ChevronRight } from "lucide-react";
 
 // i18n Settings  //
 import { getLangFromUrl } from '../../../i18n/utils/i18n';
@@ -59,7 +60,6 @@ export const prerender = true;
   </section>
 
   <section class="w-full h-3/4 pt-0 mb-4 max-w-7xl mx-auto grid md:grid-cols-[240px_1fr] gap-8">
-    <!-- ✅ Content Table -->
     <aside>
     <!-- breadcrumb -->
     <div class="breadcrumb">
@@ -69,6 +69,7 @@ export const prerender = true;
       <ChevronRight className="mx-2 h-6" />
       <span>{service.title}</span>
     </div>
+    <!-- ✅ Content Table -->
     <div class="w-full h-full px-4 rounded-2xl dark:bg-light/10 bg-dark/20 space-y-2 hidden md:block">
       <h3 class="global-subheading my-3 pt-2"> Content Table </h3>
       <ul class="space-y-1">
@@ -80,7 +81,7 @@ export const prerender = true;
                 s.id === service.id ? 'font-bold text-blue-600' : 'global-text'
               }`}
             >
-              {s.title}
+              <Box className="mx-2 h-4"/>{s.title}
             </a>
           </li>
         ))}

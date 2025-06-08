@@ -33,7 +33,7 @@ const MEDIA_STORE: Record<string, MediaItem[]> = {
   ],
   "replastering": [
     { id: "20", src: "https://picsum.photos/id/20/600/600", alt: "Replastering 1" },
-    { id: "21", src: "https://picsum.photos/id/21/600/600", alt: "Replastering 2" },
+    { id: "21", src: "https://picsum.photos/id/26/600/600", alt: "Replastering 2" },
     // ...
   ],
 };

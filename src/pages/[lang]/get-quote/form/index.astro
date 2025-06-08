@@ -24,6 +24,7 @@ const quoteTextsByLang = {
 const texts = quoteTextsByLang[lang] || enQuoteTexts;
 const t = useTranslations(texts);
 
+export const prerender = true
 ---
 
 <Layout>

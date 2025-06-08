@@ -12,7 +12,6 @@ import '../../styles/global.css';
 // i18n Settings  //
 import { useLang } from '../../hooks/useLang';
 import { useLangPageTexts } from '../../hooks/useLangPageText';
-import { useTranslations } from '../../hooks/useTranslations';
 import { getStaticPaths } from '../../i18n/utils/i18n';
 import { homeTexts as enHomeTexts } from '../../i18n/en/home';
 import { homeTexts as esHomeTexts } from '../../i18n/es/home';
@@ -28,21 +27,15 @@ const homeTextsByLang = {
   es: esHomeTexts,
 };
 
-// if (!(lang in homeTextsByLang)) {
-//    lang = getDefaultLang();
-// }
-
 const texts = useLangPageTexts<LangTypes>(Astro, homeTextsByLang);
 const lang = useLang(Astro);
-const t = useTranslations(texts);
-void lang,t;
 
 export const prerender = true
 ---
 
 <Layout>
   <head>
-    <title>{t('title')}</title>
+    <title>{texts.title}</title>
   </head>
   <Header lang={lang} />
   <Hero texts={texts.hero} />

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import Header from '../../../components/layout/Header.astro';
+import Footer from '../../../components/layout/Footer';
 
 import { ChevronRight } from "lucide-react";
 
@@ -8,6 +9,7 @@ import { ChevronRight } from "lucide-react";
 import { getLangFromUrl } from '../../../i18n/utils/i18n';
 import { servicesTexts as enServicesTexts } from '../../../i18n/en/services';
 import { servicesTexts as esServicesTexts } from '../../../i18n/es/services';
+import { Button } from '../../../components/ui/Button';
 
 const url = new URL(Astro.url);
 const lang = getLangFromUrl(url);
@@ -56,7 +58,7 @@ export const prerender = true;
     </h2>
   </section>
 
-  <section class="w-full h-3/4 pt-0 max-w-7xl mx-auto grid md:grid-cols-[240px_1fr] gap-8">
+  <section class="w-full h-3/4 pt-0 mb-4 max-w-7xl mx-auto grid md:grid-cols-[240px_1fr] gap-8">
     <!-- ✅ Content Table -->
     <aside>
     <!-- breadcrumb -->
@@ -93,7 +95,23 @@ export const prerender = true;
         <h2 class="global-heading mb-3"> Lorem </h2>
         <p set:html={service.content} />
       </div>
+      <div class="absolute bottom-4 w-full">
+        <p> {lang==='en' ? '' : ''} </p>
+        <div class="flex gap-8">
+          <Button
+            variant='secondary'
+            href={`/${lang}/gallery?f=${service.id}`}
+            text={lang === 'en' ? 'Learn More' : 'Más Información'}
+          />
+          <Button
+            variant='primary'
+            href={`/${lang}/get-quote/form?s=${service.id}`}
+            text={lang === 'en' ? 'Get a Free Stimate Now →' : 'Obtener una Cotización Gratis →'}
+          />
+        </div>
+      </div>
     </div>
 
   </section>
+  <Footer client:load />
 </Layout>

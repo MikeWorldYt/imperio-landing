@@ -51,7 +51,7 @@ export const prerender = true;
       { lang === 'en' ? 'Service ' : 'Servicio ' }{service.title} - Imperio Pools
     </title>
   </head>
-  <Header client:load lang={lang} />
+  <Header lang={lang} />
 
   <section class="w-full pt-20 pb-0 max-w-7xl mx-auto">
     <h2 class="global-section-text mb-8 text-center" transition:name={service.id}>

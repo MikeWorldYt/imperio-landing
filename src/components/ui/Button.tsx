@@ -2,18 +2,20 @@ interface ButtonProps {
   text: string;
   href?: string;
   onClick?: () => void;
-  variant?: "primary" | "secondary";
+  variant?: "primary_sm" | "secondary_sm" | "primary_lg" | "secondary_lg";
 }
 
 export const Button = ({
   text,
   href,
   onClick,
-  variant = "primary",
+  variant = "primary_sm",
 }: ButtonProps) => {
   const variantClass = {
-    primary: "inline-block px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition",
-    secondary: "inline-block px-4 py-1 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition",
+    primary_sm: "btn-primary px-4 py-1",
+    secondary_sm: "btn-secondary px-4 py-1",
+    primary_lg: "btn-primary px-4 py-2",
+    secondary_lg: "btn-secondary px-4 py-2",
   };
 
   const className = variantClass[variant];

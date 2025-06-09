@@ -171,18 +171,30 @@ nav ul li:last-child a:hover {
 
 /* === Botones === */
 .btn-primary {
-    @apply w-full px-4 py-2 rounded font-semibold shadow 
+    @apply w-full inline-block text-center rounded
     bg-[oklch(54.6%_0.245_262.881)] dark:bg-[oklch(70%_0.25_262.881)]
     hover:bg-[oklch(54.6%_0.3_262.881)] dark:hover:bg-[oklch(70%_0.3_262.881)]
-    text-primary-dm
+    font-semibold text-primary-dm
     transition-colors duration-300;
     ;
 }
 
 .btn-secondary {
-    @apply px-4 py-2 rounded font-semibold shadow
-    bg-[oklch(60%_0.05_270)] dark:bg-[oklch(80%_0.05_270)]
-    text-primary dark:text-primary-dm;
+    @apply w-full inline-block text-center rounded
+    bg-blue-500
+    hover:bg-blue-600
+    font-semibold text-white
+    hover:text-gray-800
+    transition-colors duration-300;
+}
+
+.btn-mutted {
+    @apply w-full inline-block text-center rounded
+    bg-gray-300
+    hover:bg-gray-400
+    font-semibold text-gray-800
+    hover:text-gray-500
+    transition duration-300;
 }
 
 /* === WaveSeperator Component === */

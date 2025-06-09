@@ -45,26 +45,30 @@ const Card: React.FC<CardProps> = ({
   return (
     <>
       {/* 💻 Desktop View */}
-      <div className="hidden md:block rounded-xl shadow-md overflow-hidden bg-white w-full transform transition duration-300 hover:shadow-2xl hover:scale-[1.025]">
+      <div className="hidden md:flex md:flex-col h-full rounded-xl shadow-md overflow-hidden bg-white w-full transform transition duration-300 hover:shadow-2xl hover:scale-[1.025]">
         {image && (
-          <div className="p-2">
+          <div className="p-3">
             <img src={image} alt={title} className="w-full h-48 object-cover rounded-md border border-gray-200" />
           </div>
         )}
-        <div className="px-4 pb-4 space-y-2">
+        <div className="relative px-3 pb-3 space-y-2 flex flex-col flex-grow gap-2">
           <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
           {description && <p className="text-gray-600 text-sm">{description}</p>}
-            <div className="flex flex-wrap gap-2 pt-2">
-              <Button
-                variant="secondary"
-                href={`services/${ id }`}
-                text="Learn More"
-              />
-              <Button
-                variant="primary"
-                href={`get-quote/form?s=${ id }`}
-                text="Contact"
-              />
+            <div className="flex items-center gap-1 mt-auto-important">
+              {/* <div className="fixed w-full pr-6 flex flex-col-2 bottom-3 gap-2"> */}
+                <Button
+                  variant="mutted_sm"
+                  href={`services/${ id }`}
+                  text="Learn More"
+                  classAditional="buttom-0 flex-grow"
+                />
+                <Button
+                  variant="primary_sm"
+                  href={`get-quote/form?s=${ id }`}
+                  text="Contact"
+                  classAditional="flex-grow"
+                />
+              {/* </div> */}
             </div>
         </div>
       </div>
@@ -105,12 +109,12 @@ const Card: React.FC<CardProps> = ({
             >
               <div className="py-2 px-4 shadow-lg flex gap-2" role="none">
                 <Button
-                  variant="secondary"
+                  variant="mutted_sm"
                   href={`services/${ id }`}
                   text="Learn More"
                 />
                 <Button
-                  variant="primary"
+                  variant="primary_sm"
                   href={`get-quote/form?s=${ id }`}
                   text="Contact"
                 />

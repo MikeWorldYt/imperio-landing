@@ -31,6 +31,9 @@ const config: Config =  {
                 'acent': '#9ca3af',
                 'mutted': '#6b7280',
             },
+            margin: {
+                'auto-important': 'auto !important',
+            }
         },
     },
     darkMode: 'class', // Enable dark mode support

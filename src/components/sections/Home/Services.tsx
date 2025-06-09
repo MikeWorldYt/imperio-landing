@@ -34,6 +34,7 @@ const Services = ({ lang }: ServicesProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const totalCards = servicesAPI.length - 2;
     const carouselRef = useRef<HTMLDivElement>(null);
+    const [isHovered, setIsHovered] = useState(false); // detectar el hover
   // Carrusel: desplazar el carrusel
     const scroll = (dir: "left" | "right") => {
       if (!carouselRef.current) return;
@@ -53,7 +54,7 @@ const Services = ({ lang }: ServicesProps) => {
     };
   // Carrousel: Auto-scroll y rebote manual entre extremos
     useEffect(() => {
-      if (!isDesktop || !carouselRef.current) return;
+      if (!isDesktop || !carouselRef.current || isHovered) return;
     // Calcular el ancho de la tarjeta
       const el = carouselRef.current;
       const cardWidth = el.clientWidth / 3;
@@ -73,13 +74,13 @@ const Services = ({ lang }: ServicesProps) => {
       const interval = setInterval(scrollNext, 5000);
     // retorno
       return () => clearInterval(interval);
-    }, [isDesktop, currentIndex]);
+    }, [isDesktop, currentIndex, isHovered]);
 
     return (
       <>
         <div className="relative w-full max-w-screen-xl px-4">
           {isDesktop ? ( // Desktop view
-            <div className="flex overflow-x-auto snap-x snap-mandatory space-x-4 scrollbar-hide scroll-smooth px-1 ">
+            <div className="flex overflow-x-auto space-x-4 scrollbar-hide scroll-smooth ">
               {/* Left button */}
               <button
                 onClick={() => scroll("left")}
@@ -88,9 +89,14 @@ const Services = ({ lang }: ServicesProps) => {
                 <ChevronLeft className="text-blue-950" />
               </button>
               {/* CARROUSEL CONTAINER */ }
-                <div ref={carouselRef} className="flex overflow-x-auto snap-x snap-mandatory space-x-4 scrollbar-hide scroll-smooth">
+                <div ref={carouselRef} className="flex overflow-x-auto px-4 py-4 pl-4 gap-4 scrollbar-hide scroll-smooth">
                   {servicesAPI.map(( service: ServicesTypes , index: number ) => (
-                    <div className="snap-start shrink-0 w-[calc(100%/3-1rem)] h-full py-2">
+                    <div
+                      key={index}
+                      className="snap-start shrink-0 w-[calc(100%/3-1rem)] h-full "
+                      onMouseEnter={() => setIsHovered(true)}
+                      onMouseLeave={() => setIsHovered(false)}
+                    >
                       <Card key={index} {...service} />
                     </div>
                   ))}

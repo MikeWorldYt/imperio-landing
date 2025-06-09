@@ -122,9 +122,9 @@ const AboutImage = ({ lang }: AboutImageProps) => {
                 `}
             >
                 <img
-                    src="/icons/pfp.svg"
+                    src="/icons/pfp.jpg"
                     alt="User profile"
-                    className="w-8 h-8 rounded-full border-2 border-white shadow"
+                    className="w-8 h-8 rounded-full shadow"
                 />
                 <div className="min-h-[60px] px-4 py-2 bg-gray-200 text-black flex items-center rounded-tl-2xl rounded-tr-2xl rounded-br-2xl rounded-bl-none shadow-md text-sm font-medium">
                     {response}

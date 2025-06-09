@@ -89,7 +89,7 @@ const Services = ({ lang }: ServicesProps) => {
                 <ChevronLeft className="text-blue-950" />
               </button>
               {/* CARROUSEL CONTAINER */ }
-                <div ref={carouselRef} className="flex overflow-x-auto px-4 py-4 pl-4 gap-4 scrollbar-hide scroll-smooth">
+                <div ref={carouselRef} className="flex overflow-x-auto px-4 py-4 pl-4 gap-4 scrollbar-hide scroll-smooth pb-8">
                   {servicesAPI.map(( service: ServicesTypes , index: number ) => (
                     <div
                       key={index}

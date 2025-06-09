@@ -53,14 +53,8 @@ export const prerender = true;
   </head>
   <Header lang={lang} />
 
-  <section class="w-full pt-20 pb-0 max-w-7xl mx-auto">
-    <h2 class="global-section-text mb-8 text-center" transition:name={service.id}>
-      { service.title }
-    </h2>
-  </section>
-
-  <section class="w-full h-3/4 pt-0 mb-4 max-w-7xl mx-auto grid md:grid-cols-[240px_1fr] gap-8">
-    <aside>
+  <section class="w-full pt-20 mb-4 max-w-7xl mx-auto grid md:grid-cols-[240px_1fr] gap-8">
+    <aside class="flex flex-col">
     <!-- breadcrumb -->
     <div class="breadcrumb">
       <a href={`/${lang}/services`} class="underline">
@@ -90,26 +84,28 @@ export const prerender = true;
     </aside>
 
     <!-- ✅ Item content -->
-    <div class="relative">
+    <div class="flex flex-col space-y-4">
+      <h2 class="global-section-text mb-8 text-center" transition:name={service.id}>
+        { service.title }
+      </h2>
+      <!-- Content -->
       <div class="global-text">
         <p>{service.description}</p>
         <h2 class="global-heading mb-3"> Lorem </h2>
         <p set:html={service.content} />
       </div>
-      <div class="absolute bottom-4 w-full">
-        <p> {lang==='en' ? '' : ''} </p>
-        <div class="flex gap-8">
-          <Button
-            variant='secondary'
-            href={`/${lang}/gallery?f=${service.id}`}
-            text={lang === 'en' ? 'Learn More' : 'Más Información'}
-          />
-          <Button
-            variant='primary'
-            href={`/${lang}/get-quote/form?s=${service.id}`}
-            text={lang === 'en' ? 'Get a Free Stimate Now →' : 'Obtener una Cotización Gratis →'}
-          />
-        </div>
+      <!-- CTA -->
+      <div class="flex gap-8 test_3">
+        <Button
+          variant='mutted_sm'
+          href={`/${lang}/gallery?f=${service.id}`}
+          text={lang === 'en' ? 'Learn More' : 'Más Información'}
+        />
+        <Button
+          variant='primary_sm'
+          href={`/${lang}/get-quote/form?s=${service.id}`}
+          text={lang === 'en' ? 'Get a Free Stimate Now →' : 'Obtener una Cotización Gratis →'}
+        />
       </div>
     </div>
 

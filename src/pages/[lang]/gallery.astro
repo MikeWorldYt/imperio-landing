@@ -23,6 +23,7 @@ import { getStaticPaths } from '../../i18n/utils/i18n';
 import { galleryTexts as enGalleryTexts } from '../../i18n/en/gallery';
 import { galleryTexts as esGalleryTexts } from '../../i18n/es/gallery';
 import type { LangTypes } from '../../i18n/utils/types';
+import { Button } from '../../components/ui/Button';
 
 export { getStaticPaths };
 
@@ -42,14 +43,9 @@ export const prerender = false;
       <title>{` ${texts.title} ${ filter === filter ? filter.replace("-", " ") : 'All' } - Imperio Pools`}</title>
   </head>
   <Header lang={lang} />
-  <section class="w-full pt-20 pb-0 max-w-7xl mx-auto">
-    <h2 class="global-section-text mb-8 text-center">
-      {lang === 'en' ? 'Projects of ' : 'Proyectos de '} { filter === filter ? filter.replace("-", " ") : 'All' }
-    </h2>
-  </section>
 
-  <section class="w-full h-3/4 pt-0 mb-4 max-w-7xl grid md:grid-cols-[240px_1fr] gap-8 mx-auto">
-    <aside>
+  <section class="w-full pt-20 mb-4 max-w-7xl mx-auto grid md:grid-cols-[240px_1fr] gap-8">
+    <aside class="flex flex-col">
     <!-- breadcrumb -->
       <div class="breadcrumb">
         <span> Gallery </span>
@@ -57,7 +53,7 @@ export const prerender = false;
         <span> {filter} </span>
       </div>
       <!-- ✅ Content Table -->
-      <div class="w-full h-full px-4 rounded-2xl dark:bg-light/10 bg-dark/20 space-y-2 hidden md:block">
+      <div class="w-full flex-grow px-4 rounded-2xl dark:bg-light/10 bg-dark/20 space-y-2 hidden md:block">
         <h3 class="global-subheading my-3 pt-2"> Content Table </h3>
         <ul class="space-y-1">
           {categories.map(cat => (
@@ -77,8 +73,11 @@ export const prerender = false;
     </aside>
 
   <!-- ✅ Item content -->
-  <div class="relative">
-    <!-- Tags -->
+  <div class=" flex flex-col space-y-4">
+    <h2 class="global-section-text mb-8 text-center">
+      { filter === filter ? filter.replace("-", " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ") : 'All' } <!-- metodo Title Case -->
+    </h2>
+    <!-- Tags (only for mobile) -->
     <div class="flex justify-center mb-2 gap-2 md:hidden">
       {categories.map(cat => (
         <a 
@@ -94,12 +93,23 @@ export const prerender = false;
       ))}
     </div>
     <!-- Content -->
-    <div>
-      <GalleryGrid images={media} client:load/>
+    <GalleryGrid images={media} client:load/>
+    <!-- CTA -->
+    <div class="flex gap-8">
+      <Button
+        variant='mutted_sm'
+        href={`/${lang}/services/${filter}`}
+        text={lang === 'en' ? 'Learn More' : 'Más Información'}
+      />
+      <Button
+        variant='primary_sm'
+        href={`/${lang}/get-quote/form?s=${filter}`}
+        text={lang === 'en' ? 'Get a Free Stimate Now →' : 'Obtener una Cotización Gratis →'}
+      />
     </div>
   </div>
-  </section>
 
+  </section>
   <Footer client:load />
 </Layout>
 

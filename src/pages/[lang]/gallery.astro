@@ -60,25 +60,44 @@ export const prerender = true;
         <ChevronRight className="mx-2 h-6" />
         <span> {filter} </span>
       </div>
-      <!-- Tags -->
-      <div class="flex justify-center mb-2 gap-2">
-        {categories.map(cat => (
-          <a 
-            href={ `/${lang}/gallery?f=${cat}` } 
-            class={`tag ${
-              cat === filter 
-              ? 'bg-blue-100 text-blue-600 font-semibold border-blue-400' 
-              : 'border-gray-300 hover:bg-light dark:hover:bg-light/10 text-dark dark:text-light'
-            }`}
-          >
-            <Tag className="mr-2 h-4"/>{cat.replace("-", " ")}
-          </a>
-        ))}
+      <!-- ✅ Content Table -->
+      <div class="w-full h-full px-4 rounded-2xl dark:bg-light/10 bg-dark/20 space-y-2 hidden md:block">
+        <h3 class="global-subheading my-3 pt-2"> Content Table </h3>
+        <ul class="space-y-1">
+          {categories.map(cat => (
+            <li>
+              <a 
+                href={`/${lang}/gallery?f=${cat}`} 
+                class={`flex items-center rounded hover:bg-gray-100 ${
+                  cat === activeFilter ? 'font-bold text-blue-600' : 'global-text'
+                }`}
+              >
+                <Tag className="mr-2 h-4"/>{cat.replace("-", " ")}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
   </aside>
-  </section>
 
-  <section class="w-full h-3/4 pt-0 mb-4 max-w-7xl mx-auto">
+  <!-- ✅ Item content -->
+  <div class="relative">
+    <!-- Tags -->
+    <div class="flex justify-center mb-2 gap-2 md:hidden">
+      {categories.map(cat => (
+        <a 
+          href={ `/${lang}/gallery?f=${cat}` } 
+          class={`tag ${
+            cat === filter 
+            ? 'bg-blue-100 text-blue-600 font-semibold border-blue-400' 
+            : 'border-gray-300 hover:bg-light dark:hover:bg-light/10 text-dark dark:text-light'
+          }`}
+        >
+          <Tag className="mr-2 h-4"/>{cat.replace("-", " ")}
+        </a>
+      ))}
+    </div>
+    <!-- Content -->
     <div>
       <GalleryGrid images={media} client:load/>
     </div>

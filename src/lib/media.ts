@@ -38,6 +38,10 @@ const MEDIA_STORE: Record<string, MediaItem[]> = {
   ],
 };
 
+export function getMediaCategories(): string[] {
+  return Object.keys(MEDIA_STORE);
+}
+
 export function getMediaByFilter(filter?: string): MediaItem[] {
   return MEDIA_STORE[filter as keyof typeof MEDIA_STORE] || MEDIA_STORE.default;
 }

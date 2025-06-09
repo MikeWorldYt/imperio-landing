@@ -8,18 +8,17 @@ import { ChevronRight, Tag } from 'lucide-react';
 
 // Gallery filter //
 import GalleryGrid from '../../components/ui/galleryGrid';
-import { getMediaByFilter } from "../../lib/media";
+import { getMediaByFilter, getMediaCategories } from "../../lib/media";
 
 const url = new URL(Astro.request.url);
 const filter = url.searchParams.get('f') ?? undefined;
 const media = getMediaByFilter(filter);
-const categories = ["default", "pool-remodeling", "replastering"];
+const categories = getMediaCategories();
 const activeFilter = url.searchParams.get('f') ?? "default";
 
 // i18n Settings  //
 import { useLang } from '../../hooks/useLang';
 import { useLangPageTexts } from '../../hooks/useLangPageText';
-import { useTranslations } from '../../hooks/useTranslations';
 import { getStaticPaths } from '../../i18n/utils/i18n';
 import { galleryTexts as enGalleryTexts } from '../../i18n/en/gallery';
 import { galleryTexts as esGalleryTexts } from '../../i18n/es/gallery';

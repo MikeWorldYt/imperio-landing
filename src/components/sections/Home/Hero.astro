@@ -27,9 +27,9 @@ export const prerender = true;
 
 <section class="h-full bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/hero-pool.jpg')" }}>
     <div class="absolute inset-0 bg-black/40 z-0" />
-        <div class="relative max-w-7xl mx-auto grid md:grid-cols-8 h-full items-center px-4">
+        <div class="relative max-w-7xl mx-auto grid lg:grid-cols-8 h-full items-center px-4">
             {/* Contenido principal */}
-            <div class="flex flex-col justify-center md:col-span-5 text-white">
+            <div class="flex flex-col justify-center lg:col-span-5 text-white">
                 <Kicker client:load lang={lang} />
                 <h1 class="hero-heading opacity-0 animate-fadeInUp">
                     {texts.title}

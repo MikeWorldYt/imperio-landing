@@ -37,9 +37,12 @@ export const prerender = true;
                     {texts.title_2}
                 </h1>
                 <div class="py-2 px-30 hidden md:block opacity-0 animate-fadeInUpDelay">
-                    <button class="btn-primary w-1/2">
-                        {texts.button_cta}
-                    </button>
+
+                    <Button
+                        variant='primary_lg'
+                        href={`/${lang}/get-quote/form`}
+                        text={texts.button_cta}
+                    />
                 </div>
             </div>
             {/* Formulario */}

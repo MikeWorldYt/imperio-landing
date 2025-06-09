@@ -29,6 +29,13 @@ const MEDIA_STORE: Record<string, MediaItem[]> = {
     { id: "10", src: "https://picsum.photos/id/10/600/600", alt: "Pool Remodeling 1" },
     { id: "11", src: "https://picsum.photos/id/11/600/600", alt: "Pool Remodeling 2" },
     { id: "12", src: "https://picsum.photos/id/12/600/600", alt: "Pool Remodeling 3" },
+    { id: "13", src: "https://picsum.photos/id/13/600/600", alt: "Pool Remodeling 4" },
+    { id: "14", src: "https://picsum.photos/id/14/600/600", alt: "Pool Remodeling 5" },
+    { id: "15", src: "https://picsum.photos/id/15/600/600", alt: "Pool Remodeling 6" },
+    { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
+    { id: "17", src: "https://picsum.photos/id/17/600/600", alt: "Pool Remodeling 8" },
+    { id: "18", src: "https://picsum.photos/id/18/600/600", alt: "Pool Remodeling 9" },
+    { id: "19", src: "https://picsum.photos/id/19/600/600", alt: "Pool Remodeling 10" },
     // ...
   ],
   "replastering": [

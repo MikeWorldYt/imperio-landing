@@ -1,6 +1,7 @@
 ---
 import WaveSeparator from '../../ui/WaveSeparator';
 import Kicker from '../../ui/Kicker';
+import { Button } from '../../ui/Button';
 
 // Dinamic Routes  //
 import { getDefaultLang } from '../../../i18n/utils/i18n';
@@ -26,7 +27,7 @@ export const prerender = true;
 
 <section class="h-full bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/hero-pool.jpg')" }}>
     <div class="absolute inset-0 bg-black/40 z-0" />
-        <div class="relative max-w-7xl mx-auto grid md:grid-cols-8 gap-8 px-4 pt-8">
+        <div class="relative max-w-7xl mx-auto grid md:grid-cols-8 h-full items-center px-4">
             {/* Contenido principal */}
             <div class="flex flex-col justify-center md:col-span-5 text-white">
                 <Kicker client:load lang={lang} />
@@ -36,8 +37,7 @@ export const prerender = true;
                 <h1 class="hero-subheading opacity-0 animate-fadeInUpDelay">
                     {texts.title_2}
                 </h1>
-                <div class="py-2 px-30 hidden md:block opacity-0 animate-fadeInUpDelay">
-
+                <div class="py-2 px-30 lg:hidden block opacity-0 animate-fadeInUpDelay">
                     <Button
                         variant='primary_lg'
                         href={`/${lang}/get-quote/form`}
@@ -46,7 +46,7 @@ export const prerender = true;
                 </div>
             </div>
             {/* Formulario */}
-            <div class=" md:col-span-3" transition:name="form" >
+            <div class="hidden lg:block lg:col-span-3" transition:name="form" >
                 <FormSlice client:load lang={lang}  >
                     <span slot="fallback" >
                         Loading form...

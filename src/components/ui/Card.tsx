@@ -45,7 +45,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <>
       {/* 💻 Desktop View */}
-      <div className="hidden md:flex md:flex-col h-full rounded-xl shadow-md overflow-hidden bg-white w-full transform transition duration-300 hover:shadow-2xl hover:scale-[1.025]">
+      <div className="hidden md:flex md:flex-col h-full rounded-xl shadow-md overflow-hidden bg-white w-full transform transition duration-300 hover:shadow-xl hover:scale-[1.025]">
         {image && (
           <div className="p-3">
             <img src={image} alt={title} className="w-full h-48 object-cover rounded-md border border-gray-200" />

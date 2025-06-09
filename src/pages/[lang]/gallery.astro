@@ -31,23 +31,20 @@ const galleryTextsByLang = {
     es: esGalleryTexts,
 };
 
-// @ts-ignore
 const texts = useLangPageTexts<LangTypes>(Astro, galleryTextsByLang);
-// @ts-ignore
 const lang = useLang(Astro);
-const t = useTranslations(texts);
 
-export const prerender = true;
+export const prerender = false;
 ---
 
 <Layout lang="{lang}">
   <head>
-      <title>{` Projects of ${filter} - Imperio Pools`}</title>
+      <title>{` ${texts.title}${filter ? filter : 'All' } - Imperio Pools`}</title>
   </head>
   <Header lang={lang} />
   <section class="w-full pt-20 pb-0 max-w-7xl mx-auto">
     <h2 class="global-section-text mb-8 text-center">
-      {texts.title}
+      {lang === 'en' ? 'Projects of ' : 'Proyectos de '} {filter === 'replastering' ? filter : 'All' }
     </h2>
   </section>
 
@@ -77,7 +74,7 @@ export const prerender = true;
           ))}
         </ul>
       </div>
-  </aside>
+    </aside>
 
   <!-- ✅ Item content -->
   <div class="relative">

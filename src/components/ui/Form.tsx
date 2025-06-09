@@ -15,14 +15,12 @@ const formTextsByLang: Record<string, LangTypes> = {
 };
 
 const FormSlice = ( { lang }: FormSliceProps ) => {
-  const [service, setService] = useState('');
   const texts = formTextsByLang[lang];
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const s = params.get('s');
     if (s) {
-      setService(s);
       setFormData(prev => ({ ...prev, service: s }));
     }
   }, []);

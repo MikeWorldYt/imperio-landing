@@ -21,7 +21,7 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
         setTimeout(() => {
             loadedImagesRef.current[index] = true;
             setCurrentIndex(prev => prev); // 🔄 Forzar re-render sin reiniciar el estado
-        }, index * 300); // Retraso en cascada (300ms por imagen)
+        }, ); 
     };
 
     const GoPrev = () => {

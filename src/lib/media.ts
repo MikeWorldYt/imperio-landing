@@ -22,7 +22,10 @@ const MEDIA_STORE: Record<string, MediaItem[]> = {
   default: [
     { id: "1", src: "https://picsum.photos/id/1/600/600", alt: "Default Image 1" },
     { id: "2", src: "https://picsum.photos/id/2/600/600", alt: "Default Image 2" },
-    { id: "3", src: "https://picsum.photos/id/3/600", alt: "Default Image 2" }
+    { id: "3", src: "https://picsum.photos/id/3/600", alt: "Default Image 2" },
+    { id: "4", src: "https://picsum.photos/id/4/600/600", alt: "Default Image 4" },
+    { id: "5", src: "https://picsum.photos/id/5/600/600", alt: "Default Image 5" },
+    { id: "6", src: "https://picsum.photos/id/6/600/600", alt: "Default Image 6" },
     // ...
   ],
   "pool-remodeling": [
@@ -36,6 +39,8 @@ const MEDIA_STORE: Record<string, MediaItem[]> = {
     { id: "17", src: "https://picsum.photos/id/17/600/600", alt: "Pool Remodeling 8" },
     { id: "18", src: "https://picsum.photos/id/18/600/600", alt: "Pool Remodeling 9" },
     { id: "19", src: "https://picsum.photos/id/19/600/600", alt: "Pool Remodeling 10" },
+    { id: "42", src: "https://picsum.photos/id/42/600/600", alt: "Pool Remodeling 13" },
+    { id: "43", src: "https://picsum.photos/id/43/600/600", alt: "Pool Remodeling 13" },
     // ...
   ],
   "replastering": [

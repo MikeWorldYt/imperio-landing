@@ -59,14 +59,16 @@ nav ul li:last-child a:hover {
 
 #mobile-menu {
     @apply bg-[oklch(95%_0.03_250)] dark:bg-[oklch(18%_0.03_250)]
-    md:hidden hidden fixed
-    right-0 w-full px-4 py-4 space-y-2
+    md:hidden top-14 right-0
+    w-full h-screen px-4 py-4 space-y-2
     font-medium text-right
     flex-col items-end;
 }
 
 #mobile-menu li a {
-    @apply block hover:underline;
+    @apply block py-2 px-2
+    hover:bg-slate-600/30;
+    border-bottom: 1px solid #1e2229;
 }
 
 .breadcrumb {

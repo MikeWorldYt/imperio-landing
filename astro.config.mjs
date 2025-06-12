@@ -9,5 +9,12 @@ import react from '@astrojs/react';
 export default defineConfig({
   output: 'server',
   integrations: [tailwind(), react()],
-  adapter: staticAdapter()
+  adapter: staticAdapter(),
+  vite: {
+    resolve: {
+      alias: import.meta.env.PROD && {
+        "react-dom/server": "react-dom/server.edge",
+      }
+    }
+  }
 });

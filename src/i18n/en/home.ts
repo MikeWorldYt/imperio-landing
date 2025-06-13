@@ -9,7 +9,7 @@ export const homeTexts: LangTypes = {
         title: 'We build,',
         title_2: 'with precision and excellence.',
         kickerPrefix: 'Serving in',
-        kickerLocations: ['Inland Empire', 'Orange County', 'Los Angeles', 'Irvine', 'Riverside', 'Pamona', 'San Bernardino', 'Moreno Valley', 'Menifee', 'Yorba Linda', 'Long Beach', 'Corona', 'Temecula', 'Murrieta', ],
+        kickerLocations: ['Inland Empire', 'Orange County', 'Los Angeles', 'Riverside', 'San Bernardino' ],
         description: 'Every project is a reflection of mastery—built with intention, refined through experience. We don’t follow standards. We set them.',
         button_cta: 'Free Estimate',
         form_title: 'Get a Quote',

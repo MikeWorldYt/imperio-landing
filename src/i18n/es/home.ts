@@ -9,7 +9,7 @@ export const homeTexts: LangTypes = {
         title: 'Construimos,',
         title_2: 'con precisión y excelencia.',
         kickerPrefix: 'Servimos en',
-        kickerLocations: ['Inland Empire', 'Orange County', 'Los Angeles', 'Irvine', 'Riverside', 'Pamona', 'San Bernardino', 'Moreno Valley', 'Menifee', 'Yorba Linda', 'Long Beach', 'Corona', 'Temecula', 'Murrieta', ],
+        kickerLocations:  ['Inland Empire', 'Orange County', 'Los Angeles', 'Riverside', 'San Bernardino' ],
         description: 'desc en español',
         button_cta: 'Contáctanos',
         form_title: 'Solicitar una Cotización',

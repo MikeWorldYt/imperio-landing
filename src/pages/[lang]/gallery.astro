@@ -24,6 +24,7 @@ import { galleryTexts as enGalleryTexts } from '../../i18n/en/gallery';
 import { galleryTexts as esGalleryTexts } from '../../i18n/es/gallery';
 import type { LangTypes } from '../../i18n/utils/types';
 import { Button } from '../../components/ui/Button';
+import Dropdown from '../../components/ui/Dropdown';
 
 export { getStaticPaths };
 
@@ -47,10 +48,10 @@ export const prerender = false;
   <section class="w-full pt-20 mb-4 max-w-7xl mx-auto grid md:grid-cols-[240px_1fr] gap-8">
     <aside class="flex flex-col">
     <!-- breadcrumb -->
-      <div class="breadcrumb">
-        <span> Gallery </span>
+      <div class="breadcrumb z-20">
+        <span> {lang === 'en' ? 'Gallery' : 'Galería'} </span>
         <ChevronRight className="mx-2 h-6" />
-        <span> {filter} </span>
+        <Dropdown categories={categories} filter={filter} lang={lang} client:load />
       </div>
       <!-- ✅ Content Table -->
       <div class="w-full flex-grow px-4 rounded-2xl dark:bg-light/10 bg-dark/20 space-y-2 hidden md:block">
@@ -77,21 +78,6 @@ export const prerender = false;
     <h2 class="global-section-text mb-8 text-center">
       { filter === filter ? filter.replace("-", " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ") : 'All' } <!-- metodo Title Case -->
     </h2>
-    <!-- Tags (only for mobile) -->
-    <div class="flex justify-center mb-2 gap-2 md:hidden">
-      {categories.map(cat => (
-        <a 
-          href={ `/${lang}/gallery?f=${cat}` } 
-          class={`tag ${
-            cat === filter 
-            ? 'bg-blue-100 text-blue-600 font-semibold border-blue-400' 
-            : 'border-gray-300 hover:bg-light dark:hover:bg-light/10 text-dark dark:text-light'
-          }`}
-        >
-          <Tag className="mr-2 h-4"/>{cat.replace("-", " ")}
-        </a>
-      ))}
-    </div>
     <!-- Content -->
     <GalleryGrid images={media} client:load/>
     <!-- CTA -->

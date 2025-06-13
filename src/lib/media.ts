@@ -43,10 +43,46 @@ const MEDIA_STORE: Record<string, MediaItem[]> = {
     { id: "43", src: "https://picsum.photos/id/43/600/600", alt: "Pool Remodeling 13" },
     // ...
   ],
-  "replastering": [
+  "plastering": [
     { id: "20", src: "https://picsum.photos/id/20/600/600", alt: "Replastering 1" },
     { id: "21", src: "https://picsum.photos/id/26/600/600", alt: "Replastering 2" },
     // ...
+  ],
+  "additionals": [
+    { id: "10", src: "https://picsum.photos/id/10/600/600", alt: "Pool Remodeling 1" },
+    { id: "11", src: "https://picsum.photos/id/11/600/600", alt: "Pool Remodeling 2" },
+    { id: "12", src: "https://picsum.photos/id/12/600/600", alt: "Pool Remodeling 3" },
+    { id: "13", src: "https://picsum.photos/id/13/600/600", alt: "Pool Remodeling 4" },
+    { id: "14", src: "https://picsum.photos/id/14/600/600", alt: "Pool Remodeling 5" },
+    { id: "15", src: "https://picsum.photos/id/15/600/600", alt: "Pool Remodeling 6" },
+    { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
+  ],
+  "waterfalls-and-fontains": [
+    { id: "10", src: "https://picsum.photos/id/10/600/600", alt: "Pool Remodeling 1" },
+    { id: "11", src: "https://picsum.photos/id/11/600/600", alt: "Pool Remodeling 2" },
+    { id: "12", src: "https://picsum.photos/id/12/600/600", alt: "Pool Remodeling 3" },
+    { id: "13", src: "https://picsum.photos/id/13/600/600", alt: "Pool Remodeling 4" },
+    { id: "14", src: "https://picsum.photos/id/14/600/600", alt: "Pool Remodeling 5" },
+    { id: "15", src: "https://picsum.photos/id/15/600/600", alt: "Pool Remodeling 6" },
+    { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
+  ],
+  "pool-equipment-upgrades": [
+    { id: "10", src: "https://picsum.photos/id/10/600/600", alt: "Pool Remodeling 1" },
+    { id: "11", src: "https://picsum.photos/id/11/600/600", alt: "Pool Remodeling 2" },
+    { id: "12", src: "https://picsum.photos/id/12/600/600", alt: "Pool Remodeling 3" },
+    { id: "13", src: "https://picsum.photos/id/13/600/600", alt: "Pool Remodeling 4" },
+    { id: "14", src: "https://picsum.photos/id/14/600/600", alt: "Pool Remodeling 5" },
+    { id: "15", src: "https://picsum.photos/id/15/600/600", alt: "Pool Remodeling 6" },
+    { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
+  ],
+  "outdoor-living": [
+    { id: "10", src: "https://picsum.photos/id/10/600/600", alt: "Pool Remodeling 1" },
+    { id: "11", src: "https://picsum.photos/id/11/600/600", alt: "Pool Remodeling 2" },
+    { id: "12", src: "https://picsum.photos/id/12/600/600", alt: "Pool Remodeling 3" },
+    { id: "13", src: "https://picsum.photos/id/13/600/600", alt: "Pool Remodeling 4" },
+    { id: "14", src: "https://picsum.photos/id/14/600/600", alt: "Pool Remodeling 5" },
+    { id: "15", src: "https://picsum.photos/id/15/600/600", alt: "Pool Remodeling 6" },
+    { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
   ],
 };
 

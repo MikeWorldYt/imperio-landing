@@ -102,12 +102,15 @@ const Card: React.FC<CardProps> = ({
           </button>
           {isMobileMenuOpen && (
             <div
-              className="absolute right-0 mt-2 origin-top-right bg-white rounded-md shadow-lg z-20 ring-1 ring-black ring-opacity-5 focus:outline-none"
+              className="absolute w-80 -right-5 mt-2 origin-top-right rounded-md shadow-xl z-20 ring-1 ring-black ring-opacity-5 focus:outline-none bg-white"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="menu-button" // Deberías dar un id al botón si usas esto
             >
-              <div className="py-2 px-4 shadow-lg flex gap-2" role="none">
+              <div 
+                className="py-2 px-4 flex gap-4 break-words"
+                role="none"
+              >
                 <Button
                   variant="mutted_sm"
                   href={`services/${ id }`}

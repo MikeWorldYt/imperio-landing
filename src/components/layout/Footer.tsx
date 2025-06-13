@@ -6,9 +6,14 @@ import {
     MapPin,
     Languages,
 } from "lucide-react";
+import { Button } from "../ui/Button";
+import { a } from "framer-motion/client";
 
+interface FooterProps {
+    lang: string;
+}
 
-export default function Footer() {
+const Footer = ({ lang }: FooterProps) => {
     return (
         <footer className="bg-gradient-to-br from-[#001f3f] via-[#003366] to-[#001a33] text-white pt-10 pb-6 px-6 md:px-12">
             <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
@@ -22,28 +27,37 @@ export default function Footer() {
                 <div className="space-y-2">
                     <h4 className="font-semibold">Pages</h4>
                     <ul className="space-y-1">
-                        <li><a href="/" className="hover:underline">Home</a></li>
-                        <li><a href="/gallery" className="hover:underline">Gallery</a></li>
-                        <li><a href="/services" className="hover:underline">Services</a></li>
-                        <li><a href="/get-quote" className="hover:underline">Get Quote</a></li>
+                        <li><a href={`/${lang}/home`} className="hover:underline">Home</a></li>
+                        <li><a href={`/${lang}/gallery`} className="hover:underline">Gallery</a></li>
+                        <li><a href={`/${lang}/services`} className="hover:underline">Services</a></li>
+                        <li><a href={`/${lang}/get-quote/form`} className="hover:underline">Get Quote</a></li>
                     </ul>
                 </div>
                 {/* Legal */}
                 <div className="space-y-2">
                     <h4 className="font-semibold">Legal</h4>
                     <ul className="space-y-1">
-                        <li><a href="/legal" className="hover:underline">Legal Stuff</a></li>
-                        <li><a href="/privacy" className="hover:underline">Privacy Policy</a></li>
+                        <li><a href={`/en/legal`} className="hover:underline">Legal Stuff</a></li>
+                        <li><a href={`/en/privacy`} className="hover:underline">Privacy Policy</a></li>
                     </ul>
                 </div>
                 {/* Social + Language */}
                 <div className="space-y-3">
                     <h4 className="font-semibold">Follow Us</h4>
                     <div className="flex gap-4">
-                        <a href="#"><Facebook size={20} /></a>
-                        <a href="#"><Instagram size={20} /></a>
+                        <a target="_blank" href="https://www.facebook.com/people/Imperio-pools-patios/61563309971169/"><Facebook size={20} /></a>
+                        <a target="_blank" href="https://www.instagram.com/imperiopools.patios/"><Instagram size={20} /></a>
                         {/* <a href="#"><Tiktok size={20} /></a> */}
-                        <a href="mailto:info@imperiopools.com"><Mail size={20} /></a>
+                        <Button
+                            text="Mail"
+                            variant="transparent"
+                            onClick={() => {
+                                navigator.clipboard.writeText('alexmijangos@imperiopoolsandpatios.com');
+                                alert(lang === "es" ? "Copiado al portapapeles!" : "Copied to clipboard!" )
+                            }} 
+                        >
+                            <Mail size={20} />
+                        </Button>
                     </div>
                     <div className="flex items-center gap-2 pt-3">
                         <Languages size={18} />
@@ -58,3 +72,5 @@ export default function Footer() {
         </footer>
     );
 }
+
+export default Footer;

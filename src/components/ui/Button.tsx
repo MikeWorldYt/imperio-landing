@@ -1,12 +1,14 @@
 interface ButtonProps {
   text: string;
   href?: string;
+  icon?: string;
   onClick?: () => void;
-  variant?: "primary_sm" | "secondary_sm" | "primary_lg" | "secondary_lg" | "mutted_sm" | "mutted_lg";
+  children?: React.ReactNode;
+  variant?: "primary_sm" | "secondary_sm" | "primary_lg" | "secondary_lg" | "mutted_sm" | "mutted_lg" | "transparent";
   classAditional?: string;
 }
 
-export const Button:React.FC<ButtonProps> = ({text, href, onClick, variant = "primary_sm", classAditional}) => {
+export const Button:React.FC<ButtonProps> = ({text, href, onClick, variant = "primary_sm", classAditional, children}) => {
   const variantClass = {
     primary_sm: "btn-primary px-4 py-1",
     secondary_sm: "btn-secondary px-4 py-1",
@@ -14,6 +16,7 @@ export const Button:React.FC<ButtonProps> = ({text, href, onClick, variant = "pr
     primary_lg: "btn-primary px-4 py-2",
     secondary_lg: "btn-secondary px-4 py-2",
     mutted_lg: "btn-mutted px-4 py-2",
+    transparent: "transparent",
   };
 
   const className = variantClass[variant];
@@ -33,7 +36,7 @@ export const Button:React.FC<ButtonProps> = ({text, href, onClick, variant = "pr
 
   return (
     <button onClick={onClick} className={className}>
-      {text}
+      {children || text}
     </button>
   );
 };

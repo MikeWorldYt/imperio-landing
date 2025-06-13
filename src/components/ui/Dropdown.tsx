@@ -11,7 +11,7 @@ const Dropdown: React.FC<Props> = ({ categories, filter, lang }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden relative">
+    <div className="md:hidden relative z-20">
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center"
@@ -21,7 +21,7 @@ const Dropdown: React.FC<Props> = ({ categories, filter, lang }) => {
       </button>
 
       {open && (
-        <ul className="absolute z-10 w-full mt-1 bg-white dark:bg-dark border rounded shadow-lg max-h-60 overflow-auto">
+        <ul className="absolute w-max mt-1 bg-white dark:bg-dark border rounded shadow-lg overflow-auto">
           {categories.map(cat => (
             <li key={cat}>
               <a

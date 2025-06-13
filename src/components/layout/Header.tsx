@@ -55,7 +55,7 @@ export default function Header({ lang }: Props) {
         </ul>
       </nav>
       {/* Mobile Menu */}
-      <ul id="mobile-menu" className="fixed transform translate-x-full transition-all duration-500 ease-in-out bg-white w-full z-50 p-4 space-y-4">
+      <ul id="mobile-menu" className="fixed transform translate-x-full transition-all duration-500 ease-in-out bg-white w-full z-30 p-4 space-y-4">
         <li><a href={`/${lang}/home`}>{texts.nav1}</a></li>
         <li><a href={`/${lang}/gallery`}>{texts.nav2}</a></li>
         <li><a href={`/${lang}/services`}>{texts.nav3}</a></li>

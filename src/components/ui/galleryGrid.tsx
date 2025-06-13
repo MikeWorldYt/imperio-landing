@@ -42,7 +42,7 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
                     {images.map(({ id, src, alt }, index) => (
                         <button
                             key={id}
-                            className="w-full aspect-square group relative z-10"
+                            className="w-full aspect-square group relative"
                             onClick={() => setCurrentIndex(index)}
                         >
                             <div className="absolute inset-0 w-full h-full">

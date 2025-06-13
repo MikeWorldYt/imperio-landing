@@ -48,7 +48,7 @@ export const prerender = false;
   <section class="w-full pt-20 mb-4 max-w-7xl mx-auto grid md:grid-cols-[240px_1fr] gap-8">
     <aside class="flex flex-col">
     <!-- breadcrumb -->
-      <div class="breadcrumb z-20">
+      <div class="breadcrumb">
         <span> {lang === 'en' ? 'Gallery' : 'Galería'} </span>
         <ChevronRight className="mx-2 h-6" />
         <Dropdown categories={categories} filter={filter} lang={lang} client:load />

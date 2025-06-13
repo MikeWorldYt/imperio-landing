@@ -15,7 +15,7 @@ header {
     @apply transition-colors duration-300
     bg-secondary dark:bg-secondary-dm
     text-primary dark:text-primary-dm
-    w-full fixed top-0 z-20;
+    w-full fixed top-0 z-50;
     box-shadow: 3px 9px 12px 0px rgba(0,0,0,0.39);
         -webkit-box-shadow: 3px 9px 12px 0px rgba(0,0,0,0.39);
         -moz-box-shadow: 3px 9px 12px 0px rgba(0,0,0,0.39);

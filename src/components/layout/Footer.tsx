@@ -53,8 +53,8 @@ const Footer = ({ lang }: FooterProps) => {
                             variant="transparent"
                             onClick={() => {
                                 navigator.clipboard.writeText('alexmijangos@imperiopoolsandpatios.com');
-                                alert(lang === "es" ? "Copiado al portapapeles!" : "Copied to clipboard!" )
-                            }} 
+                                alert(lang == "es" ? "Copiado al portapapeles!" : "Copied to clipboard!" )
+                            }}
                         >
                             <Mail size={20} />
                         </Button>

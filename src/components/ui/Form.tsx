@@ -49,7 +49,12 @@ const FormSlice = ( { lang }: FormSliceProps ) => {
         {texts.title[2]}
       </h1>
       {/* Formulario */}
-      <form className="flex flex-col gap-4 mt-6">
+      <form 
+        className="flex flex-col gap-4 mt-6"
+        method='POST'
+        action="https://formsubmit.co/alexmijangos@imperiopoolsandpatios.com" 
+      >
+        <input type="hidden" name="_next" value="/get-quote/success" />
         <input
           name="name"
           type="text"

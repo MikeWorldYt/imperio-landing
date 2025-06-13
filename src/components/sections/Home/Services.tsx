@@ -110,7 +110,7 @@ const Services = ({ lang }: ServicesProps) => {
               </button>
             </div>
           ) : ( // Mobile view
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-screen-xl px-4">
+            <div className="grid sm:grid-cols-2 gap-4 w-full max-w-screen-xl px-4">
               {servicesAPI.map(( service: ServicesTypes, index: number ) => (
                 <Card key={index} {...service} />
               ))}

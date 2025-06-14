@@ -41,7 +41,7 @@ export const servicesTexts: Service = {
       content: "<i>This is a <b>text</b> for demonstration purposes</i> ",
     },
     {
-      id: 'additionals', // Pool Construction, Planning, 
+      id: 'new-pools-and-additionals', // Pool Construction, Planning, 
       title: 'New Pools & Additionals',
       short: 'This is a test service for demonstration purposes...',
       description: "This is a test service for demonstration purposes",
@@ -59,7 +59,7 @@ export const servicesTexts: Service = {
       content: "This is a <b>text for demonstration purposes</b>, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti non eius corrupti recusandae repellat, nulla commodi amet modi delectus nam consectetur in tenetur molestias aliquid. Non voluptas esse amet voluptate! ",
     },
     {
-      id: 'pool-equipment',
+      id: 'pool-equipment-upgrades',
       title: 'Pool Equipment Upgrades',
       short: 'This is a test service for demonstration purposes...',
       description: "This is a test service for demonstration purposes",
@@ -68,7 +68,7 @@ export const servicesTexts: Service = {
       content: "This is a <b>text</b> for demonstration purposes, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti non eius corrupti recusandae repellat, nulla commodi amet modi delectus nam consectetur in tenetur molestias aliquid. Non voluptas esse amet voluptate! ",
     },
     {
-      id: "landscapes",
+      id: "outdoor-living", // Landscapes
       title: "Outdoor Living",
       short: 'This is a test service for demonstration purposes...',
       description: "This is a test service for demonstration purposes",
@@ -77,8 +77,8 @@ export const servicesTexts: Service = {
       content: "This is a <b>text</b> for demonstration purposes",
     },
         {
-      id: "maintenence",
-      title: "Weekly Pool Service",
+      id: "weekly-pool-services",
+      title: "Weekly Pool Services",
       short: 'This is a test service for demonstration purposes...',
       description: "This is a test service for demonstration purposes",
       image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',

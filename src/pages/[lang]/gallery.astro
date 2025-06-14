@@ -8,7 +8,7 @@ import { Tag, ChevronRight } from 'lucide-react';
 
 // Gallery filter //
 import GalleryGrid from '../../components/ui/galleryGrid';
-import { getMediaByFilter, getMediaCategories } from "../../lib/media";
+import { getMediaByFilter, getMediaCategories } from "../../lib/mediaAPI";
 
 const url = new URL(Astro.request.url);
 const filter = url.searchParams.get('f') || "default";

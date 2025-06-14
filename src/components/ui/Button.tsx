@@ -35,7 +35,7 @@ export const Button:React.FC<ButtonProps> = ({text, href, onClick, variant = "pr
   }
 
   return (
-    <button onClick={onClick} className={className}>
+    <button onClick={onClick} className={`${className} ${classAditional ?? ""}`}>
       {children || text}
     </button>
   );

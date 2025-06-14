@@ -16,7 +16,7 @@ const Dropdown: React.FC<Props> = ({ categories, filter, lang }) => {
         onClick={() => setOpen(!open)}
         className="flex items-center"
       >
-        <span>{filter.replace("-", " ")}</span>
+        <span>{filter.replace(/-/g, " ")}</span>
         <ChevronDown className="ml-2 h-6" />
       </button>
 

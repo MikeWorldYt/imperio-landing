@@ -40,6 +40,15 @@ export const servicesTexts: Service = {
       content: "This is a <b>text</b> for demonstration purposes, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti non eius corrupti recusandae repellat, nulla commodi amet modi delectus nam consectetur in tenetur molestias aliquid. Non voluptas esse amet voluptate! ",
     },
     {
+      id: 'new-pools-and-additionals', // Pool Construction, Planning, 
+      title: 'Nuevas Piscinas y Ampliaciones',
+      short: 'This is a test service for demonstration purposes...',
+      description: "This is a test service for demonstration purposes",
+      image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
+      icon: '/icons/renovation.svg',
+      content: "This is a <b>text</b> for demonstration purposes, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti non eius corrupti recusandae repellat, nulla commodi amet modi delectus nam consectetur in tenetur molestias aliquid. Non voluptas esse amet voluptate! ",
+    },
+    {
       id: 'waterfalls-and-fountains',
       title: 'Cascadas y Fuentes',
       short: 'Revitalize ... desc desc',
@@ -48,14 +57,32 @@ export const servicesTexts: Service = {
       icon: '/icons/renovation.svg',
       content: "This is a <b>text</b> for demonstration purposes, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti non eius corrupti recusandae repellat, nulla commodi amet modi delectus nam consectetur in tenetur molestias aliquid. Non voluptas esse amet voluptate! ",
     },
-
-
-
-
-
-
-
-
-
+    {
+      id: 'pool-equipment-upgrades',
+      title: 'Equipos de Piscina',
+      short: 'This is a test service for demonstration purposes...',
+      description: "This is a test service for demonstration purposes",
+      image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
+      icon: '/icons/renovation.svg',
+      content: "This is a <b>text</b> for demonstration purposes, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti non eius corrupti recusandae repellat, nulla commodi amet modi delectus nam consectetur in tenetur molestias aliquid. Non voluptas esse amet voluptate! ",
+    },
+    {
+      id: "outdoor-living", // Landscapes
+      title: "Patios",
+      short: 'This is a test service for demonstration purposes...',
+      description: "This is a test service for demonstration purposes",
+      image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
+      icon: '/icons/renovation.svg',
+      content: "This is a <b>text</b> for demonstration purposes",
+    },
+        {
+      id: "weekly-pool-services",
+      title: "Servicios Semanales",
+      short: 'This is a test service for demonstration purposes...',
+      description: "This is a test service for demonstration purposes",
+      image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
+      icon: '/icons/renovation.svg',
+      content: "This is a <b>text</b> for demonstration purposes",
+    },
   ]
 };

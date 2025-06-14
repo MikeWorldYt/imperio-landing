@@ -56,7 +56,7 @@ export const prerender = false;
       <!-- ✅ Content Table -->
       <div class="w-full flex-grow px-4 rounded-2xl dark:bg-light/10 bg-dark/20 space-y-2 hidden md:block">
         <h3 class="global-subheading my-3 pt-2"> Content Table </h3>
-        <ul class="space-y-1">
+        <ul class="space-y-1 pb-6">
           {categories.map(cat => (
             <li>
               <a 
@@ -67,7 +67,7 @@ export const prerender = false;
               >
                 <Tag className="mr-2 h-4 flex-shrink-0"/>
                 <span class="truncate flex-shrink min-w-0">
-                  {cat.replace(/-/g, " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}
+                  {cat.replace("and", "&").replace(/-/g, " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}
                 </span>
               </a>
             </li>
@@ -87,7 +87,7 @@ export const prerender = false;
     <div class="flex gap-8">
       <Button
         variant='mutted_sm'
-        href={`/${lang}/services/${filter}`}
+        href={filter === 'latest-jobs' ? `/${lang}/services` : `/${lang}/services/${filter}`}
         text={lang === 'en' ? 'Learn More' : 'Más Información'}
       />
       <Button

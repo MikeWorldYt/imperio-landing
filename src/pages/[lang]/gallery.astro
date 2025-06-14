@@ -4,7 +4,7 @@ import Header from '../../components/layout/Header';
 import Footer from '../../components/layout/Footer';
 
 import '../../styles/global.css';
-import { ChevronRight, Tag } from 'lucide-react';
+import { Tag, ChevronRight } from 'lucide-react';
 
 // Gallery filter //
 import GalleryGrid from '../../components/ui/galleryGrid';
@@ -41,7 +41,7 @@ export const prerender = false;
 
 <Layout lang="{lang}">
   <head>
-      <title>{` ${texts.title} ${ filter === filter ? filter.replace("-", " ") : 'All' } - Imperio Pools`}</title>
+      <title>{` ${texts.title} ${ filter === filter ? filter.replace(/-/g, " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ") : 'All' } - Imperio Pools`}</title>
   </head>
   <Header client:load lang={lang} />
 
@@ -65,7 +65,10 @@ export const prerender = false;
                   cat === activeFilter ? 'font-bold text-blue-600' : 'global-text'
                 }`}
               >
-                <Tag className="mr-2 h-4"/>{cat.replace("-", " ")}
+                <Tag className="mr-2 h-4 flex-shrink-0"/>
+                <span class="truncate flex-shrink min-w-0">
+                  {cat.replace(/-/g, " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}
+                </span>
               </a>
             </li>
           ))}
@@ -76,7 +79,7 @@ export const prerender = false;
   <!-- ✅ Item content -->
   <div class=" flex flex-col space-y-4">
     <h2 class="global-section-text mb-8 text-center">
-      { filter === filter ? filter.replace("-", " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ") : 'All' } <!-- metodo Title Case -->
+      { filter === filter ? filter.replace(/-/g, " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ") : 'All' } <!-- metodo Title Case -->
     </h2>
     <!-- Content -->
     <GalleryGrid images={media} client:load/>

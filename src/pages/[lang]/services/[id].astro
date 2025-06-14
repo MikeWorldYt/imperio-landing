@@ -51,7 +51,7 @@ export const prerender = true;
       { lang === 'en' ? 'Service ' : 'Servicio ' }{service.title} - Imperio Pools
     </title>
   </head>
-  <Header client:load lang={lang} />
+  <Header lang={lang} />
 
   <section class="w-full pt-20 mb-4 max-w-7xl mx-auto grid md:grid-cols-[240px_1fr] gap-8">
     <aside class="flex flex-col">
@@ -67,15 +67,18 @@ export const prerender = true;
     <div class="w-full h-full px-4 rounded-2xl dark:bg-light/10 bg-dark/20 space-y-2 hidden md:block">
       <h3 class="global-subheading my-3 pt-2"> Content Table </h3>
       <ul class="space-y-1">
-        {allServices.map(s => (
+        {allServices.map(cat => (
           <li>
             <a 
-              href={`/${lang}/services/${s.id}`} 
+              href={`/${lang}/services/${cat.id}`} 
               class={`flex items-center rounded hover:bg-gray-100 ${
-                s.id === service.id ? 'font-bold text-blue-600' : 'global-text'
+                cat.id === service.id ? 'font-bold text-blue-600' : 'global-text'
               }`}
             >
-              <Box className="mr-2 h-4"/>{s.title}
+              <Box className="mr-2 h-4 flex-shrink-0"/>
+              <span class="truncate flex-shrink min-w-0">
+                {cat.title}
+              </span>
             </a>
           </li>
         ))}

@@ -20,7 +20,7 @@ type MediaItem = {
 
 const MEDIA_STORE: Record<string, MediaItem[]> = {
   "latest-jobs": [
-    { id: "1", src: "https://picsum.photos/id/1/600/600", alt: "Default Image 1" },
+    { id: "250523-g2cl-lt_n001", src: "https://i.pinimg.com/1200x/17/13/4a/17134a44f8e577a45e57608afd7a8cf7.jpg", alt: "Green to clean" },
     { id: "2", src: "https://picsum.photos/id/2/600/600", alt: "Default Image 2" },
     { id: "3", src: "https://picsum.photos/id/3/600", alt: "Default Image 2" },
     { id: "4", src: "https://picsum.photos/id/4/600/600", alt: "Default Image 4" },
@@ -76,22 +76,12 @@ const MEDIA_STORE: Record<string, MediaItem[]> = {
     { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
   ],
   "outdoor-living": [
-    { id: "10", src: "https://picsum.photos/id/10/600/600", alt: "Pool Remodeling 1" },
-    { id: "11", src: "https://picsum.photos/id/11/600/600", alt: "Pool Remodeling 2" },
-    { id: "12", src: "https://picsum.photos/id/12/600/600", alt: "Pool Remodeling 3" },
-    { id: "13", src: "https://picsum.photos/id/13/600/600", alt: "Pool Remodeling 4" },
-    { id: "14", src: "https://picsum.photos/id/14/600/600", alt: "Pool Remodeling 5" },
-    { id: "15", src: "https://picsum.photos/id/15/600/600", alt: "Pool Remodeling 6" },
-    { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
+    { id: "000000-na-outd_n001", src: "https://picsum.photos/id/10/600/600", alt: "Outdoor Living" },
+    // ...
   ],
   "weekly-pool-services": [
-    { id: "10", src: "https://picsum.photos/id/10/600/600", alt: "Pool Remodeling 1" },
-    { id: "11", src: "https://picsum.photos/id/11/600/600", alt: "Pool Remodeling 2" },
-    { id: "12", src: "https://picsum.photos/id/12/600/600", alt: "Pool Remodeling 3" },
-    { id: "13", src: "https://picsum.photos/id/13/600/600", alt: "Pool Remodeling 4" },
-    { id: "14", src: "https://picsum.photos/id/14/600/600", alt: "Pool Remodeling 5" },
-    { id: "15", src: "https://picsum.photos/id/15/600/600", alt: "Pool Remodeling 6" },
-    { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
+    { id: "250523-g2cl-lt_n001", src: "https://i.pinimg.com/1200x/17/13/4a/17134a44f8e577a45e57608afd7a8cf7.jpg", alt: "Green to clean" },
+    // ...
   ],
 };
 

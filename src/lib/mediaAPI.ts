@@ -21,62 +21,33 @@ type MediaItem = {
 const MEDIA_STORE: Record<string, MediaItem[]> = {
   "latest-jobs": [
     { id: "250523-g2cl-lt_n001", src: "https://i.pinimg.com/1200x/17/13/4a/17134a44f8e577a45e57608afd7a8cf7.jpg", alt: "Green to clean" },
-    { id: "2", src: "https://picsum.photos/id/2/600/600", alt: "Default Image 2" },
-    { id: "3", src: "https://picsum.photos/id/3/600", alt: "Default Image 2" },
-    { id: "4", src: "https://picsum.photos/id/4/600/600", alt: "Default Image 4" },
-    { id: "5", src: "https://picsum.photos/id/5/600/600", alt: "Default Image 5" },
-    { id: "6", src: "https://picsum.photos/id/6/600/600", alt: "Default Image 6" },
+    { id: "000000-na-prem-lt_n001", src: "https://i.pinimg.com/1200x/d7/e1/69/d7e16972351474de00ff0bf635889e58.jpg", alt: "Pool Remodeling" },
+    { id: "000000-na-nwpo-lt_n001", src: "https://i.pinimg.com/1200x/68/c2/07/68c20705a37e7fd9ab2da217e18e0ac3.jpg", alt: "New Pools" },
     // ...
   ],
   "pool-remodeling": [
-    { id: "10", src: "https://picsum.photos/id/10/600/600", alt: "Pool Remodeling 1" },
-    { id: "11", src: "https://picsum.photos/id/11/600/600", alt: "Pool Remodeling 2" },
-    { id: "12", src: "https://picsum.photos/id/12/600/600", alt: "Pool Remodeling 3" },
-    { id: "13", src: "https://picsum.photos/id/13/600/600", alt: "Pool Remodeling 4" },
-    { id: "14", src: "https://picsum.photos/id/14/600/600", alt: "Pool Remodeling 5" },
-    { id: "15", src: "https://picsum.photos/id/15/600/600", alt: "Pool Remodeling 6" },
-    { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
-    { id: "17", src: "https://picsum.photos/id/17/600/600", alt: "Pool Remodeling 8" },
-    { id: "18", src: "https://picsum.photos/id/18/600/600", alt: "Pool Remodeling 9" },
-    { id: "19", src: "https://picsum.photos/id/19/600/600", alt: "Pool Remodeling 10" },
-    { id: "42", src: "https://picsum.photos/id/42/600/600", alt: "Pool Remodeling 13" },
-    { id: "43", src: "https://picsum.photos/id/43/600/600", alt: "Pool Remodeling 13" },
+    { id: "000000-na-prem-lt_n001", src: "https://i.pinimg.com/1200x/d7/e1/69/d7e16972351474de00ff0bf635889e58.jpg", alt: "Pool Remodeling" },
     // ...
   ],
   "plastering": [
-    { id: "20", src: "https://picsum.photos/id/20/600/600", alt: "Replastering 1" },
-    { id: "21", src: "https://picsum.photos/id/26/600/600", alt: "Replastering 2" },
+    { id: "000000-na-plas_n001", src: "https://i.pinimg.com/1200x/f3/ac/49/f3ac495dc88f66d4c8dee8e0e5cb0249.jpg", alt: "Replastering" },
+    { id: "000000-na-mpeb_n001", src: "https://i.pinimg.com/1200x/ab/3d/53/ab3d539f395476ff54e445bcf56a9a9d.jpg", alt: "Mini Pebble" },
     // ...
   ],
   "new-pools-and-additionals": [
-    { id: "10", src: "https://picsum.photos/id/10/600/600", alt: "Pool Remodeling 1" },
-    { id: "11", src: "https://picsum.photos/id/11/600/600", alt: "Pool Remodeling 2" },
-    { id: "12", src: "https://picsum.photos/id/12/600/600", alt: "Pool Remodeling 3" },
-    { id: "13", src: "https://picsum.photos/id/13/600/600", alt: "Pool Remodeling 4" },
-    { id: "14", src: "https://picsum.photos/id/14/600/600", alt: "Pool Remodeling 5" },
-    { id: "15", src: "https://picsum.photos/id/15/600/600", alt: "Pool Remodeling 6" },
-    { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
+    { id: "000000-na-nwpo-lt_n001", src: "https://i.pinimg.com/1200x/68/c2/07/68c20705a37e7fd9ab2da217e18e0ac3.jpg", alt: "New Pools" },
+    // ...
   ],
   "waterfalls-and-fontains": [
-    { id: "10", src: "https://picsum.photos/id/10/600/600", alt: "Pool Remodeling 1" },
-    { id: "11", src: "https://picsum.photos/id/11/600/600", alt: "Pool Remodeling 2" },
-    { id: "12", src: "https://picsum.photos/id/12/600/600", alt: "Pool Remodeling 3" },
-    { id: "13", src: "https://picsum.photos/id/13/600/600", alt: "Pool Remodeling 4" },
-    { id: "14", src: "https://picsum.photos/id/14/600/600", alt: "Pool Remodeling 5" },
-    { id: "15", src: "https://picsum.photos/id/15/600/600", alt: "Pool Remodeling 6" },
-    { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
+    { id: "000000-na-wafa_n001", src: "https://i.pinimg.com/1200x/13/d5/57/13d5577b3ac61c792e550381c41708d7.jpg", alt: "Waterfalls" },
+    // ...
   ],
   "pool-equipment-upgrades": [
-    { id: "10", src: "https://picsum.photos/id/10/600/600", alt: "Pool Remodeling 1" },
-    { id: "11", src: "https://picsum.photos/id/11/600/600", alt: "Pool Remodeling 2" },
-    { id: "12", src: "https://picsum.photos/id/12/600/600", alt: "Pool Remodeling 3" },
-    { id: "13", src: "https://picsum.photos/id/13/600/600", alt: "Pool Remodeling 4" },
-    { id: "14", src: "https://picsum.photos/id/14/600/600", alt: "Pool Remodeling 5" },
-    { id: "15", src: "https://picsum.photos/id/15/600/600", alt: "Pool Remodeling 6" },
-    { id: "16", src: "https://picsum.photos/id/16/600/600", alt: "Pool Remodeling 7" },
+    { id: "000000-na-equp_n001", src: "https://i.pinimg.com/1200x/69/0d/d5/690dd5df84ed8f81df654fbaaa0bd552.jpg", alt: "Equipments" },
+    // ...
   ],
   "outdoor-living": [
-    { id: "000000-na-outd_n001", src: "https://picsum.photos/id/10/600/600", alt: "Outdoor Living" },
+    { id: "000000-na-outd_n001", src: "https://i.pinimg.com/1200x/39/eb/f0/39ebf0cc79dd5e8b0e66cdb758c3df25.jpg", alt: "Outdoor Living" },
     // ...
   ],
   "weekly-pool-services": [

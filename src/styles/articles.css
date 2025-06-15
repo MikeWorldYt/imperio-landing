@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+article h2 {
+    @apply text-3xl font-semibold mb-3 pt-4 transition-colors duration-300
+    text-primary dark:text-primary-dm;
+}
+
+article img {
+    @apply max-w-full max-h-[90vh] rounded shadow-lg;
+}

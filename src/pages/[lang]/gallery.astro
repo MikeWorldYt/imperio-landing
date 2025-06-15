@@ -11,7 +11,7 @@ import GalleryGrid from '../../components/ui/galleryGrid';
 import { getMediaByFilter, getMediaCategories } from "../../lib/mediaAPI";
 
 const url = new URL(Astro.request.url);
-const filter = url.searchParams.get('f') || "default";
+const filter = url.searchParams.get('f') || "latest-jobs";
 const media = getMediaByFilter(filter);
 const categories = getMediaCategories();
 const activeFilter = url.searchParams.get('f') ?? "default";

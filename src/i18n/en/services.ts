@@ -30,13 +30,49 @@ export const servicesTexts: Service = {
       image: "https://leisurepools.eu/wp-content/uploads/2020/06/best-type-of-swimming-pool-for-my-home_2.jpg",
       icon: '/icons/pool.svg',
       content_1: `
-
+        Your pool should be the heart of your backyard, but that's hard when you’re staring at cracked tiles, rough plaster, or just an outdated style. It's time to transform your space from functional to unforgettable.
+        <br>
+        Our expert Pool Remodeling service is your all-in-one solution. We focus on what matters:
+        <br>
+          <li> <b>Replastering & Resurfacing:</b> For a silky-smooth finish in a beautiful new color. </li>
+          <li> <b>New Tile & Coping:</b> The perfect frame for your pool with modern, durable materials. </li>
+          <li> <b>Deck & Patio Renewal:</b> We create a safe, stylish, and comfortable space for relaxing and entertaining. </li>
+        From essential renovations to luxury upgrades like waterfalls or custom LED lighting, we bring your vision to life.
+        <br> <br>
+        Ready to fall in love with your pool again? Contact us for a free consultation!
       `,
       content_2: `
-
+        <h2> Is It Time to Renovate Your Pool? </h2>
+        If you're nodding along to any of these common issues, it’s a clear sign your pool is ready for a transformation:
+          <li> The surface feels rough, stained, or is cracking (plaster issues). </li>
+          <li> You have chipped, broken, or simply outdated pool tiles. </li>
+          <li> The pool coping (the edge of the pool) is damaged or looks old. </li>
+          <li> Your pool deck has cracks, stains, or is dangerously slippery. </li>
+          <li> You're simply tired of the old look and ready for something fresh and modern. </li>
+        <br>
+        Your pool should be more than just a place to swim, it should be the centerpiece of your backyard, a source of pride, relaxation, and endless fun.
+        But over time, even the best pools can start to look outdated, worn-out, or simply stop reflecting your personal style.
+        <br>
+        Don't worry though, <b> We're here to help! </b>
+        <br>
+        Our Pool Remodeling service is designed to breathe new life into your outdoor space, turning it back into the luxurious escape you deserve.
+        <br>
+        We handle every aspect of your renovation project with professionalism and an eye for detail. We don’t just fix problems; we create beautiful, durable, and functional spaces.
       `,
       content_3: `
-
+        <h2> Elevate Your Oasis with Modern Upgrades </h2>
+        Why stop at the basics? A full pool remodeling is the perfect opportunity to add features that enhance your enjoyment and can even save you money:
+          <li> Custom Water Features: Add the soothing sound of a waterfall or the elegant look of deck jets. </li>
+          <li> LED Lighting: Create the perfect mood for evening swims with vibrant, energy-efficient color-changing lights. </li>
+          <li> Energy-Efficient Equipment: Upgrade to a modern pump and filter to reduce your energy bills and maintenance time. </li>
+          <li> Saltwater System Conversion: Enjoy softer, silkier water that's gentler on your skin and eyes. </li>
+        <img 
+          alt="Pool Remodeling"
+          src="https://i.pinimg.com/1200x/b5/26/94/b526948f50e94a1f5374ed8794b88c09.jpg"
+        >
+        Ready to fall in love with your pool again? Let’s work together to design and build the backyard retreat you won't want to leave.
+        <br> <br>
+        Contact us today for a free, no-obligation consultation!
       `,
     },
     {

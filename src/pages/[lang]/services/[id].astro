@@ -4,6 +4,7 @@ import Header from '../../../components/layout/Header';
 import Footer from '../../../components/layout/Footer';
 
 import '../../../styles/global.css';
+import '../../../styles/articles.css';
 import { Box, ChevronRight } from "lucide-react";
 
 // Gallery filter //
@@ -26,6 +27,11 @@ const servicesTextsByLang = {
 };
 const allServices = servicesTextsByLang[lang].services;
 
+const { service } = Astro.props;
+const contentKeys = Object.keys(service)
+  .filter(key => key.startsWith('content_'))
+  .sort();
+
 export const getStaticPaths = async () => {
   const langs = ['en', 'es'];
   // Define the services texts for each language
@@ -44,8 +50,6 @@ export const getStaticPaths = async () => {
     }));
   });
 };
-
-const { service } = Astro.props;
 
 export const prerender = true;
 ---
@@ -98,24 +102,36 @@ export const prerender = true;
         { service.title }
       </h2>
       <!-- Content -->
-      <div class="global-text">
-        <p>{service.description}</p>
-        <h2 class="global-heading mb-3"> Lorem </h2>
-        <p set:html={service.content} />
-      </div>
-      <!-- CTA -->
-      <div class="flex gap-8 md:mx-0 mx-4 items-center">
-        <Button
-          variant='mutted_sm'
-          href={`/${lang}/gallery?f=${service.id}`}
-          text={lang === 'en' ? 'Learn More' : 'Más Información'}
-        />
-        <Button
-          variant='primary_sm'
-          href={`/${lang}/get-quote/form?s=${service.id}`}
-          text={lang === 'en' ? 'Get a Free Stimate Now →' : 'Obtener una Cotización Gratis →'}
-        />
-      </div>
+      <article class="global-text">
+        <div class="px-2 md:px-0">
+          {contentKeys.map((key, index) => (
+            <>
+                <div set:html={service[key]} />
+              {index < contentKeys.length - 1 && (
+                <div class="flex gap-8 md:max-w-lg md:mx-0 mx-4 items-center my-6">
+                  <Button
+                    variant="primary_sm"
+                    href={`/${lang}/get-quote/form?s=${service.id}`}
+                    text={lang === 'en' ? 'Get a Free Stimate Now →' : 'Obtener una Cotización Gratis →'}
+                  />
+                </div>
+              )}
+            </>
+          ))}
+          <div class="flex gap-8 md:mx-0 mx-4 items-center my-6">
+                  <Button
+                    variant="mutted_sm"
+                    href={`/${lang}/gallery?f=${service.id}`}
+                    text={lang === 'en' ? 'Learn More' : 'Más Información'}
+                  />
+                  <Button
+                    variant="primary_sm"
+                    href={`/${lang}/get-quote/form?s=${service.id}`}
+                    text={lang === 'en' ? 'Get a Free Stimate Now →' : 'Obtener una Cotización Gratis →'}
+                  />
+          </div>
+        </div>
+      </article>
     </div>
 
   </section>

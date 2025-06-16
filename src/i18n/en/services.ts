@@ -98,11 +98,27 @@ export const servicesTexts: Service = {
       `,
       content_2: `
         <h3> Mini Pebble </h3> 
-        The perfect blend of beauty and durability. Mini pebble finish consists of small rounded pebbles tumbled and mixed into a cement-based finish naturally. The result is a subtly textured, slip-resistant surface significantly stronger and stain-resistant than regular plaster. It has a more riverbed-like appearance and unbelievable durability. It's a classic for a reason.
+        The perfect blend of beauty and durability. Mini pebble finish consists of small rounded pebbles tumbled and mixed into a cement-based finish naturally. The result is a subtly textured, slip-resistant surface significantly stronger and stain-resistant than regular plaster. It has a more riverbed-like appearance and unbelievable durability.
         <img 
           alt="Mini Pebble"
           src="https://i.pinimg.com/1200x/ab/3d/53/ab3d539f395476ff54e445bcf56a9a9d.jpg"
         >
+        `,
+      content_3: `
+        <h3> Micro Pebble </h3> 
+        The epitome of elegance and smoothness. A micro pebble finish uses the smallest, most refined pebbles to make a surface that is extremely smooth to the hand, yet incredibly durable. This premium choice offers the maximum durability and stain resistance, yielding a deep, high-end look that will endure for decades.
+        <img 
+          alt="Micro Pebble"
+          src=""
+        >
+        `,
+        content_4: `
+        <h3> Why a Professional Pool Resurfacing Matters? </h3>
+        Why a Professional Pool Resurfacing Matters
+        <br>
+        <br>
+        When you decide to resurface your pool, it's important to choose a finish that matches your lifestyle, budget, and style.
+        <br>
         `,
     },
     {

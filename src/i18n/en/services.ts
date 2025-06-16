@@ -10,6 +10,7 @@ export interface Service {
     content_1: string;
     content_2?: string;
     content_3?: string;
+    content_4?: string;
     // features: string[];
     // btnSecondary: {
     //   href: string;
@@ -114,10 +115,11 @@ export const servicesTexts: Service = {
         `,
         content_4: `
         <h3> Why a Professional Pool Resurfacing Matters? </h3>
-        Why a Professional Pool Resurfacing Matters
+        Choosing the right material is only the first step. The longevity of your pool finish depends entirely on proper application. Our experienced personnel ensures complete preparation of the original surface, flawless application of the new finish, and guidance on the critical curing process. This commitment to quality will have your new finish looking beautiful, durable, and a good investment.
+        <br> <br>
+        Ready to see and experience the difference a fresh pool finish can create?
         <br>
-        <br>
-        When you decide to resurface your pool, it's important to choose a finish that matches your lifestyle, budget, and style.
+        Contact us today to see samples and get a free, detailed estimate!
         <br>
         `,
     },

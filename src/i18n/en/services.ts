@@ -80,7 +80,7 @@ export const servicesTexts: Service = {
       id: 'plastering', // 
       title: 'Plastering',
       description: "The pool finish gives your water its beautiful color and provides a smooth surface underfoot. Choose from classic plaster to durable modern pebble styles.",
-      image: "https://images.squarespace-cdn.com/content/v1/65eb3d8c9719340a9a48d8d7/6c62ce0a-e2cb-46b7-8ad8-b9df9e1db52f/Luxury+Custom+Pool+Seattle+-+Krisco+Pools+%282%29.jpg?format=2500w",
+      image: "https://professionalpoolguy.com/wp-content/uploads/2024/04/pool-plastering-experts-in-plano-tx.webp",
       icon: '/icons/spa.svg',
       content_1: `
         Far too often, the pool finish (or plaster) is the overlooked element of your pool's look and feel.

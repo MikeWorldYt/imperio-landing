@@ -130,7 +130,8 @@ export const servicesTexts: Service = {
       image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
-        This is a <b>text</b> for demonstration purposes, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti non eius corrupti recusandae repellat, nulla commodi amet modi delectus nam consectetur in tenetur molestias aliquid. Non voluptas esse amet voluptate!
+        503 Service Unavailable, Server in maintenance.
+        <br> Please try after.
       `,
     },
     {
@@ -140,7 +141,8 @@ export const servicesTexts: Service = {
       image: 'https://leisurepools.com.au/wp-content/uploads/2020/10/LeisurePoolsAU_Absolute_8m_SilverGrey_Rockhampton_2018-1.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
-        This is a <b>text for demonstration purposes</b>, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti non eius corrupti recusandae repellat, nulla commodi amet modi delectus nam consectetur in tenetur molestias aliquid. Non voluptas esse amet voluptate!
+        503 Service Unavailable, Server in maintenance.
+        <br> Please try after.
       `,
     },
     {
@@ -150,7 +152,8 @@ export const servicesTexts: Service = {
       image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
-        This is a <b>text</b> for demonstration purposes, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti non eius corrupti recusandae repellat, nulla commodi amet modi delectus nam consectetur in tenetur molestias aliquid. Non voluptas esse amet voluptate! 
+        503 Service Unavailable, Server in maintenance.
+        <br> Please try after.
       `,
     },
     {
@@ -160,7 +163,8 @@ export const servicesTexts: Service = {
       image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
-        This is a <b>text</b> for demonstration purposes
+        503 Service Unavailable, Server in maintenance.
+        <br> Please try after.
       `,
     },
         {
@@ -170,7 +174,8 @@ export const servicesTexts: Service = {
       image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
-        This is a <b>text</b> for demonstration purposes
+        503 Service Unavailable, Server in maintenance.
+        <br> Please try after.
       `,
     },
   ]

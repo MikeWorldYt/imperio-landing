@@ -89,9 +89,21 @@ export const servicesTexts: Service = {
         <br>
         <h2> Pool Finish Options </h2>
         We offer a thoughtfully curated range of top-of-the-line finishes to meet your design vision, lifestyle, and budget. Each one has its own unique characteristics:
-        <ul> Regular Plaster </ul> 
+        <h3> Regular Plaster </h3> 
         The classic one. It's the original smooth, white finish that creates that beautiful, light-blue water color. It's an inexpensive way of achieving a clean, fresh, and inviting look for your pool. It's the classic for a reason.
+        <img 
+          alt="Replaster"
+          src="https://i.pinimg.com/1200x/f3/ac/49/f3ac495dc88f66d4c8dee8e0e5cb0249.jpg"
+        >
       `,
+      content_2: `
+        <h3> Mini Pebble </h3> 
+        The perfect blend of beauty and durability. Mini pebble finish consists of small rounded pebbles tumbled and mixed into a cement-based finish naturally. The result is a subtly textured, slip-resistant surface significantly stronger and stain-resistant than regular plaster. It has a more riverbed-like appearance and unbelievable durability. It's a classic for a reason.
+        <img 
+          alt="Mini Pebble"
+          src="https://i.pinimg.com/1200x/ab/3d/53/ab3d539f395476ff54e445bcf56a9a9d.jpg"
+        >
+        `,
     },
     {
       id: 'new-pools-and-additionals', // Pool Construction, Planning, 

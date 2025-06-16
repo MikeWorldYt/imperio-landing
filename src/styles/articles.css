@@ -7,6 +7,10 @@ article h2 {
     text-primary dark:text-primary-dm;
 }
 
+article h3 {
+    @apply text-2xl font-medium mb-2 pt-2;
+}
+
 article img {
     @apply max-w-full max-h-[90vh] rounded shadow-lg;
 }

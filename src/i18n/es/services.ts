@@ -25,7 +25,7 @@ export const servicesTexts: Service = {
     {
       id: 'pool-remodeling',
       title: 'Remodelelación de Piscinas',
-      description: "Transforma tu piscina existente con nuestros servicios de remodelación expertos. Mejoramos la estética y funcionalidad, asegurando que tu piscina cumpla con los estándares modernos y tu estilo personal.",
+      description: "Transfomamos una simple piscina al impresionante Oasis en el patio trasero que siempre has soñado, convirtiéndolo en el lugar favorito de tu familia y amigos.",
       image: "https://leisurepools.eu/wp-content/uploads/2020/06/best-type-of-swimming-pool-for-my-home_2.jpg",
       icon: '/icons/pool.svg',
       content_1: `

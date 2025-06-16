@@ -30,7 +30,7 @@ export const servicesTexts: Service = {
       image: "https://leisurepools.eu/wp-content/uploads/2020/06/best-type-of-swimming-pool-for-my-home_2.jpg",
       icon: '/icons/pool.svg',
       content_1: `
-        Your pool should be the heart of your backyard, but that's hard when you’re staring at cracked tiles, rough plaster, or just an outdated style. It's time to transform your space from functional to unforgettable.
+        Your pool should be the heart of your backyard, but that's hard when you are staring at cracked tiles, rough plaster, or just an outdated style. It's time to transform your space from functional to unforgettable.
         <br>
         Our expert Pool Remodeling service is your all-in-one solution. We focus on what matters:
         <br>
@@ -82,7 +82,15 @@ export const servicesTexts: Service = {
       image: "https://images.squarespace-cdn.com/content/v1/65eb3d8c9719340a9a48d8d7/6c62ce0a-e2cb-46b7-8ad8-b9df9e1db52f/Luxury+Custom+Pool+Seattle+-+Krisco+Pools+%282%29.jpg?format=2500w",
       icon: '/icons/spa.svg',
       content_1: `
-        <i>This is a <b>text</b> for demonstration purposes</i> 
+        Far too often, the pool finish (or plaster) is the overlooked element of your pool's look and feel.
+        It's not just the material that presents to the interior of your pool, It's defining the color, texture, and overall personality of they.
+        <br>
+        A new pool plastering is not a repair; it's an opportunity to completely reshape the personality of your pool. Whether you desire a classic, modern, or custom look, we have the expertise to bring your vision to life.
+        <br>
+        <h2> Pool Finish Options </h2>
+        We offer a thoughtfully curated range of top-of-the-line finishes to meet your design vision, lifestyle, and budget. Each one has its own unique characteristics:
+        <ul> Regular Plaster </ul> 
+        The classic one. It's the original smooth, white finish that creates that beautiful, light-blue water color. It's an inexpensive way of achieving a clean, fresh, and inviting look for your pool. It's the classic for a reason.
       `,
     },
     {

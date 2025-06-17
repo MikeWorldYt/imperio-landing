@@ -155,14 +155,34 @@ export const servicesTexts: Service = {
         We offer a wide range of features, all designed to meet our high quality and aesthetic standards:
         <h3> Grottos & Waterfalls </h3>
         With realistic rock waterfalls that look like a mountain spring or modern sheer descent pieces that produce a smooth, crystal clear sheet of water, we can create a waterfall that frames your space. For ultimate luxury, a grotto offers an intimate, cave-like retreat behind the falls.
+        <img 
+          alt="Grotto"
+          src="https://i.pinimg.com/1200x/6f/7b/fd/6f7bfd2356b12fad604debe5bedfb9d8.jpg"
+        >
         <h3> Fountains & Bubblers </h3>
         Excellent for producing calming visions and sounds, fountains can be incorporated into the pool design or freestanding. Bubblers are small jets typically located on a Baja shelf or steps to disrupt the water in a bubbly, playful manner.
+        <img 
+          alt="Fountain"
+          src="https://i.pinimg.com/1200x/13/d6/e5/13d6e5d724a407a2d928cf7fabe6747b.jpg"
+        >
       `,
       content_3: `
         <h3> Deck Jets & Laminars </h3>
         They create long, dramatic water arcs that blast off the pool deck and into the pool. Deck jets create a gentle, bubbling stream, and laminar jets create a silky, glassy tube of water, often with mounted-in LED lighting for a striking nighttime display.
+        <img 
+          alt="Deck Jet"
+          src="https://i.pinimg.com/1200x/79/3e/4c/793e4cd6c63d460c67432b754aa4047d.jpg"
+        >
+        <img 
+          alt="Laminar"
+          src="https://hiveoutdoor.com/wp-content/uploads/2022/11/Laminars-Water-Descent-Hive-Outddoor-Living.jpg"
+        >
         <h3> Slides </h3>
         Far more than a simple piece of plastic pipe, our slides are meticulously designed to integrate into the landscape, often built into rock outcroppings or gardens for a seamless, upscale visual effect. We are most concerned with safety and utilize only top-grade materials for a resilient, resort-quality experience.
+        <img 
+          alt="Slide"
+          src="https://i.pinimg.com/1200x/6c/f1/98/6cf198cef563a89adbfa7ecc0cd9155c.jpg"
+        >
       `,
       content_4: `
         <h2>  The Design & Integration Process </h2>

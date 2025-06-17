@@ -154,23 +154,24 @@ export const servicesTexts: Service = {
         <h2> Our Custom Water Feature Services </h2>
         We offer a wide range of features, all designed to meet our high quality and aesthetic standards:
         <h3> Grottos & Waterfalls </h3>
-        
+        With realistic rock waterfalls that look like a mountain spring or modern sheer descent pieces that produce a smooth, crystal clear sheet of water, we can create a waterfall that frames your space. For ultimate luxury, a grotto offers an intimate, cave-like retreat behind the falls.
         <h3> Fountains & Bubblers </h3>
-        
+        Excellent for producing calming visions and sounds, fountains can be incorporated into the pool design or freestanding. Bubblers are small jets typically located on a Baja shelf or steps to disrupt the water in a bubbly, playful manner.
       `,
       content_3: `
         <h3> Deck Jets & Laminars </h3>
-        stom water feature
+        They create long, dramatic water arcs that blast off the pool deck and into the pool. Deck jets create a gentle, bubbling stream, and laminar jets create a silky, glassy tube of water, often with mounted-in LED lighting for a striking nighttime display.
         <h3> Slides </h3>
-        `,
+        Far more than a simple piece of plastic pipe, our slides are meticulously designed to integrate into the landscape, often built into rock outcroppings or gardens for a seamless, upscale visual effect. We are most concerned with safety and utilize only top-grade materials for a resilient, resort-quality experience.
+      `,
       content_4: `
         <h2>  The Design & Integration Process </h2>
         Every installation of a water feature requires careful, professional attention. Our work begins with a consultation to develop one-of-a-kind designs and style concepts designed specifically to fit your vision. Then we perform a thorough examination of your pool's integrity and hydraulic system to ensure that every new feature not only looks breathtaking but also functions smoothly and efficiently, without interrupting your existing pool operations.
-        Co.
+        <br> <br>
+        Ready to bring a new level of sophistication and thrill to your pool?
+        <br>
+        Contact us today for a professional design consultation and to explore the possibilities for your backyard.
       `,
-      content_4: `
-        
-      `
     },
     {
       id: 'pool-equipment-upgrades',

@@ -12,5 +12,5 @@ article h3 {
 }
 
 article img {
-    @apply max-w-full max-h-[90vh] rounded shadow-lg;
+    @apply inline-block align-top max-w-full max-h-[40vh] rounded shadow-lg;
 }

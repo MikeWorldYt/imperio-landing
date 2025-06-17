@@ -126,7 +126,7 @@ export const servicesTexts: Service = {
     {
       id: 'new-pools-and-additionals', // Pool Construction, Planning, 
       title: 'New Pools & Additionals',
-      description: "This is a test service for demonstration purposes",
+      description: "Loading...",
       image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
@@ -148,18 +148,38 @@ export const servicesTexts: Service = {
     {
       id: 'pool-equipment-upgrades',
       title: 'Pool Equipment Upgrades',
-      description: "This is a test service for demonstration purposes",
+      description: "Upgrade your pool equipment for smarter control, lower energy bills, and easier maintenance, all from your phone. Enjoy modern convenience and make your pool work for you.",
       image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
-        503 Service Unavailable, Server in maintenance.
-        <br> Please try after.
+        The equipment pad is the control hub of your pool, handling everything from circulation to sanitation. Although frequently out of sight, this system determines your pool's operating expense, water clarity, and overall convenience. One of the most significant upgrades a pool owner can undertake is to modern, efficient equipment.
+        <h2> When is it Time to Upgrade Equipment? </h2>
+        Upgrading is the reasonable option. In certain circumstances, it is unavoidable:
+        <li> High Energy Costs: When your electric bill seems disproportionately high, a worn-out pump is likely to be the prime culprit. </li>
+        <li> Frequent Repairs: If your device requires constant service calls and repairs, the maintenance cost can quickly approach replacement levels. </li>
+        <li> Loud Machines: Grinding, whining, or noisy, cacophonous sounds are clear indications of mechanical wear and imminent failure. </li>
+        <li> Dirty Water: If you're having trouble maintaining the water clear through proper chemical balancing, your pump or filter may not be functioning as well as it once did. </li>
+        <li> Deteriorated Performance: The average equipment lasts 8-12 years of normal use. After that, efficiency plummets drastically. </li>
+        If you have any of these issues, is important to upgrade your equipment.
+        <br>
+        You can count with qualified professionals to remplace your equipment with the latest models, ensuring optimal performance.
       `,
+      content_2: `
+        <h2> The Advantages of a New Equipment System </h2>
+        When you replace your equipment, you get genuine payback for your dollar. The benefits are clear:
+        <li> Major Energy Savings: New variable-speed pumps can lower your pool's circulation energy usage by as much as 90% compared to outdated single-speed pumps. </li>
+        <li> Improved Water Quality: High-efficiency new filters paired with advanced sanitizing systems yield clearer, healthier water with fewer chemical treatments. </li>
+        <li> Streamlined Operation & Automation: A control system offers single-point management of all your pool's operations—sometimes from an app on your smartphone—removing daily manual settings. </li>
+        <li> Longer Swimming Season: Efficient pool heaters and heat pumps allow you to maintain your ideal water temperature for more of the year, maximizing your investment. </li>
+        <br>
+        Some equipment is more complex to replace, though you can count on us to handle it.
+      `,
+
     },
     {
       id: "outdoor-living", // Landscapes
       title: "Outdoor Living",
-      description: "This is a test service for demonstration purposes",
+      description: "Loading...",
       image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
@@ -170,7 +190,7 @@ export const servicesTexts: Service = {
         {
       id: "weekly-pool-services",
       title: "Weekly Pool Services",
-      description: "This is a test service for demonstration purposes",
+      description: "Loading...",
       image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
       icon: '/icons/renovation.svg',
       content_1: `

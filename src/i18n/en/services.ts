@@ -174,7 +174,20 @@ export const servicesTexts: Service = {
         <br>
         Some equipment is more complex to replace, though you can count on us to handle it.
       `,
-
+      content_3: `
+        <h2> Core Equipment Upgrades We Provide </h2>
+        We provide professional installation of the finest equipment designed for performance and longevity:
+        <li> New Pumps: We provide high-efficiency, variable-speed pumps that are quiet, reliable, and the cornerstone of an energy-efficient pool. </li>
+        <li> New Filters: From cartridge filters that contain lots of water to D.E. systems, we have your pool as the ideal filter for perfect water clarity. </li>
+        <li> Pool Heaters: Our energy-efficient gas heaters and electric heat pumps give you hot water in the palm of your hand when you want it. </li>
+        <li> PNew Lights: Upgrade to new, energy-efficient LED new lights for enhanced safety and dramatic night atmosphere, with color-changing models to choose from. </li>
+        <li> Advanced Sanitation: We provide cutting-edge systems that provide a better swim experience. This includes the very sought-after salt system for gentler water, as well as strong UV3 and Ozone systems that significantly reduce chemical demand. </li>
+        <li> Automation Systems: Put your entire equipment pad under one convenient easy-to-use platform for total control and convenience. </li>
+        <br>
+        Investing in your pool's equipment is a smart decision for any homeowner.
+        <br>
+        Contact us today for a professional assessment of your current system and a detailed upgrade consultation.
+      `,
     },
     {
       id: "outdoor-living", // Landscapes

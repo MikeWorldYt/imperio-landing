@@ -137,13 +137,40 @@ export const servicesTexts: Service = {
     {
       id: 'waterfalls-and-fountains',
       title: 'Waterfalls & Fountains',
-      description: 'Enhance your pool or spa with stunning waterfalls and fountains, offering a unique and captivating visual experience. From cascading waterfalls to cascading fountains, our expertly crafted waterfalls and fountains add a touch of elegance and sophistication to your outdoor oasis.',
+      description: "Elevate your pool with custom water features that add beauty and soothing sound. From tranquil waterfalls to fun slides, transform your backyard into a sensory oasis.",
       image: 'https://leisurepools.com.au/wp-content/uploads/2020/10/LeisurePoolsAU_Absolute_8m_SilverGrey_Rockhampton_2018-1.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
-        503 Service Unavailable, Server in maintenance.
-        <br> Please try after.
+        A pool is a significant architectural element, yet the introduction of flowing water transforms a static feature into a lively piece of art. The sound and action of waterfalls, fountains, and jets create a resort-like atmosphere of opulence, taking the entire outdoor living experience to the maximum. We are experts at designing and constructing unique custom water features that complement beautifully your new or old pool.
+        <h2> Why Add Custom Water Features? </h2>
+        Water feature incorporation is an investment in your pool's ambiance and functionality. The primary advantages are:
+        <li> More Recreation & Fun: Personalized jets and interactive slides provide an added measure of fun for family and guests. </li>
+        <li> Calming Auditory Atmosphere: The gentle noise of running water muffles ambient sound and offers a soothing, relaxing environment. </li>
+        <li> Architectural Aesthetic: A waterfall or fountain is a stunning sight, bringing architectural style and natural beauty. </li>
+        <li> Complete Personalization: Personalized style and design make your new water feature a personalized reflection of your own style, perfectly adapted to fit your home's architecture. </li>
+        See how our custom water features can transform your backyard into a serene oasis.
       `,
+      content_2: `
+        <h2> Our Custom Water Feature Services </h2>
+        We offer a wide range of features, all designed to meet our high quality and aesthetic standards:
+        <h3> Grottos & Waterfalls </h3>
+        
+        <h3> Fountains & Bubblers </h3>
+        
+      `,
+      content_3: `
+        <h3> Deck Jets & Laminars </h3>
+        stom water feature
+        <h3> Slides </h3>
+        `,
+      content_4: `
+        <h2>  The Design & Integration Process </h2>
+        Every installation of a water feature requires careful, professional attention. Our work begins with a consultation to develop one-of-a-kind designs and style concepts designed specifically to fit your vision. Then we perform a thorough examination of your pool's integrity and hydraulic system to ensure that every new feature not only looks breathtaking but also functions smoothly and efficiently, without interrupting your existing pool operations.
+        Co.
+      `,
+      content_4: `
+        
+      `
     },
     {
       id: 'pool-equipment-upgrades',

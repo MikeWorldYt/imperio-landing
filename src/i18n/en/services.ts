@@ -161,8 +161,8 @@ export const servicesTexts: Service = {
           class="img-float-left"
           src="https://i.pinimg.com/1200x/6f/7b/fd/6f7bfd2356b12fad604debe5bedfb9d8.jpg"
         >
-        Waterfalls are one of the most popular pool water features, transformed spaces with their elegance, soothing sound, and therapeutic benefits. Whether it's naturalistic rock waterfalls that immerse memories of a mountain spring, or a Modern Sheer descent, forming a smooth crystal-clear veil of water, they add dynamics and glamour to any pool.
-        <br> Besides grottos create a nauturalistic atmosphere, making every swim a relaxing escape.
+        Waterfalls are one of <i>the most popular pool water features</i>, transformed spaces with their elegance, soothing sound, and therapeutic benefits. Whether it's naturalistic <b>Rock Waterfalls</b> that immerse memories of a mountain spring, or a Modern <b> Sheer Descent</b>, forming a smooth crystal-clear veil of water, they add dynamics and glamour to any pool.
+        <br> Besides <b>Grottos</b> create a nauturalistic atmosphere, making every swim a relaxing escape.
         <br> More than decoration, waterfalls shape outdoor spaces, crafting an experience that is as visually dramatic as it is deeply refreshing.
         <h3> Fountains & Bubblers </h3>
         <img 
@@ -170,29 +170,26 @@ export const servicesTexts: Service = {
           class="img-float-right"
           src="https://i.pinimg.com/1200x/f9/b5/87/f9b587f4a01c833b1b7386533f74c7e3.jpg"
         >
-        Fountains and bubblers bring energy, elegance, and movement to any pool, creating a dynamic and visually captivating experience.
-        Whether they're soft streams or lively bubbling jets, they form a whimsical, sophisticated impression, enhancing ambiance with their soothing sound and mesmerizing movement.
+        Fountains and bubblers <i> bring energy, elegance, and movement to any pool</i>, creating a dynamic and visually captivating experience.
+        Whether they're soft streams or <b>lively bubbling jets</b>, they form a whimsical, sophisticated impression, enhancing ambiance with their soothing sound and mesmerizing movement.
         <br>
         Fountains and bubblers enhance outdoor spaces, rendering them dynamic oases where water comes alive.
         `,
         content_3: `
         <h3> Deck Jets & Laminars </h3>
-        They create long, dramatic water arcs that blast off the pool deck and into the pool. Deck jets create a gentle, bubbling stream, and laminar jets create a silky, glassy tube of water, often with mounted-in LED lighting for a striking nighttime display.
         <img 
           alt="Deck Jet"
-          src="https://i.pinimg.com/1200x/79/3e/4c/793e4cd6c63d460c67432b754aa4047d.jpg"
-        >
-        <img 
-          alt="Laminar"
+          class="img-float-left"
           src="https://hiveoutdoor.com/wp-content/uploads/2022/11/Laminars-Water-Descent-Hive-Outddoor-Living.jpg"
         >
+        They create long, dramatic water arcs that blast off the pool deck and into the pool. Deck jets create a gentle, bubbling stream, and laminar jets create a silky, glassy tube of water, often with mounted-in LED lighting for a striking nighttime display.
         <h3> Slides </h3>
-        Far more than a simple piece of plastic pipe, our slides are meticulously designed to integrate into the landscape, often built into rock outcroppings or gardens for a seamless, upscale visual effect. We are most concerned with safety and utilize only top-grade materials for a resilient, resort-quality experience.
         <img 
-          class="img-float-left"
           alt="Slide"
+          class="img-float-right"
           src="https://i.pinimg.com/1200x/6c/f1/98/6cf198cef563a89adbfa7ecc0cd9155c.jpg"
         >
+        Far more than a simple piece of plastic pipe, our slides are meticulously designed to integrate into the landscape, often built into rock outcroppings or gardens for a seamless, upscale visual effect. We are most concerned with safety and utilize only top-grade materials for a resilient, resort-quality experience.
       `,
       content_4: `
         <h2>  The Design & Integration Process </h2>

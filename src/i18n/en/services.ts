@@ -95,18 +95,18 @@ export const servicesTexts: Service = {
         <img 
           alt="Replaster"
           class="img-float-right"
-          src="https://i.pinimg.com/1200x/f3/ac/49/f3ac495dc88f66d4c8dee8e0e5cb0249.jpg"
+          src="https://countrysidepoolservices.com/wp-content/uploads/2021/08/PlasterShades.jpg"
         >
         The classic one, it has been a long-time favorite among generations. This finish is known for offering a smooth and elegant look that gives water its signature color.
-
-        This pool finish, such as plaster, creates a classic and timeless look. Its smooth surface beautifully reflects light, enhancing the natural hues of the water for a truly inviting appearance.
+        <br>
+        Its smooth surface beautifully reflects light, enhancing the natural hues of the water for a truly inviting appearance.
         Color you select for the finish directly pigments the water
         And this allows you to customize your pool's appearance, creating anything from a bright, tropical turquoise to a deep, tranquil lagoon.
         
         <br> Simple and elegant, besides plus is they have a smoother finish and won’t hurt anyone’s.
       `,
       content_2: `
-        <h3> Mini Pebble </h3> 
+        <h3> Mini Pebble (Pebble Tec) </h3> 
         <img 
           alt="Mini Pebble"
           class="img-float-left"

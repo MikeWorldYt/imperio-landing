@@ -71,6 +71,7 @@ export const servicesTexts: Service = {
           alt="Pool Remodeling"
           src="https://i.pinimg.com/1200x/b5/26/94/b526948f50e94a1f5374ed8794b88c09.jpg"
         >
+        <br>
         Ready to fall in love with your pool again? Let’s work together to design and build the backyard retreat you won't want to leave.
         <br> <br>
         Contact us today for a free, no-obligation consultation!
@@ -91,11 +92,12 @@ export const servicesTexts: Service = {
         <h2> Pool Finish Options </h2>
         We offer a thoughtfully curated range of top-of-the-line finishes to meet your design vision, lifestyle, and budget. Each one has its own unique characteristics:
         <h3> Regular Plaster </h3> 
-        The classic one. It's the original smooth, white finish that creates that beautiful, light-blue water color. It's an inexpensive way of achieving a clean, fresh, and inviting look for your pool. It's the classic for a reason.
         <img 
           alt="Replaster"
+          class="img-float-right"
           src="https://i.pinimg.com/1200x/f3/ac/49/f3ac495dc88f66d4c8dee8e0e5cb0249.jpg"
         >
+        The classic one. It's the original smooth, white finish that creates that beautiful, light-blue water color. It's an inexpensive way of achieving a clean, fresh, and inviting look for your pool. It's the classic for a reason.
       `,
       content_2: `
         <h3> Mini Pebble </h3> 
@@ -154,19 +156,26 @@ export const servicesTexts: Service = {
         <h2> Our Custom Water Feature Services </h2>
         We offer a wide range of features, all designed to meet our high quality and aesthetic standards:
         <h3> Grottos & Waterfalls </h3>
-        With realistic rock waterfalls that look like a mountain spring or modern sheer descent pieces that produce a smooth, crystal clear sheet of water, we can create a waterfall that frames your space. For ultimate luxury, a grotto offers an intimate, cave-like retreat behind the falls.
         <img 
           alt="Grotto"
+          class="img-float-left"
           src="https://i.pinimg.com/1200x/6f/7b/fd/6f7bfd2356b12fad604debe5bedfb9d8.jpg"
         >
+        Waterfalls are one of the most popular pool water features, transformed spaces with their elegance, soothing sound, and therapeutic benefits. Whether it's naturalistic rock waterfalls that immerse memories of a mountain spring, or a Modern Sheer descent, forming a smooth crystal-clear veil of water, they add dynamics and glamour to any pool.
+        <br> Besides grottos create a nauturalistic atmosphere, making every swim a relaxing escape.
+        <br> More than decoration, waterfalls shape outdoor spaces, crafting an experience that is as visually dramatic as it is deeply refreshing.
         <h3> Fountains & Bubblers </h3>
-        Excellent for producing calming visions and sounds, fountains can be incorporated into the pool design or freestanding. Bubblers are small jets typically located on a Baja shelf or steps to disrupt the water in a bubbly, playful manner.
         <img 
           alt="Fountain"
-          src="https://i.pinimg.com/1200x/13/d6/e5/13d6e5d724a407a2d928cf7fabe6747b.jpg"
+          class="img-float-right"
+          src="https://i.pinimg.com/1200x/f9/b5/87/f9b587f4a01c833b1b7386533f74c7e3.jpg"
         >
-      `,
-      content_3: `
+        Fountains and bubblers bring energy, elegance, and movement to any pool, creating a dynamic and visually captivating experience.
+        Whether they're soft streams or lively bubbling jets, they form a whimsical, sophisticated impression, enhancing ambiance with their soothing sound and mesmerizing movement.
+        <br>
+        Fountains and bubblers enhance outdoor spaces, rendering them dynamic oases where water comes alive.
+        `,
+        content_3: `
         <h3> Deck Jets & Laminars </h3>
         They create long, dramatic water arcs that blast off the pool deck and into the pool. Deck jets create a gentle, bubbling stream, and laminar jets create a silky, glassy tube of water, often with mounted-in LED lighting for a striking nighttime display.
         <img 
@@ -180,6 +189,7 @@ export const servicesTexts: Service = {
         <h3> Slides </h3>
         Far more than a simple piece of plastic pipe, our slides are meticulously designed to integrate into the landscape, often built into rock outcroppings or gardens for a seamless, upscale visual effect. We are most concerned with safety and utilize only top-grade materials for a resilient, resort-quality experience.
         <img 
+          class="img-float-left"
           alt="Slide"
           src="https://i.pinimg.com/1200x/6c/f1/98/6cf198cef563a89adbfa7ecc0cd9155c.jpg"
         >

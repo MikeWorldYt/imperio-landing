@@ -3,14 +3,28 @@
 @tailwind utilities;
 
 article h2 {
-    @apply text-3xl font-semibold mb-3 pt-4 transition-colors duration-300
+    @apply text-3xl font-semibold mb-3 pt-4
+    transition-colors duration-300 clear-both
     text-primary dark:text-primary-dm;
 }
 
 article h3 {
-    @apply text-2xl font-medium mb-2 pt-2;
+    @apply text-2xl font-medium mb-2 pt-2
+    clear-both;
 }
 
 article img {
-    @apply inline-block align-top max-w-full max-h-[40vh] rounded shadow-lg;
+    @apply inline-block align-top my-1 mr-1
+    rounded shadow-lg
+    max-w-full max-h-[40vh];
+}
+
+article .img-float-left {
+    @apply block md:float-left mr-4 mb-2
+    md:max-w-[40%] md:max-h-[30vh];
+}
+
+article .img-float-right {
+    @apply block md:float-right ml-4 mb-2
+    max-w-[40%] max-h-[30vh];
 }

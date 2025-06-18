@@ -182,14 +182,17 @@ export const servicesTexts: Service = {
           class="img-float-left"
           src="https://hiveoutdoor.com/wp-content/uploads/2022/11/Laminars-Water-Descent-Hive-Outddoor-Living.jpg"
         >
-        They create long, dramatic water arcs that blast off the pool deck and into the pool. Deck jets create a gentle, bubbling stream, and laminar jets create a silky, glassy tube of water, often with mounted-in LED lighting for a striking nighttime display.
+        Deck jets and laminar jets add movement, elegance, and excitement your pool.
+        <br> They create dynamic and a modern ambiance, transforming the space with a mesmerizing visual effect. <s>Deck jets produce soft, bubbling streams, offering a playful and relaxing ambiance, while laminar jets create smooth, glass-like tubes of water, often enhanced with LED lighting for a dazzling nighttime display.</s>
+        <br> Whether for daytime enjoyment or an illuminated evening spectacle, these features bring a dynamic and sophisticated touch.
         <h3> Slides </h3>
         <img 
           alt="Slide"
           class="img-float-right"
           src="https://i.pinimg.com/1200x/6c/f1/98/6cf198cef563a89adbfa7ecc0cd9155c.jpg"
         >
-        Far more than a simple piece of plastic pipe, our slides are meticulously designed to integrate into the landscape, often built into rock outcroppings or gardens for a seamless, upscale visual effect. We are most concerned with safety and utilize only top-grade materials for a resilient, resort-quality experience.
+        Our slides are crafted with thoughtfulness to blend unobtrusively into their surroundings, frequently being integrated into rock outcroppings or gardens to achieve a refined, organic aesthetic. We craft from only top-quality materials, they offer a resilient and a resort-level experience.
+        <br> Above all, <b>your safety is our priority</b>, each design being carefully planned for stability and safe use. So for a fun or sophisticated poolside flair, Slides add excitement with seamless style.
       `,
       content_4: `
         <h2>  The Design & Integration Process </h2>

@@ -108,11 +108,13 @@ export const prerender = true;
         <div class="px-2 md:px-0">
           {contentKeys.map((key, index) => (
             <>
-                <div set:html={service[key]} />
+                <div set:html={service[key]} /> {/* inserccion */}
+                <div class="clear-both h-0"></div>
               {index < contentKeys.length - 1 && (
-                <div class="flex gap-8 md:max-w-lg md:mx-0 mx-4 items-center my-6">
+                <div class="flex items-center justify-items-center my-6">
                   <Button
                     variant="primary_sm"
+                    classAditional='md:max-w-lg mx-auto'
                     href={`/${lang}/get-quote/form?s=${service.id}`}
                     text={lang === 'en' ? 'Get a Free Stimate Now →' : 'Obtener una Cotización Gratis →'}
                   />

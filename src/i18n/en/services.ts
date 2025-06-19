@@ -213,7 +213,7 @@ export const servicesTexts: Service = {
       id: 'pool-equipment-upgrades',
       title: 'Pool Equipment Upgrades',
       description: "Upgrade your pool equipment for smarter control, lower energy bills, and easier maintenance, all from your phone. Enjoy modern convenience and make your pool work for you.",
-      image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
+      image: 'https://i.pinimg.com/1200x/d2/7a/a1/d27aa16b4215f8d6a699ad991f862f4d.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
         The equipment pad is the control hub of your pool, handling everything from circulation to sanitation. Although frequently out of sight, this system determines your pool's operating expense, water clarity, and overall convenience. One of the most significant upgrades a pool owner can undertake is to modern, efficient equipment.
@@ -268,7 +268,7 @@ export const servicesTexts: Service = {
       id: "weekly-pool-services",
       title: "Weekly Pool Services",
       description: "Loading...",
-      image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
+      image: 'https://i.pinimg.com/1200x/6e/c3/6e/6ec36e9d532cdfe24932817b351bc620.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
         503 Service Unavailable, Server in maintenance.

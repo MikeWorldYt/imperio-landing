@@ -81,7 +81,7 @@ export const servicesTexts: Service = {
       id: 'plastering', // 
       title: 'Plastering',
       description: "The pool finish gives your water its beautiful color and provides a smooth surface underfoot. Choose from classic plaster to durable modern pebble styles.",
-      image: "https://professionalpoolguy.com/wp-content/uploads/2024/04/pool-plastering-experts-in-plano-tx.webp",
+      image: "https://i.pinimg.com/1200x/fb/e1/cf/fbe1cfeb445ba643d7fae091c6740fa2.jpg",
       icon: '/icons/spa.svg',
       content_1: `
         Far too often, the pool finish (or plaster) is the overlooked element of your pool's look and feel.
@@ -101,12 +101,11 @@ export const servicesTexts: Service = {
         <br>
         Its smooth surface beautifully reflects light, enhancing the natural hues of the water for a truly inviting appearance.
         Color you select for the finish directly pigments the water
-        And this allows you to customize your pool's appearance, creating anything from a bright, tropical turquoise to a deep, tranquil lagoon.
-        
+        And this allows you to customize your pool's appearance.        
         <br> Simple and elegant, besides plus is they have a smoother finish and won’t hurt anyone’s.
       `,
       content_2: `
-        <h3> Mini Pebble (Pebble Tec) </h3> 
+        <h3> Mini Pebble </h3> 
         <img 
           alt="Mini Pebble"
           class="img-float-left"
@@ -136,7 +135,7 @@ export const servicesTexts: Service = {
       id: 'new-pools-and-additionals', // Pool Construction, Planning, 
       title: 'New Pools & Additionals',
       description: "Loading...",
-      image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
+      image: 'https://i.pinimg.com/1200x/35/33/a6/3533a69009498b0378c959ae2cd0cfe6.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
         503 Service Unavailable, Server in maintenance.
@@ -191,7 +190,7 @@ export const servicesTexts: Service = {
         >
         Deck jets and laminar jets add movement, elegance, and excitement your pool.
         <br> They create dynamic and a modern ambiance, transforming the space with a mesmerizing visual effect. <s>Deck jets produce soft, bubbling streams, offering a playful and relaxing ambiance, while laminar jets create smooth, glass-like tubes of water, often enhanced with LED lighting for a dazzling nighttime display.</s>
-        <br> Whether for daytime enjoyment or an illuminated evening spectacle, these features bring a dynamic and sophisticated touch.
+        <br> Whether for daytime enjoyment or an illuminated evening spectacle with LED lighting, these features bring a dynamic and sophisticated touch.
         <h3> Slides </h3>
         <img 
           alt="Slide"

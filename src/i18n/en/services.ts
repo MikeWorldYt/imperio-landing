@@ -5,7 +5,7 @@ export interface Service {
     id: string;
     title: string;
     description: string;
-    image: string; // Only use 3:2 aspect ratio images
+    image: string; // Only use 8:5 aspect ratio images
     icon: string;
     content_1: string;
     content_2?: string;
@@ -81,7 +81,7 @@ export const servicesTexts: Service = {
       id: 'plastering', // 
       title: 'Plastering',
       description: "The pool finish gives your water its beautiful color and provides a smooth surface underfoot. Choose from classic plaster to durable modern pebble styles.",
-      image: "https://i.pinimg.com/1200x/fb/e1/cf/fbe1cfeb445ba643d7fae091c6740fa2.jpg",
+      image: "https://i.pinimg.com/1200x/7c/0a/25/7c0a25e7be19a259123ec821e6eec539.jpg",
       icon: '/icons/spa.svg',
       content_1: `
         Far too often, the pool finish (or plaster) is the overlooked element of your pool's look and feel.
@@ -135,7 +135,7 @@ export const servicesTexts: Service = {
       id: 'new-pools-and-additionals', // Pool Construction, Planning, 
       title: 'New Pools & Additionals',
       description: "Loading...",
-      image: 'https://i.pinimg.com/1200x/35/33/a6/3533a69009498b0378c959ae2cd0cfe6.jpg',
+      image: 'https://i.pinimg.com/1200x/55/40/d3/5540d32a71631cd3294cb7891acb58e3.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
         503 Service Unavailable, Server in maintenance.

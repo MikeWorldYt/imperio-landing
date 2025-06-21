@@ -18,7 +18,7 @@ const Dropdown: React.FC<Props> = ({ categories, filter, lang, page }) => {
         className="flex items-center"
       >
         <span>
-          {filter.replace(/-/g, " ")}
+          { filter.replace("and", "&").replace(/-/g, " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ") }
         </span>
         <ChevronDown className="ml-2 h-6" />
       </button>
@@ -40,7 +40,7 @@ const Dropdown: React.FC<Props> = ({ categories, filter, lang, page }) => {
                 }`}
                 onClick={() => setOpen(false)}
               >
-                {cat.replace("-", " ")}
+                { cat.replace("and", "&").replace(/-/g, " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ") }
               </a>
             </li>
           ))}

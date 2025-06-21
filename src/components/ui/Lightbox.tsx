@@ -54,7 +54,7 @@ const Lightbox: React.FC<LightboxProps> = ({
 
     return (
         <motion.div
-            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+            className="fixed inset-0 bg-black/80 flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -63,21 +63,27 @@ const Lightbox: React.FC<LightboxProps> = ({
         >
             <button
                 onClick={onClose}
-                className="absolute top-4 right-4 text-white p-2 hover:scale-110 transition-transform"
+                className="absolute z-40 top-4 right-4 text-white p-2 hover:scale-110 transition-transform"
             >
                 <CircleX size={28} />
             </button>
             {/* Anterior */}
             <button
-                onClick={onPrev}
-                className="hidden sm:flex absolute left-4 text-white p-2"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    onPrev?.();
+                }}
+                className="hidden sm:flex absolute left-4 text-white hover:bg-slate-200 rounded-full p-2 z-20"
             >
                 <ChevronLeft size={40} />
             </button>
             {/* Siguiente */}
             <button
-                onClick={onNext}
-                className="hidden sm:flex absolute right-4 text-white p-2"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    onNext?.();
+                }}
+                className="hidden sm:flex absolute right-4 text-white hover:bg-slate-200 rounded-full p-2 z-20"
             >
                 <ChevronRight size={40} />
             </button>
@@ -106,6 +112,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                             }
                         }}
                         className="absolute inset-0 flex items-center justify-center"
+                        onClick={(e) => e.stopPropagation()}
                     >
                     <img
                         src={imageSrc}
@@ -124,6 +131,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                     onTouchStart={handleTouchStart}
                     onTouchEnd={handleTouchEnd}
+                    onClick={(e) => e.stopPropagation()}
                 />
             )}
         </motion.div>

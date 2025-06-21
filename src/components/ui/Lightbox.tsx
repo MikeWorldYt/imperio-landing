@@ -63,7 +63,7 @@ const Lightbox: React.FC<LightboxProps> = ({
         >
             <button
                 onClick={onClose}
-                className="absolute top-4 right-4 text-white p-2 hover:scale-110 transition-transform"
+                className="absolute z-50 top-4 right-4 text-white p-2 hover:scale-110 transition-transform"
             >
                 <CircleX size={28} />
             </button>
@@ -112,7 +112,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                             }
                         }}
                         className="absolute inset-0 flex items-center justify-center"
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={onClose}
                     >
                     <img
                         src={imageSrc}

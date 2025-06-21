@@ -5,9 +5,10 @@ interface Props {
     categories: string[];
     filter: string;
     lang: string;
+    page?: string;
 }
 
-const Dropdown: React.FC<Props> = ({ categories, filter, lang }) => {
+const Dropdown: React.FC<Props> = ({ categories, filter, lang, page }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -16,16 +17,22 @@ const Dropdown: React.FC<Props> = ({ categories, filter, lang }) => {
         onClick={() => setOpen(!open)}
         className="flex items-center"
       >
-        <span>{filter.replace(/-/g, " ")}</span>
+        <span>
+          {filter.replace(/-/g, " ")}
+        </span>
         <ChevronDown className="ml-2 h-6" />
       </button>
 
       {open && (
         <ul className="absolute w-max mt-1 bg-white dark:bg-dark border rounded shadow-lg overflow-auto">
-          {categories.map(cat => (
+          {(page === "services" ? categories.slice(1) : categories).map(cat => (
             <li key={cat}>
               <a
-                href={`/${lang}/gallery?f=${cat}`}
+                href={
+                  page === "gallery"
+                    ? `/${lang}/gallery?f=${cat}`
+                    : `/${lang}/${page}/${cat}`
+                }
                 className={`block px-4 py-2 ${
                   cat === filter
                     ? 'bg-blue-100 text-blue-600 font-semibold'

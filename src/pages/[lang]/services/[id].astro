@@ -70,8 +70,7 @@ export const prerender = true;
         Services
       </a>
       <ChevronRight className="mx-2 h-6" />
-      <span>{service.title}</span>
-      <Dropdown categories={categories} filter={service.id} lang={lang} client:load />
+      <Dropdown categories={categories} filter={service.id} lang={lang} page='services' client:load />
     </div>
     <!-- ✅ Content Table -->
     <div class="w-full h-full px-4 rounded-2xl dark:bg-light/10 bg-dark/20 space-y-2 hidden md:block">

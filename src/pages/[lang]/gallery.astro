@@ -51,7 +51,7 @@ export const prerender = false;
       <div class="breadcrumb">
         <span> {lang === 'en' ? 'Gallery' : 'Galería'} </span>
         <ChevronRight className="mx-2 h-6" />
-        <Dropdown categories={categories} filter={filter} lang={lang} client:load />
+        <Dropdown categories={categories} filter={filter} lang={lang} page='gallery' client:load />
       </div>
       <!-- ✅ Content Table -->
       <div class="w-full flex-grow px-4 rounded-2xl dark:bg-light/10 bg-dark/20 space-y-2 hidden md:block">

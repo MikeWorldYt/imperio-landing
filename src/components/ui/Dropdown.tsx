@@ -11,7 +11,7 @@ const Dropdown: React.FC<Props> = ({ categories, filter, lang }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden relative z-20">
+    <div className="md:hidden relative z-10">
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center"

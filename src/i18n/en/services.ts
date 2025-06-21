@@ -146,7 +146,7 @@ export const servicesTexts: Service = {
       id: 'waterfalls-and-fountains',
       title: 'Waterfalls & Fountains',
       description: "Elevate your pool with custom water features that add beauty and soothing sound. From tranquil waterfalls to fun slides, transform your backyard into a sensory oasis.",
-      image: 'https://leisurepools.com.au/wp-content/uploads/2020/10/LeisurePoolsAU_Absolute_8m_SilverGrey_Rockhampton_2018-1.jpg',
+      image: 'https://i.pinimg.com/1200x/15/83/d9/1583d92c7c59b4864a3862a1273923fd.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
         A pool is a significant architectural element, yet the introduction of flowing water transforms a static feature into a lively piece of art. The sound and action of waterfalls, fountains, and jets create a resort-like atmosphere of opulence, taking the entire outdoor living experience to the maximum. We are experts at designing and constructing unique custom water features that complement beautifully your new or old pool.

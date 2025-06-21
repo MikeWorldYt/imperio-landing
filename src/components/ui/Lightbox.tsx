@@ -54,7 +54,7 @@ const Lightbox: React.FC<LightboxProps> = ({
 
     return (
         <motion.div
-            className="fixed inset-0 bg-black/80 flex items-center justify-center"
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -63,7 +63,7 @@ const Lightbox: React.FC<LightboxProps> = ({
         >
             <button
                 onClick={onClose}
-                className="absolute z-40 top-4 right-4 text-white p-2 hover:scale-110 transition-transform"
+                className="absolute top-4 right-4 text-white p-2 hover:scale-110 transition-transform"
             >
                 <CircleX size={28} />
             </button>
@@ -73,7 +73,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                     e.stopPropagation();
                     onPrev?.();
                 }}
-                className="hidden sm:flex absolute left-4 text-white hover:bg-slate-200 rounded-full p-2 z-20"
+                className="hidden sm:flex absolute left-4 text-white hover:bg-slate-200/30 rounded-full p-2"
             >
                 <ChevronLeft size={40} />
             </button>
@@ -83,7 +83,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                     e.stopPropagation();
                     onNext?.();
                 }}
-                className="hidden sm:flex absolute right-4 text-white hover:bg-slate-200 rounded-full p-2 z-20"
+                className="hidden sm:flex absolute right-4 text-white hover:bg-slate-200/30 rounded-full p-2"
             >
                 <ChevronRight size={40} />
             </button>

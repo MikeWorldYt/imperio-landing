@@ -38,7 +38,7 @@ const MEDIA_STORE: Record<string, MediaItem[]> = {
     { id: "000000-na-nwpo-lt_n001", src: "https://i.pinimg.com/1200x/68/c2/07/68c20705a37e7fd9ab2da217e18e0ac3.jpg", alt: "New Pools" },
     // ...
   ],
-  "waterfalls-and-fontains": [
+  "waterfalls-and-fountains": [
     { id: "000000-na-wafa_n001", src: "https://i.pinimg.com/1200x/13/d5/57/13d5577b3ac61c792e550381c41708d7.jpg", alt: "Waterfalls" },
     // ...
   ],

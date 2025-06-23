@@ -146,7 +146,7 @@ export const servicesTexts: Service = {
       id: 'waterfalls-and-fountains',
       title: 'Waterfalls & Fountains',
       description: "Elevate your pool with custom water features that add beauty and soothing sound. From tranquil waterfalls to fun slides, transform your backyard into a sensory oasis.",
-      image: 'https://i.pinimg.com/1200x/15/83/d9/1583d92c7c59b4864a3862a1273923fd.jpg',
+      image: 'https://i.pinimg.com/1200x/9e/1d/0b/9e1d0b4caad2c7e0c01367bb579f6765.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
         A pool is a significant architectural element, yet the introduction of flowing water transforms a static feature into a lively piece of art. The sound and action of waterfalls, fountains, and jets create a resort-like atmosphere of opulence, taking the entire outdoor living experience to the maximum. We are experts at designing and constructing unique custom water features that complement beautifully your new or old pool.
@@ -257,7 +257,7 @@ export const servicesTexts: Service = {
       id: "outdoor-living", // Landscapes
       title: "Outdoor Living",
       description: "Loading...",
-      image: 'https://www.385swim.com/wp-content/uploads/2020/10/Rochester-NY-In-Ground-Pool-Installer-41-scaled.jpg',
+      image: 'https://i.pinimg.com/1200x/08/37/38/083738ecb69a6407ff7d5c3d04fdd85f.jpg',
       icon: '/icons/renovation.svg',
       content_1: `
         503 Service Unavailable, Server in maintenance.

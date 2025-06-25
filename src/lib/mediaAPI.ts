@@ -36,6 +36,17 @@ const MEDIA_STORE: Record<string, MediaItem[]> = {
   ],
   "new-pools-and-additionals": [
     { id: "000000-na-nwpo-lt_n001", src: "https://i.pinimg.com/1200x/68/c2/07/68c20705a37e7fd9ab2da217e18e0ac3.jpg", alt: "New Pools" },
+    { id: "201004-addspa-covina_n001", src: "https://i.pinimg.com/1200x/83/f1/06/83f1065309a68932f3ffabfb1dd3b4db.jpg", alt: "Spa Addition" },
+    { id: "201004-addspa-covina_n002", src: "https://i.pinimg.com/1200x/cf/7c/1d/cf7c1d90a5eda81e979ca07d70449599.jpg", alt: "Spa Addition" },
+    { id: "201004-addspa-covina_n003", src: "https://i.pinimg.com/1200x/cf/7c/1d/cf7c1d90a5eda81e979ca07d70449599.jpg", alt: "Spa Addition" },
+    { id: "201004-addspa-covina_n004", src: "https://i.pinimg.com/1200x/fe/1e/8d/fe1e8dc7c93443ad5dd310fc0aa0a9b5.jpg", alt: "Spa Addition" },
+    { id: "201004-addspa-covina_n005", src: "https://i.pinimg.com/1200x/ee/c8/f3/eec8f3d5d66ec30f389f053bd7c165d2.jpg", alt: "Spa Addition" },
+    { id: "201004-addspa-covina_n006", src: "https://i.pinimg.com/1200x/05/3e/4a/053e4a663c4ca54ec6185ae2d20cebad.jpg", alt: "Spa Addition" },
+    { id: "201004-addspa-covina_n007", src: "https://i.pinimg.com/1200x/df/c5/91/dfc591ada21a93dead9331aaadd1c3d9.jpg", alt: "Spa Addition" },
+    { id: "201004-addspa-covina_n008", src: "https://i.pinimg.com/1200x/3b/40/a3/3b40a36592d11a6631e85045a4aee4c0.jpg", alt: "Spa Addition" },
+    { id: "201004-addspa-covina_n009", src: "https://i.pinimg.com/1200x/db/f2/cf/dbf2cf4745d33f6e97d63114be95ad59.jpg", alt: "Spa Addition" },
+    { id: "201004-addspa-covina_n010", src: "https://i.pinimg.com/1200x/54/88/4a/54884ae348bc85590ac3516ee45a31a4.jpg", alt: "Spa Addition" },
+
     // ...
   ],
   "waterfalls-and-fountains": [

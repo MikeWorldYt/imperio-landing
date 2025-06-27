@@ -7,13 +7,15 @@ interface LightboxProps {
     imageId: string;
     imageSrc: string;
     alt?: string;
+    prevImage?: { id: string; src: string; alt?: string }
+    nextImage?: { id: string; src: string; alt?: string }
     onClose: () => void;
     onPrev?: () => void;
     onNext?: () => void;
 }
 
 const Lightbox: React.FC<LightboxProps> = ({ 
-    imageId, imageSrc, alt, onClose, onPrev, onNext
+    imageId, imageSrc, alt, prevImage, nextImage, onClose, onPrev, onNext
 }) => {
 
     const touchStartX = useRef<number | null>(null);
@@ -125,7 +127,10 @@ const Lightbox: React.FC<LightboxProps> = ({
 
             {/* Imagen */}
             {isMobile ? (
-                <AnimatePresence mode="wait" initial={false}>
+                <div
+                    className="absolute inset-0 flex items-center justify-center overflow-hidden"
+                >
+                {/* <AnimatePresence mode="wait" initial={false}> */}
                     <motion.div
                         key={imageSrc}
                         custom={direction}
@@ -133,29 +138,65 @@ const Lightbox: React.FC<LightboxProps> = ({
                         initial="enter"
                         animate="center"
                         exit="exit"
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        transition={{ duration: 0, ease: "easeOut" }}
                         drag="x"
                         dragConstraints={{ left: 0, right: 0 }}
                         dragElastic={0.2}
                         onDragEnd={(e, info) => {
-                            if (info.offset.x < -100) {
+                            const threshold = window.innerWidth * 0.9;
+                            if (info.offset.x < -threshold && nextImage) {
                                 setDirection("left");
                                 onNext?.();
-                            } else if (info.offset.x > 100) {
+                            } else if (info.offset.x > threshold && prevImage) {
                                 setDirection("right");
                                 onPrev?.();
                             }
                         }}
-                        className="absolute inset-0 flex items-center justify-center"
+                        className="flex items-center justify-center"
                         onClick={onClose}
                     >
-                    <img
+                    {/* <img
                         src={imageSrc}
                         alt={alt || "Expanded image"}
                         className="max-w-full max-h-[90vh] rounded shadow-lg"
-                    />
+                    /> */}
+
+                    {prevImage ? (
+                        <div className="flex-shrink-0 w-full flex items-center justify-center">
+                            <img
+                                src={prevImage.src}
+                                alt={prevImage.alt || "Previous"}
+                                className="max-w-full max-h-[90vh] rounded shadow-lg"
+                            />
+                        </div>
+                    ) : (
+                        <div className="flex-shrink-0 w-full" />
+                    )}
+
+                    <div className="flex-shrink-0 w-full flex items-center justify-center">
+                        <img
+                            src={imageSrc}
+                            alt={alt || "Expanded image"}
+                            className="max-w-full max-h-[90vh] rounded shadow-lg"
+                        />
+                    </div>
+
+                    {nextImage ? (
+                        <div className="flex-shrink-0 w-full flex items-center justify-center">
+                            <img
+                                src={nextImage.src}
+                                alt={nextImage.alt || "Next"}
+                                className="max-w-full max-h-[90vh] rounded shadow-lg"
+                            />
+                        </div>
+                    ) : (
+                        <div className="flex-shrink-0 w-full" />
+                    )}
+
+
                     </motion.div>
-                </AnimatePresence>
+                {/* </AnimatePresence> */}
+                </div>
             ) : (
                 <motion.img
                     key={imageSrc}

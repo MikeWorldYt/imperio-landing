@@ -74,15 +74,24 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
       )}
       <AnimatePresence>
           {currentImage && (
+            <div className="bg-black sm:bg-transparent">
             <Lightbox
               key={currentImage.id}
               imageId={currentImage.id}
               imageSrc={currentImage.src}
               alt={currentImage.alt}
+              prevImage={
+                currentIndex! > 0 ? images![currentIndex! - 1] : undefined
+              }
+              nextImage={
+                currentIndex! < images!.length - 1
+                  ? images![currentIndex! + 1]
+                  : undefined
+              }
               onClose={() => setCurrentIndex(null)}
               onPrev={GoPrev}
               onNext={GoNext}
-            />
+            /></div>
           )}
       </AnimatePresence>
     </>

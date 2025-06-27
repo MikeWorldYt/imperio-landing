@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, CircleX } from "lucide-react";
+import { ArrowLeft, ArrowRight, X } from "lucide-react";
 
 interface LightboxProps {
     imageId: string;
@@ -54,19 +54,34 @@ const Lightbox: React.FC<LightboxProps> = ({
 
     return (
         <motion.div
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+            className="fixed inset-0 sm:bg-black/80 bg-black flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             onClick={onClose}
         >
-            <button
+            {isMobile ? ( // Botón de cerrar - Mobile
+                <button
                 onClick={onClose}
-                className="absolute z-50 top-4 right-4 text-white p-2 hover:scale-110 transition-transform"
-            >
-                <CircleX size={28} />
-            </button>
+                className="absolute top-0 left-0 p-4
+                        text-white
+                        hover:scale-110 transition-transform"
+                >
+                    <ArrowLeft size={15} />
+                </button>
+            ) : ( // Botón de cerrar - Desktop
+                <button
+                onClick={onClose}
+                className="absolute z-50 top-4 right-4 p-2
+                        text-white border border-gray-300/10
+                        bg-slate-200/10 rounded-full
+                        hover:bg-slate-200/30
+                        hover:scale-110 transition-transform"
+                >
+                    <X size={28} />
+                </button>
+            )}
             {/* Anterior */}
             <button
                 onClick={(e) => {

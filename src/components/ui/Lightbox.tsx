@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
@@ -33,6 +33,20 @@ const Lightbox: React.FC<LightboxProps> = ({
         }
         touchStartX.current = null;
     };
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "ArrowLeft") {
+                onPrev?.();
+            } else if (e.key === "ArrowRight") {
+                onNext?.();
+            } else if (e.key === "Escape") {
+                onClose();
+            }
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [onPrev, onNext, onClose]);
 
     const variants = {
         enter: (dir: "left" | "right") => ({

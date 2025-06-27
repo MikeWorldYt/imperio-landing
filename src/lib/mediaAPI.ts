@@ -34,7 +34,7 @@ const MEDIA_STORE: Record<string, MediaItem[]> = {
     { id: "000000-na-mpeb_n001", src: "https://i.pinimg.com/1200x/ab/3d/53/ab3d539f395476ff54e445bcf56a9a9d.jpg", alt: "Mini Pebble" },
     // ...
   ],
-  "new-pools-and-additionals": [
+  "new-pools-and-additions": [
     { id: "000000-na-nwpo-lt_n001", src: "https://i.pinimg.com/1200x/68/c2/07/68c20705a37e7fd9ab2da217e18e0ac3.jpg", alt: "New Pools" },
     { id: "201004-addspa-covina_n001", src: "https://i.pinimg.com/1200x/83/f1/06/83f1065309a68932f3ffabfb1dd3b4db.jpg", alt: "Spa Addition" },
     { id: "201004-addspa-covina_n002", src: "https://i.pinimg.com/1200x/d4/00/be/d400bebeb7839cd3ee49b90a6a8dc946.jpg", alt: "Spa Addition" },

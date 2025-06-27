@@ -54,15 +54,15 @@ const Lightbox: React.FC<LightboxProps> = ({
 
     return (
         <motion.div
-            className="fixed inset-0 sm:bg-black/80 bg-black flex items-center justify-center z-50"
+            className="fixed inset-0 sm:bg-black/80 backdrop-blur bg-black flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             onClick={onClose}
         >
-            {isMobile ? ( // Botón de cerrar - Mobile
-                <button
+            {isMobile ? ( 
+                <button // Botón de cerrar - Mobile
                 onClick={onClose}
                 className="absolute top-0 left-0 p-4
                         text-white
@@ -70,8 +70,8 @@ const Lightbox: React.FC<LightboxProps> = ({
                 >
                     <ArrowLeft size={15} />
                 </button>
-            ) : ( // Botón de cerrar - Desktop
-                <button
+            ) : ( </* Desktop */>
+                <button   // Botón de cerrar
                 onClick={onClose}
                 className="absolute z-50 top-4 right-4 p-2
                         text-white border border-gray-300/10
@@ -81,35 +81,33 @@ const Lightbox: React.FC<LightboxProps> = ({
                 >
                     <X size={28} />
                 </button>
-            )}
-            {/* Anterior */}
-            <button
-                onClick={(e) => {
-                    e.stopPropagation();
-                    onPrev?.();
-                }}
-                className="hidden sm:flex absolute left-4 
-                        text-white border border-gray-300/10
-                        bg-gray-900/30 rounded-full p-1
-                        hover:bg-slate-600/30"
-            >
-                <ArrowLeft size={30} />
-            </button>
-            {/* Siguiente */}
-            <button
-                onClick={(e) => {
-                    e.stopPropagation();
-                    onNext?.();
-                }}
-                className="hidden sm:flex absolute right-4
-                        text-white border border-gray-300/10 
-                        bg-gray-900/30 rounded-full p-1
-                        hover:bg-gray-600/30"
-            >
-                <div className=" ">
-                    <ArrowRight size={30} />
-                </div>
-            </button>
+                <button   // Botón anterior
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onPrev?.();
+                    }}
+                    className="flex absolute left-4 
+                            text-white border border-gray-300/10
+                            bg-gray-900/30 rounded-full p-1
+                            hover:bg-slate-600/30"
+                >
+                    <ArrowLeft size={30} />
+                </button>
+                <button   // Botón siguiente
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onNext?.();
+                    }}
+                    className="flex absolute right-4
+                            text-white border border-gray-300/10 
+                            bg-gray-900/30 rounded-full p-1
+                            hover:bg-gray-600/30"
+                >
+                    <div className=" ">
+                        <ArrowRight size={30} />
+                    </div>
+                </button>
+            </>   )}
 
             {/* Imagen */}
             {isMobile ? (

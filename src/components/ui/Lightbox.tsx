@@ -88,9 +88,12 @@ const Lightbox: React.FC<LightboxProps> = ({
                     e.stopPropagation();
                     onPrev?.();
                 }}
-                className="hidden sm:flex absolute left-4 text-white hover:bg-slate-200/30 rounded-full p-2"
+                className="hidden sm:flex absolute left-4 
+                        text-white border border-gray-300/10
+                        bg-gray-900/30 rounded-full p-1
+                        hover:bg-slate-600/30"
             >
-                <ChevronLeft size={40} />
+                <ArrowLeft size={30} />
             </button>
             {/* Siguiente */}
             <button
@@ -98,9 +101,14 @@ const Lightbox: React.FC<LightboxProps> = ({
                     e.stopPropagation();
                     onNext?.();
                 }}
-                className="hidden sm:flex absolute right-4 text-white hover:bg-slate-200/30 rounded-full p-2"
+                className="hidden sm:flex absolute right-4
+                        text-white border border-gray-300/10 
+                        bg-gray-900/30 rounded-full p-1
+                        hover:bg-gray-600/30"
             >
-                <ChevronRight size={40} />
+                <div className=" ">
+                    <ArrowRight size={30} />
+                </div>
             </button>
 
             {/* Imagen */}

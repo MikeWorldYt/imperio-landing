@@ -143,7 +143,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                         dragConstraints={{ left: 0, right: 0 }}
                         dragElastic={0.2}
                         onDragEnd={(e, info) => {
-                            const threshold = window.innerWidth * 0.6;
+                            const threshold = window.innerWidth * 0.4;
                             if (info.offset.x < -threshold && nextImage) {
                                 setDirection("left");
                                 onNext?.();

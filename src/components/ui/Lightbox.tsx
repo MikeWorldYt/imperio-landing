@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, X, ZoomIn, ZoomOut, Share2 } from "lucide-react";
 
 interface LightboxProps {
     imageId: string;
@@ -122,6 +122,19 @@ const Lightbox: React.FC<LightboxProps> = ({
                     <ArrowRight size={30} />
                 </button>
             </>   )}
+            {/* Tool Box */}
+            <div
+                className={`absolute z-30 gap-2 m-2 py-2 px-4 rounded-md
+                    flex items-center justify-center
+                    bottom-0
+                ${isMobile
+                    ? "bg-slate-800/80 "
+                    : "bg-black/80"
+                }`}
+            >
+
+            </div>
+
 
             {/* Imagen */}
             {isMobile ? (

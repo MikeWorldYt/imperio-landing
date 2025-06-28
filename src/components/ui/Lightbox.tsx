@@ -105,7 +105,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                     className="flex absolute left-4 
                             text-white border border-gray-300/10
                             bg-gray-900/30 rounded-full p-1
-                            hover:bg-slate-600/30"
+                            hover:bg-blue-700/60"
                 >
                     <ArrowLeft size={30} />
                 </button>
@@ -117,11 +117,9 @@ const Lightbox: React.FC<LightboxProps> = ({
                     className="flex absolute right-4
                             text-white border border-gray-300/10 
                             bg-gray-900/30 rounded-full p-1
-                            hover:bg-gray-600/30"
+                            hover:bg-blue-700/60"
                 >
-                    <div className=" ">
-                        <ArrowRight size={30} />
-                    </div>
+                    <ArrowRight size={30} />
                 </button>
             </>   )}
 

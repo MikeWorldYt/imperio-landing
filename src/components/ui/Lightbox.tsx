@@ -251,7 +251,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                         x: position.x,
                         y: position.y,
                     }}
-                    drag
+                    drag={zoom === 1}
                     dragMomentum={false}
                     onDragEnd={(e, info) => {
                         setPosition((prev) => ({
@@ -260,8 +260,8 @@ const Lightbox: React.FC<LightboxProps> = ({
                         }));
                     }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                    onTouchStart={handleTouchStart}
-                    onTouchEnd={handleTouchEnd}
+                    // onTouchStart={handleTouchStart}
+                    // onTouchEnd={handleTouchEnd}
                     onClick={(e) => e.stopPropagation()}
                 />
             )}

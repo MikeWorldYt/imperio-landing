@@ -67,6 +67,8 @@ const Lightbox: React.FC<LightboxProps> = ({
 
     const isMobile = useIsMobile();
     const [direction, setDirection] = useState<"left" | "right">("left");
+    const [zoom, setZoom] = useState(1);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
 
     return (
         <motion.div
@@ -125,7 +127,7 @@ const Lightbox: React.FC<LightboxProps> = ({
             {/* Tool Box */}
             <div
                 className={`absolute z-30 gap-2 m-2 py-2 px-4 rounded-md
-                    flex items-center justify-center
+                    flex items-center justify-center text-white
                     bottom-0
                 ${isMobile
                     ? "bg-slate-800/80 "
@@ -135,27 +137,30 @@ const Lightbox: React.FC<LightboxProps> = ({
                 <button
                     onClick={(e) => {
                         e.stopPropagation();
-                        // logica de zoom in
+                        setZoom((z) => Math.max(z - 0.25, 1));
                     }}
-                    className="p-2 rounded hover:bg-slate-600 text-white hover:text-blue-400 transition-colors"
+                    className="p-2 rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
+                >
+                    <ZoomOut size={20} />
+                </button>
+                <span>
+                    {Math.round(zoom * 100)}%
+                </span>
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setZoom((z) => Math.min(z + 0.25, 2.5));
+                    }}
+                    className="p-2 rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
                 >
                     <ZoomIn size={20} />
                 </button>
                 <button
                     onClick={(e) => {
                         e.stopPropagation();
-                        // logica de zoom out
-                    }}
-                    className="p-2 rounded hover:bg-slate-600 text-white hover:text-blue-400 transition-colors"
-                >
-                    <ZoomOut size={20} />
-                </button>
-                <button
-                    onClick={(e) => {
-                        e.stopPropagation();
                         // logica de share
                     }}
-                    className="p-2 rounded hover:bg-slate-600 text-white hover:text-blue-400 transition-colors"
+                    className="p-2 rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
                 >
                     <Share2 size={20} />
                 </button>
@@ -240,7 +245,18 @@ const Lightbox: React.FC<LightboxProps> = ({
                     layoutId={`image-${imageId}`}
                     src={imageSrc}
                     alt={alt || "Expanded image"}
-                    className="max-w-full max-h-[90vh] rounded shadow-lg"
+                    className="max-w-full max-h-[90vh] rounded shadow-lg cursor-grab active:cursor-grabbing"
+                    style={{
+                        transform: `scale(${zoom}) translate(${position.x}px, ${position.y}px)`,
+                    }}
+                    drag
+                    dragMomentum={false}
+                    onDragEnd={(e, info) => {
+                        setPosition({
+                            x: info.point.x,
+                            y: info.point.y,
+                        });
+                    }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                     onTouchStart={handleTouchStart}
                     onTouchEnd={handleTouchEnd}

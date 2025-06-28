@@ -246,16 +246,18 @@ const Lightbox: React.FC<LightboxProps> = ({
                     src={imageSrc}
                     alt={alt || "Expanded image"}
                     className="max-w-full max-h-[90vh] rounded shadow-lg cursor-grab active:cursor-grabbing"
-                    style={{
-                        transform: `scale(${zoom}) translate(${position.x}px, ${position.y}px)`,
+                    animate={{
+                        scale: zoom,
+                        x: position.x,
+                        y: position.y,
                     }}
                     drag
                     dragMomentum={false}
                     onDragEnd={(e, info) => {
-                        setPosition({
-                            x: info.point.x,
-                            y: info.point.y,
-                        });
+                        setPosition((prev) => ({
+                            x: prev.x + info.offset.x,
+                            y: prev.y + info.offset.y,
+                        }));
                     }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                     onTouchStart={handleTouchStart}

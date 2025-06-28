@@ -104,7 +104,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                         e.stopPropagation();
                         onPrev?.();
                     }}
-                    className="flex absolute left-4 
+                    className="flex absolute left-4 z-10
                             text-white border border-gray-300/10
                             bg-gray-900/30 rounded-full p-1
                             hover:bg-blue-700/60"
@@ -116,7 +116,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                         e.stopPropagation();
                         onNext?.();
                     }}
-                    className="flex absolute right-4
+                    className="flex absolute right-4 z-10
                             text-white border border-gray-300/10 
                             bg-gray-900/30 rounded-full p-1
                             hover:bg-blue-700/60"

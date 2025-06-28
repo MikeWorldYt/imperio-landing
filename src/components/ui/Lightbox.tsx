@@ -132,7 +132,33 @@ const Lightbox: React.FC<LightboxProps> = ({
                     : "bg-black/80"
                 }`}
             >
-
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        // logica de zoom in
+                    }}
+                    className="p-2 rounded hover:bg-slate-600 text-white hover:text-blue-400 transition-colors"
+                >
+                    <ZoomIn size={20} />
+                </button>
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        // logica de zoom out
+                    }}
+                    className="p-2 rounded hover:bg-slate-600 text-white hover:text-blue-400 transition-colors"
+                >
+                    <ZoomOut size={20} />
+                </button>
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        // logica de share
+                    }}
+                    className="p-2 rounded hover:bg-slate-600 text-white hover:text-blue-400 transition-colors"
+                >
+                    <Share2 size={20} />
+                </button>
             </div>
 
 

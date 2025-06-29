@@ -85,12 +85,26 @@ const Lightbox: React.FC<LightboxProps> = ({
     const handleTouchMove = (e: React.TouchEvent) => {
         e.preventDefault(); // evita scroll de fondo
         const touch = e.touches[0];
+        // Tamaño del contenedor (viewport)
+        const containerWidth = window.innerWidth;
+        const containerHeight = window.innerHeight;
+        // Tamaño de la imagen escalada
+        const scaledWidth = containerWidth * zoom;
+        const scaledHeight = containerHeight * zoom;
+        // Rango máximo que puede moverse (para que no deje espacio vacío)
+        const maxX = Math.max(0, (scaledWidth - containerWidth) / 2);
+        const maxY = Math.max(0, (scaledHeight - containerHeight) / 2);
+        // Movimiento calculado como antes
         const dx = touch.clientX - startXRef.current;
         const dy = touch.clientY - startYRef.current;
-        setPosition({
-            x: startPosRef.current.x + dx,
-            y: startPosRef.current.y + dy,
-        });
+        let nextX = startPosRef.current.x + dx;
+        let nextY = startPosRef.current.y + dy;
+        // Limitar dentro de -max y +max
+        nextX = Math.max(-maxX, Math.min(maxX, nextX));
+        nextY = Math.max(-maxY, Math.min(maxY, nextY));
+        setPosition({ x: nextX, y: nextY });
+        //
+
     };
 
     return (
@@ -160,7 +174,13 @@ const Lightbox: React.FC<LightboxProps> = ({
                 <button
                     onClick={(e) => {
                         e.stopPropagation();
-                        setZoom((z) => Math.max(z - 0.25, 1));
+                        setZoom((z) => {
+                            const newZoom = Math.max(z - 0.25, 1);
+                            if (newZoom === 1) {
+                                setPosition({ x: 0, y: 0 });
+                            }
+                            return newZoom;
+                        });
                     }}
                     className="p-2 rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
                 >

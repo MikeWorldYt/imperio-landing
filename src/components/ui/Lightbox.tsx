@@ -270,7 +270,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                         <img
                             src={imageSrc}
                             alt={alt || "Expanded image"}
-                            className="max-w-full max-h-[90vh] rounded shadow-lg"
+                            className="max-w-full max-h-[90vh] rounded shadow-lg test_2"
                             style={{ transform }}
                             onTouchStart={handleTouchStart}
                             onTouchMove={handleTouchMove}
@@ -294,30 +294,72 @@ const Lightbox: React.FC<LightboxProps> = ({
                 {/* </AnimatePresence> */}
                 </div>
             ) : (
-                <motion.img
-                    key={imageSrc}
-                    layoutId={`image-${imageId}`}
+                <img
                     src={imageSrc}
                     alt={alt || "Expanded image"}
-                    className="max-w-full max-h-[90vh] rounded shadow-lg cursor-grab active:cursor-grabbing"
-                    animate={{
-                        scale: zoom,
-                        x: position.x,
-                        y: position.y,
+                    className="max-w-full max-h-[90vh] rounded shadow-lg touch-none cursor-grab active:cursor-grabbing"
+                    style={{ transform }}
+                    onMouseDown={(e) => {
+                        e.preventDefault();
+                        const startX = e.clientX;
+                        const startY = e.clientY;
+                        const origX = position.x;
+                        const origY = position.y;
+
+                        const handleMouseMove = (moveEvent: MouseEvent) => {
+                            const containerWidth = window.innerWidth;
+                            const containerHeight = window.innerHeight;
+                            const scaledWidth = containerWidth * zoom;
+                            const scaledHeight = containerHeight * zoom;
+                            const maxX = Math.max(0, (scaledWidth - containerWidth) / 2);
+                            const maxY = Math.max(0, (scaledHeight - containerHeight) / 2);
+
+                            let nextX = origX + (moveEvent.clientX - startX);
+                            let nextY = origY + (moveEvent.clientY - startY);
+
+                            nextX = Math.max(-maxX, Math.min(maxX, nextX));
+                            nextY = Math.max(-maxY, Math.min(maxY, nextY));
+
+                            setPosition({ x: nextX, y: nextY });
+                        };
+
+                        const handleMouseUp = () => {
+                            window.removeEventListener("mousemove", handleMouseMove);
+                            window.removeEventListener("mouseup", handleMouseUp);
+                        };
+
+                        window.addEventListener("mousemove", handleMouseMove);
+                        window.addEventListener("mouseup", handleMouseUp);
                     }}
-                    drag={zoom === 1}
-                    dragMomentum={false}
-                    onDragEnd={(e, info) => {
-                        setPosition((prev) => ({
-                            x: prev.x + info.offset.x,
-                            y: prev.y + info.offset.y,
-                        }));
+                    onTouchStart={(e) => {
+                        const startX = e.touches[0].clientX;
+                        const startY = e.touches[0].clientY;
+                        const origX = position.x;
+                        const origY = position.y;
+
+                        const handleTouchMove = (moveEvent: TouchEvent) => {
+                            const containerWidth = window.innerWidth;
+                            const containerHeight = window.innerHeight;
+                            const scaledWidth = containerWidth * zoom;
+                            const scaledHeight = containerHeight * zoom;
+                            const maxX = Math.max(0, (scaledWidth - containerWidth) / 2);
+                            const maxY = Math.max(0, (scaledHeight - containerHeight) / 2);
+                            let nextX = origX + (moveEvent.touches[0].clientX - startX);
+                            let nextY = origY + (moveEvent.touches[0].clientY - startY);
+                            nextX = Math.max(-maxX, Math.min(maxX, nextX));
+                            nextY = Math.max(-maxY, Math.min(maxY, nextY));
+                            setPosition({ x: nextX, y: nextY });
+                        };
+
+                        const handleTouchEnd = () => {
+                            window.removeEventListener("touchmove", handleTouchMove);
+                            window.removeEventListener("touchend", handleTouchEnd);
+                        };
+                        window.addEventListener("touchmove", handleTouchMove);
+                        window.addEventListener("touchend", handleTouchEnd);
                     }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
-                    // onTouchStart={handleTouchStart}
-                    // onTouchEnd={handleTouchEnd}
-                    onClick={(e) => e.stopPropagation()}
-                />
+/>
+
             )}
         </div>
     );

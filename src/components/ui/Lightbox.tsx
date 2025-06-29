@@ -154,7 +154,7 @@ const Lightbox: React.FC<LightboxProps> = ({
             </>   )}
             {/* Tool Box */}
             <div
-                className={`absolute z-30 gap-2 m-2 py-2 px-4 rounded-md
+                className={`absolute z-30 gap-3 m-2 py-2 px-4 rounded-md
                     flex items-center justify-center text-white
                     bottom-0
                 ${isMobile
@@ -167,7 +167,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                         e.stopPropagation();
                         onPrev?.();
                     }}
-                    className="p-2 rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
+                    className="rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
                 >
                     <ChevronLeft size={20} />
                 </button>
@@ -179,7 +179,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                         e.stopPropagation();
                         onNext?.();
                     }}
-                    className="p-2 rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
+                    className="rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
                 >
                     <ChevronRight size={20} />
                 </button>
@@ -194,7 +194,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                             return newZoom;
                         });
                     }}
-                    className="p-2 rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
+                    className="rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
                 >
                     <ZoomOut size={20} />
                 </button>
@@ -206,7 +206,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                         e.stopPropagation();
                         setZoom((z) => Math.min(z + 0.25, 2.5));
                     }}
-                    className="p-2 rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
+                    className="rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
                 >
                     <ZoomIn size={20} />
                 </button>
@@ -215,7 +215,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                         e.stopPropagation();
                         // logica de share
                     }}
-                    className="p-2 rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
+                    className="ounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
                 >
                     <Share2 size={20} />
                 </button>

@@ -20,9 +20,9 @@ const Lightbox: React.FC<LightboxProps> = ({
 
     const touchStartX = useRef<number | null>(null);
 
-    const handleTouchStart = (e: React.TouchEvent) => {
-        touchStartX.current = e.touches[0].clientX;
-    };
+    // const handleTouchStart = (e: React.TouchEvent) => {
+    //     touchStartX.current = e.touches[0].clientX;
+    // };
 
     const handleTouchEnd = (e: React.TouchEvent) => {
         if (touchStartX.current === null) return;
@@ -69,20 +69,43 @@ const Lightbox: React.FC<LightboxProps> = ({
     const [direction, setDirection] = useState<"left" | "right">("left");
     const [zoom, setZoom] = useState(1);
     const [position, setPosition] = useState({ x: 0, y: 0 });
+    const transform = `scale(${zoom}) translate(${position.x}px, ${position.y}px)`;
+
+    // Mobile Detail grabbing Gesture
+    const startXRef = useRef(0);
+    const startYRef = useRef(0);
+    const startPosRef = useRef({ x: 0, y: 0 });
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        const touch = e.touches[0];
+        startXRef.current = touch.clientX;
+        startYRef.current = touch.clientY;
+        startPosRef.current = { x: position.x, y: position.y };
+    }
+    const handleTouchMove = (e: React.TouchEvent) => {
+        e.preventDefault(); // evita scroll de fondo
+        const touch = e.touches[0];
+        const dx = touch.clientX - startXRef.current;
+        const dy = touch.clientY - startYRef.current;
+        setPosition({
+            x: startPosRef.current.x + dx,
+            y: startPosRef.current.y + dy,
+        });
+    };
 
     return (
-        <motion.div
+        <div
             className="fixed inset-0 sm:bg-black/80 backdrop-blur bg-black flex items-center justify-center z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            onClick={onClose}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // exit={{ opacity: 0 }}
+            // transition={{ duration: 0.3, ease: "easeInOut" }}
+            // onClick={onClose}
         >
             {isMobile ? ( 
                 <button // Botón de cerrar - Mobile
                 onClick={onClose}
-                className="absolute top-0 left-0 p-4
+                className="absolute top-0 left-0 p-4 z-50
                         text-white
                         hover:scale-110 transition-transform"
                 >
@@ -185,6 +208,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                         dragConstraints={{ left: 0, right: 0 }}
                         dragElastic={0.2}
                         onDragEnd={(e, info) => {
+                            if (zoom !== 1) return;
                             const threshold = window.innerWidth * 0.4;
                             if (info.offset.x < -threshold && nextImage) {
                                 setDirection("left");
@@ -220,6 +244,9 @@ const Lightbox: React.FC<LightboxProps> = ({
                             src={imageSrc}
                             alt={alt || "Expanded image"}
                             className="max-w-full max-h-[90vh] rounded shadow-lg"
+                            style={{ transform }}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
                         />
                     </div>
 
@@ -265,7 +292,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                     onClick={(e) => e.stopPropagation()}
                 />
             )}
-        </motion.div>
+        </div>
     );
 };
 

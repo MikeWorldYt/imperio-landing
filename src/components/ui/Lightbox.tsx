@@ -310,42 +310,40 @@ const Lightbox: React.FC<LightboxProps> = ({
                         className="flex items-center justify-center"
                         // onClick={onClose}
                     >
-
-                    {prevImage ? (
+                            {/*   Imagen previa   */}
+                        {prevImage ? (
+                            <div className="flex-shrink-0 w-full flex items-center justify-center">
+                                <img
+                                    src={prevImage.src}
+                                    alt={prevImage.alt || "Previous"}
+                                    className="max-w-full max-h-[90vh] rounded shadow-lg"
+                                />
+                            </div>
+                        ) : (
+                            <div className="flex-shrink-0 w-full" />
+                        )}
+                            {/*   Imagen actual   */}
                         <div className="flex-shrink-0 w-full flex items-center justify-center">
                             <img
-                                src={prevImage.src}
-                                alt={prevImage.alt || "Previous"}
-                                className="max-w-full max-h-[90vh] rounded shadow-lg"
+                                src={imageSrc}
+                                alt={alt || "Expanded image"}
+                                className="max-w-full max-h-[90vh] rounded shadow-lg test_2"
+                                style={{ transform }}
+                                onTouchStart={handleTouchStart}
+                                onTouchMove={handleTouchMove}
                             />
                         </div>
-                    ) : (
-                        <div className="flex-shrink-0 w-full" />
-                    )}
-
-                    <div className="flex-shrink-0 w-full flex items-center justify-center">
-                        <img
-                            src={imageSrc}
-                            alt={alt || "Expanded image"}
-                            className="max-w-full max-h-[90vh] rounded shadow-lg test_2"
-                            style={{ transform }}
-                            onTouchStart={handleTouchStart}
-                            onTouchMove={handleTouchMove}
-                        />
-                    </div>
-
-                    {nextImage ? (
-                        <div className="flex-shrink-0 w-full flex items-center justify-center">
-                            <img
-                                src={nextImage.src}
-                                alt={nextImage.alt || "Next"}
-                                className="max-w-full max-h-[90vh] rounded shadow-lg"
-                            />
-                        </div>
-                    ) : (
-                        <div className="flex-shrink-0 w-full" />
-                    )}
-
+                            {/*   Imagen siguiente   */}
+                        {nextImage ? (                        <div className="flex-shrink-0 w-full flex items-center justify-center">
+                                <img
+                                    src={nextImage.src}
+                                    alt={nextImage.alt || "Next"}
+                                    className="max-w-full max-h-[90vh] rounded shadow-lg"
+                                />
+                            </div>
+                        ) : (
+                            <div className="flex-shrink-0 w-full" />
+                        )}
                     </motion.div>
                 {/* </AnimatePresence> */}
                 </div>

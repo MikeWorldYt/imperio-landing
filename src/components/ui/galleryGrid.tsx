@@ -88,6 +88,8 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
                   ? images![currentIndex! + 1]
                   : undefined
               }
+              currentIndex={currentIndex!}
+              totalImages={images!.length}
               onClose={() => setCurrentIndex(null)}
               onPrev={GoPrev}
               onNext={GoNext}

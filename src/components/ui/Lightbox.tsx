@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight, X, ZoomIn, ZoomOut, Share2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, X, ZoomIn, ZoomOut, Share2, ChevronRight, ChevronLeft } from "lucide-react";
 
 interface LightboxProps {
     imageId: string;
@@ -9,32 +9,16 @@ interface LightboxProps {
     alt?: string;
     prevImage?: { id: string; src: string; alt?: string }
     nextImage?: { id: string; src: string; alt?: string }
+    currentIndex: number;
+    totalImages: number;
     onClose: () => void;
     onPrev?: () => void;
     onNext?: () => void;
 }
 
 const Lightbox: React.FC<LightboxProps> = ({ 
-    imageId, imageSrc, alt, prevImage, nextImage, onClose, onPrev, onNext
+    imageId, imageSrc, alt, prevImage, nextImage, currentIndex, totalImages, onClose, onPrev, onNext
 }) => {
-
-    const touchStartX = useRef<number | null>(null);
-
-    // const handleTouchStart = (e: React.TouchEvent) => {
-    //     touchStartX.current = e.touches[0].clientX;
-    // };
-
-    const handleTouchEnd = (e: React.TouchEvent) => {
-        if (touchStartX.current === null) return;
-        const touchEndX = e.changedTouches[0].clientX;
-        const diff = touchStartX.current - touchEndX;
-
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) onNext?.(); // swipe left
-            else onPrev?.();         // swipe right
-        }
-        touchStartX.current = null;
-    };
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -116,7 +100,7 @@ const Lightbox: React.FC<LightboxProps> = ({
             // transition={{ duration: 0.3, ease: "easeInOut" }}
             // onClick={onClose}
         >
-            {isMobile ? ( 
+            {isMobile ? ( </* Mobile */>
                 <button // Botón de cerrar - Mobile
                 onClick={onClose}
                 className="absolute top-0 left-0 p-4 z-50
@@ -125,6 +109,13 @@ const Lightbox: React.FC<LightboxProps> = ({
                 >
                     <ArrowLeft size={15} />
                 </button>
+                <span
+                    className="absolute top-0 p-4 text-xs z-50
+                        text-white"
+                >
+                    {currentIndex + 1} / {totalImages}
+                </span>
+                </>
             ) : ( </* Desktop */>
                 <button   // Botón de cerrar
                 onClick={onClose}
@@ -171,6 +162,27 @@ const Lightbox: React.FC<LightboxProps> = ({
                     : "bg-black/80"
                 }`}
             >
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onPrev?.();
+                    }}
+                    className="p-2 rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
+                >
+                    <ChevronLeft size={20} />
+                </button>
+                    <span>
+                        {currentIndex + 1} / {totalImages}
+                    </span>
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onNext?.();
+                    }}
+                    className="p-2 rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
+                >
+                    <ChevronRight size={20} />
+                </button>
                 <button
                     onClick={(e) => {
                         e.stopPropagation();
@@ -239,13 +251,8 @@ const Lightbox: React.FC<LightboxProps> = ({
                             }
                         }}
                         className="flex items-center justify-center"
-                        onClick={onClose}
+                        // onClick={onClose}
                     >
-                    {/* <img
-                        src={imageSrc}
-                        alt={alt || "Expanded image"}
-                        className="max-w-full max-h-[90vh] rounded shadow-lg"
-                    /> */}
 
                     {prevImage ? (
                         <div className="flex-shrink-0 w-full flex items-center justify-center">

@@ -90,34 +90,91 @@ const Lightbox: React.FC<LightboxProps> = ({
         //
 
     };
+    // Desktop Paneo
+    const imageRef = useRef<HTMLImageElement>(null);
 
+    const handleMouseMove = (moveEvent: MouseEvent) => {
+        if (zoom === 1 || !imageRef.current) return;
+        const baseImageWidth = imageRef.current.clientWidth;
+        const baseImageHeight = imageRef.current.clientHeight;
+        const scaledImageWidth = baseImageWidth * zoom;
+        const scaledImageHeight = baseImageHeight * zoom;
+        // Máximo rango que puede moverse desde el centro (para que no deje espacio vacío)
+        const maxX = Math.max(0, (scaledImageWidth - baseImageWidth) / 2);
+        const maxY = Math.max(0, (scaledImageHeight - baseImageHeight) / 2);
+        const dx = moveEvent.clientX - startXRef.current;
+        const dy = moveEvent.clientY - startYRef.current;
+        let nextX = startPosRef.current.x + dx;
+        let nextY = startPosRef.current.y + dy;
+        // Limitar la posición para que la imagen no salga de los bordes
+        nextX = Math.max(-maxX, Math.min(maxX, nextX));
+        nextY = Math.max(-maxY, Math.min(maxY, nextY));
+        setPosition({ x: nextX, y: nextY });
+    };
+
+    const handleMouseUp = () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    const handleImageMouseDown = (e: React.MouseEvent) => {
+        if (zoom === 1) return; // Si no hay zoom, no panear
+        e.preventDefault(); // Prevenir el arrastre por defecto del navegador
+        startXRef.current = e.clientX;
+        startYRef.current = e.clientY;
+        startPosRef.current = { x: position.x, y: position.y };
+        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("mouseup", handleMouseUp);
+    };
+
+    const handleImageTouchStart = (e: React.TouchEvent) => {
+        if (zoom === 1) return; // Si no hay zoom, no panear
+        e.stopPropagation(); // Evitar que el lightbox padre detecte este toque para arrastrar y cerrar
+        const touch = e.touches[0];
+        startXRef.current = touch.clientX;
+        startYRef.current = touch.clientY;
+        startPosRef.current = { x: position.x, y: position.y };
+    }
+
+    const handleImageTouchMove = (e: React.TouchEvent) => {
+        if (zoom === 1 || !imageRef.current) return; // Solo panear si hay zoom
+        e.preventDefault(); // Evitar el scroll del fondo o el drag del lightbox
+        const touch = e.touches[0];
+        const baseImageWidth = imageRef.current.clientWidth;
+        const baseImageHeight = imageRef.current.clientHeight;
+        const scaledImageWidth = baseImageWidth * zoom;
+        const scaledImageHeight = baseImageHeight * zoom;
+        const maxX = Math.max(0, (scaledImageWidth - baseImageWidth) / 2);
+        const maxY = Math.max(0, (scaledImageHeight - baseImageHeight) / 2);
+        const dx = touch.clientX - startXRef.current;
+        const dy = touch.clientY - startYRef.current;
+        let nextX = startPosRef.current.x + dx;
+        let nextY = startPosRef.current.y + dy;
+        nextX = Math.max(-maxX, Math.min(maxX, nextX));
+        nextY = Math.max(-maxY, Math.min(maxY, nextY));
+        setPosition({ x: nextX, y: nextY });
+    };
+
+    //   R    E    T    U    R    N
     return (
         <div
             className="fixed inset-0 sm:bg-black/80 backdrop-blur bg-black flex items-center justify-center z-50"
-            // initial={{ opacity: 0 }}
-            // animate={{ opacity: 1 }}
-            // exit={{ opacity: 0 }}
-            // transition={{ duration: 0.3, ease: "easeInOut" }}
-            // onClick={onClose}
         >
+            {/*         H  A  N  D  L  E  R  S         */}
             {isMobile ? ( </* Mobile */>
-                <button // Botón de cerrar - Mobile
+                <button    //         Botón de cerrar
                 onClick={onClose}
-                className="absolute top-0 left-0 p-4 z-50
-                        text-white
+                className="absolute top-0 left-0 p-4 text-white z-50
                         hover:scale-110 transition-transform"
                 >
                     <ArrowLeft size={15} />
                 </button>
-                <span
-                    className="absolute top-0 p-4 text-xs z-50
-                        text-white"
-                >
+                <span className="absolute top-0 p-4 text-xs text-white z-50" >
                     {currentIndex + 1} / {totalImages}
                 </span>
-                </>
-            ) : ( </* Desktop */>
-                <button   // Botón de cerrar
+                
+            </> ) : ( </* Desktop */>
+                <button   //         Botón de cerrar
                 onClick={onClose}
                 className="absolute z-50 top-4 right-4 p-2
                         text-white border border-gray-300/10
@@ -127,7 +184,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 >
                     <X size={28} />
                 </button>
-                <button   // Botón anterior
+                <button   //         Botón anterior
                     onClick={(e) => {
                         e.stopPropagation();
                         onPrev?.();
@@ -139,7 +196,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 >
                     <ArrowLeft size={30} />
                 </button>
-                <button   // Botón siguiente
+                <button   //         Botón siguiente
                     onClick={(e) => {
                         e.stopPropagation();
                         onNext?.();
@@ -152,7 +209,8 @@ const Lightbox: React.FC<LightboxProps> = ({
                     <ArrowRight size={30} />
                 </button>
             </>   )}
-            {/* Tool Box */}
+
+            {/*         T  O  O  L  B  O  X         */}
             <div
                 className={`absolute z-30 gap-3 m-2 py-2 px-4 rounded-md
                     flex items-center justify-center text-white
@@ -162,7 +220,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                     : "bg-black/80"
                 }`}
             >
-                <button
+                <button   //         Botón Previo
                     onClick={(e) => {
                         e.stopPropagation();
                         onPrev?.();
@@ -174,7 +232,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                     <span>
                         {currentIndex + 1} / {totalImages}
                     </span>
-                <button
+                <button   //         Botón Siguiente
                     onClick={(e) => {
                         e.stopPropagation();
                         onNext?.();
@@ -183,7 +241,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 >
                     <ChevronRight size={20} />
                 </button>
-                <button
+                <button   //         Botón de Zoom Out
                     onClick={(e) => {
                         e.stopPropagation();
                         setZoom((z) => {
@@ -201,7 +259,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 <span>
                     {Math.round(zoom * 100)}%
                 </span>
-                <button
+                <button   //         Botón de Zoom In
                     onClick={(e) => {
                         e.stopPropagation();
                         setZoom((z) => Math.min(z + 0.25, 2.5));
@@ -210,7 +268,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 >
                     <ZoomIn size={20} />
                 </button>
-                <button
+                <button   //         Botón de Compartir
                     onClick={(e) => {
                         e.stopPropagation();
                         // logica de share
@@ -221,8 +279,7 @@ const Lightbox: React.FC<LightboxProps> = ({
                 </button>
             </div>
 
-
-            {/* Imagen */}
+            {/*         I  M  A  G  E         */}
             {isMobile ? (
                 <div
                     className="absolute inset-0 flex items-center justify-center overflow-hidden"
@@ -289,7 +346,6 @@ const Lightbox: React.FC<LightboxProps> = ({
                         <div className="flex-shrink-0 w-full" />
                     )}
 
-
                     </motion.div>
                 {/* </AnimatePresence> */}
                 </div>
@@ -299,67 +355,11 @@ const Lightbox: React.FC<LightboxProps> = ({
                     alt={alt || "Expanded image"}
                     className="max-w-full max-h-[90vh] rounded shadow-lg touch-none cursor-grab active:cursor-grabbing"
                     style={{ transform }}
-                    onMouseDown={(e) => {
-                        e.preventDefault();
-                        const startX = e.clientX;
-                        const startY = e.clientY;
-                        const origX = position.x;
-                        const origY = position.y;
-
-                        const handleMouseMove = (moveEvent: MouseEvent) => {
-                            const containerWidth = window.innerWidth;
-                            const containerHeight = window.innerHeight;
-                            const scaledWidth = containerWidth * zoom;
-                            const scaledHeight = containerHeight * zoom;
-                            const maxX = Math.max(0, (scaledWidth - containerWidth) / 2);
-                            const maxY = Math.max(0, (scaledHeight - containerHeight) / 2);
-
-                            let nextX = origX + (moveEvent.clientX - startX);
-                            let nextY = origY + (moveEvent.clientY - startY);
-
-                            nextX = Math.max(-maxX, Math.min(maxX, nextX));
-                            nextY = Math.max(-maxY, Math.min(maxY, nextY));
-
-                            setPosition({ x: nextX, y: nextY });
-                        };
-
-                        const handleMouseUp = () => {
-                            window.removeEventListener("mousemove", handleMouseMove);
-                            window.removeEventListener("mouseup", handleMouseUp);
-                        };
-
-                        window.addEventListener("mousemove", handleMouseMove);
-                        window.addEventListener("mouseup", handleMouseUp);
-                    }}
-                    onTouchStart={(e) => {
-                        const startX = e.touches[0].clientX;
-                        const startY = e.touches[0].clientY;
-                        const origX = position.x;
-                        const origY = position.y;
-
-                        const handleTouchMove = (moveEvent: TouchEvent) => {
-                            const containerWidth = window.innerWidth;
-                            const containerHeight = window.innerHeight;
-                            const scaledWidth = containerWidth * zoom;
-                            const scaledHeight = containerHeight * zoom;
-                            const maxX = Math.max(0, (scaledWidth - containerWidth) / 2);
-                            const maxY = Math.max(0, (scaledHeight - containerHeight) / 2);
-                            let nextX = origX + (moveEvent.touches[0].clientX - startX);
-                            let nextY = origY + (moveEvent.touches[0].clientY - startY);
-                            nextX = Math.max(-maxX, Math.min(maxX, nextX));
-                            nextY = Math.max(-maxY, Math.min(maxY, nextY));
-                            setPosition({ x: nextX, y: nextY });
-                        };
-
-                        const handleTouchEnd = () => {
-                            window.removeEventListener("touchmove", handleTouchMove);
-                            window.removeEventListener("touchend", handleTouchEnd);
-                        };
-                        window.addEventListener("touchmove", handleTouchMove);
-                        window.addEventListener("touchend", handleTouchEnd);
-                    }}
-/>
-
+                    onMouseDown={handleImageMouseDown}
+                    onTouchStart={handleImageTouchStart}
+                    onTouchMove={handleImageTouchMove}
+                    ref={imageRef}
+                />
             )}
         </div>
     );

@@ -262,7 +262,11 @@ const Lightbox: React.FC<LightboxProps> = ({
                 <button   //         Botón de Zoom In
                     onClick={(e) => {
                         e.stopPropagation();
-                        setZoom((z) => Math.min(z + 0.25, 2.5));
+                        setZoom((z) => {
+                            const maxZoom = isMobile ? 2.5 : 2.0;
+                            const newZoom = Math.min(z + 0.25, maxZoom);
+                            return newZoom;
+                        });
                     }}
                     className="rounded hover:bg-slate-600 hover:text-blue-400 transition-colors"
                 >
